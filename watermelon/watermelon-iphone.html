@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Watermelon">
+  <title>Watermelon</title>
+  <style>
+    html {
+        font-family: "Consolas", "MS Gothic", monospace;
+        font-size: 25px;
+        box-sizing: border-box;
+        overscroll-behavior: none;
+        text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        margin: 0;
+        height: 100%;
+    }
+    *, *::before, *::after {
+        font-family: inherit;
+        font-size: 100%;
+        box-sizing: inherit;
+    }
+    body {
+        overflow: hidden;
+        height: inherit;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    header {
+        font-size: 0.8rem;
+        &.shown {
+            display: block;
+        }
+        &.hidden {
+            display: none;
+        }
+        & > h1 {
+            font-size: 1.4rem;
+            margin-block-start: 0.2rem;
+            margin-block-end: 0.2rem;
+        }
+    }
+
+    .area {
+        margin: 0.2rem;
+        &:not(details) {
+            display: block;
+        }
+    }
+
+    main {
+        padding: 0px;
+        margin: 0px;
+        & > canvas#canvas {
+            background-color: black;
+            background-image: url(images/screen.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100%;
+        }
+    }
+
+    aside {
+        font-size: 0.8rem;
+        &.shown {
+            display: block;
+        }
+        &.hidden {
+            display: none;
+        }
+        & > h2 {
+            font-size: 1.2rem;
+            margin-block-start: 0.2rem;
+            margin-block-end: 0.2rem;
+        }
+    }
+
+    footer {
+        font-size: 0.8rem;
+        &.shown {
+            display: block;
+        }
+        &.hidden {
+            display: none;
+        }
+    }
+
+  </style>
+</head>
+
+<body>
+  <header class="hidden">
+    <h1>Watermelon</h1>
+    <hr>
+  </header>
+
+  <div id="images" class="hidden">
+    <img class="fruit" id="cherry" src="images/cherry.png" alt="cherry">
+    <img class="fruit" id="strawberry" src="images/strawberry.png" alt="strawberry">
+    <img class="fruit" id="grape" src="images/grape.png" alt="grape">
+    <img class="fruit" id="dekopon" src="images/dekopon.png" alt="dekopon">
+    <img class="fruit" id="persimmon" src="images/persimmon.png" alt="persimmon">
+    <img class="fruit" id="apple" src="images/apple.png" alt="apple">
+    <img class="fruit" id="pear" src="images/pear.png" alt="pear">
+    <img class="fruit" id="peach" src="images/peach.png" alt="peach">
+    <img class="fruit" id="pineapple" src="images/pineapple.png" alt="pineapple">
+    <img class="fruit" id="melon" src="images/melon.png" alt="melon">
+    <img class="fruit" id="watermelon" src="images/watermelon.png" alt="watermelon">
+    <hr>
+  </div>
+
+  <main class="shown">
+    <canvas id="canvas"></canvas>
+  </main>
+
+  <aside class="hidden">
+    <hr>
+    <h2>Reference</h2>
+    <ul>
+      <li>
+        <a href="https://topics.nintendo.co.jp/article/e9d2815a-23be-4dab-9264-1b959470e4fb" target="_blank">
+          フルーツを成長させてスイカを目指す。『スイカゲーム』をご存知ですか？
+        </a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=T3Fg8yQhUfI&feature=shared&t=81" target="_blank">
+          初心者からレベルアップ！世界１位の考え。 高得点への道のり！！【Switch版 スイカゲーム】
+        </a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=Ng0FSyVkE1w&feature=shared&t=823" target="_blank">
+          奇跡のダブルスイカ2回目達成！メロン下型【Switch版スイカゲーム】
+        </a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=mtHQ6JCpXMg" target="_blank">
+          【日本1位】スイカ作成RTAー2:23.47【スイカゲーム】【更新しちゃった男】
+        </a>
+      </li>
+      <li>
+        <a href="https://www.tenkaichi-hanseikai.com/entry/2023/09/19/000009" target="_blank">
+          switch版"スイカゲーム"攻略・検証メモ（各フルーツの出現確率の偏り、点数計算、小技など）
+        </a>
+      </li>
+      <li>
+        <a href="https://x.com/aladdinx_jp/status/1704067991003144688?s=20" target="_blank">
+          Aladdin Xシリーズのマスコットキャラクター「ポッピー」です！
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <footer class="hidden">
+    <hr>
+    <p>&copy;Copyright 2023 by nobody. All rights reversed.</p>
+  </footer>
+
+  <script>
+    "use strict";
+
+    // ヘルパー関数
+
+    /** 強制終了
+     * @description 呼び出し元にcatchがなければプログラムが終了する
+     * @param {string} [str="exit"] エラーメッセージ
+     */
+    function exit(str = "exit") {
+        throw new Error(str);
+    }
+
+    /** min以上max以下の疑似整数乱数
+     * @param {number} min 下限値
+     * @param {number} [max=min] 上限値
+     * @returns {number} 疑似整数乱数
+     */
+    function randomIntRange(min, max) {
+        if (min > max) [min, max] = [max, min];
+        min = Math.ceil(min);
+        max = Math.floor(max) + 1;
+        return Math.trunc(Math.random()*(max-min)) + min;
+    }
+
+    /** 0以上num未満の疑似整数乱数
+     * @param {number} [max=0] 疑似整数乱数の候補の個数
+     * @returns {number} 疑似整数乱数
+     */
+    function randomInt(num) {
+        return randomIntRange(0, num-1);
+    }
+
+    /** 離散確率密度関数pdfに従う0以上pdf.length未満の疑似整数乱数
+     * @param {number[]} pdf 離散確率密度関数
+     * @returns {number} 疑似整数乱数
+     */
+    function randomIntPdf(pdf) {
+        const cdf = new Array(pdf.length+1).fill(0);
+        for (let i = 0; i < pdf.length; i++) {
+            cdf[i+1] = cdf[i] + pdf[i];
+        }
+        const total = cdf.slice(-1)[0];
+        const rand = Math.random()*total;
+        for (let i = 0; i < pdf.length; i++) {
+            if (rand < cdf[i+1]) return i;
+        }
+    }
+
+
+    const canvas = document.querySelector("canvas#canvas");
+    (() => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        // console.log(window.innerWidth); // 1503
+        // console.log(window.innerHeight); // 926
+        // console.log(window.innerWidth/window.innerHeight); // 1.623110151187905
+        // console.log(window.devicePixelRatio); // 1.5
+    })();
+    const ctx = canvas.getContext("2d");
+    const dpr = window.devicePixelRatio;
+    const fruits = document.querySelectorAll("div#images > img.fruit");
+
+    /** 壁座標 */
+    const wall = (() => {
+        const w = 790/dpr;
+        const h = 1000/dpr;
+        const l = 43/2/dpr;
+        return {
+            left  : canvas.width/2-w/2,
+            right : canvas.width/2+w/2,
+            top   : 155.0+l,
+            bottom: 152.5+l+h,
+        };
+    })();
+    const delay = 800;  // 落下開始可能時間間隔[ms]
+
+    let score = 0;  // 総得点
+    let bestScore = 0;  // 最高得点
+    let requestID = 0;  // clear用
+
+    /** 2次元ベクトル */
+    class Vector2D {
+        // 定数
+        static zero = new Vector2D(0, 0);
+        static xUnit = new Vector2D(1, 0);
+        static yUnit = new Vector2D(0, 1);
+
+        /**
+         * @param {number} x
+         * @param {number} y
+         */
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+        /**
+         * @param {Vector2D} other
+         * @returns this + other
+         */
+        add(other) {
+            return new Vector2D(
+                this.x + other.x,
+                this.y + other.y,
+            );
+        }
+        /**
+         * @param {Vector2D} other
+         * @returns this - other
+         */
+        sub(other) {
+            return new Vector2D(
+                this.x - other.x,
+                this.y - other.y,
+            );
+        }
+        /**
+         * @param {number} scalar
+         * @returns this * scalar
+         */
+        mul(scalar) {
+            return new Vector2D(
+                this.x * scalar,
+                this.y * scalar,
+            );
+        }
+        /**
+         * @param {number} scalar
+         * @returns this / scalar
+         */
+        div(scalar) {
+            return new Vector2D(
+                this.x / scalar,
+                this.y / scalar,
+            );
+        }
+        /**
+         * @param {Vector2D} other
+         * @returns this . other
+         */
+        dot(other) {
+            return this.x*other.x + this.y*other.y;
+        }
+        /**
+         * @param {Vector2D} other
+         * @returns (this x other)z
+         */
+        cross(other) {
+            return this.x*other.y - this.y*other.x;
+        }
+        /**
+         * @returns |this|
+         */
+        abs() {
+            return Math.sqrt(this.dot(this));
+        }
+        /**
+         * @param {Vector2D} other
+         * @returns |this - other|
+         */
+        distance(other) {
+            return this.sub(other).abs();
+        }
+        /**
+         * @returns this / |this|
+         */
+        normalize() {
+            return this.div(this.abs());
+        }
+        /**
+         * @param {number} angle
+         * @returns R_angle * this
+         */
+        rotate(angle) {
+            const x = this.x;
+            const y = this.y;
+            const cos = Math.cos(angle);
+            const sin = Math.sin(angle);
+            return new Vector2D(
+                cos*x - sin*y,
+                sin*x + cos*y,
+            );
+        }
+        /**
+         * @param {Vector2D} other
+         * @returns this < other (x major)
+         */
+        lt(other) {
+            if (this.x === other.x) {
+                return this.y < other.y;
+            } else {
+                return this.x < other.x;
+            }
+        }
+        /**
+         * @param {Vector2D} other
+         * @returns this > other (x major)
+         */
+        gt(other) {
+            return other.lt(this);
+        }
+        /**
+         * @param {Vector2D} other
+         * @returns this <= other (x major)
+         */
+        le(other) {
+            return !this.gt(other);
+        }
+        /**
+         * @param {Vector2D} other
+         * @returns this >= other (x major)
+         */
+        ge(other) {
+            return !this.lt(other);
+        }
+        /**
+         * @param {Vector2D} other
+         * @returns this == other
+         */
+        eq(other) {
+            return this.ge(other) && this.le(other);
+        }
+        /**
+         * @param {Vector2D} other
+         * @returns this != other
+         */
+        ne(other) {
+            return !this.eq(other);
+        }
+    }
+
+    /** ball種類別情報 */
+    const ballInfos = (() => {
+        class BallInfo {
+            /**
+             * @param {string} name
+             * @param {Image} image
+             * @param {number} radius
+             * @param {number} mass
+             * @param {number} point
+             * @param {number} odds
+             */
+            constructor(name, image, radius, mass, point, odds) {
+                this.name   = name;
+                this.image  = image;
+                this.radius = radius;
+                this.mass   = mass;
+                this.point  = point;
+                this.odds   = odds;
+            }
+        }
+
+        return [
+            new BallInfo("cherry"    , fruits[0], 59, 60, 1, 20),
+            new BallInfo("strawberry", fruits[1], 74, 58, 3, 20),
+            new BallInfo("grape"     , fruits[2], 113, 56, 6, 20),
+            new BallInfo("dekopon"   , fruits[3], 122, 54, 10, 20),
+            new BallInfo("persimmon" , fruits[4], 156, 52, 15, 20),
+            new BallInfo("apple"     , fruits[5], 193, 50, 21, 0),
+            new BallInfo("pear"      , fruits[6], 230, 48, 28, 0),
+            new BallInfo("peach"     , fruits[7], 280, 46, 36, 0),
+            new BallInfo("pineapple" , fruits[8], 316, 44, 45, 0),
+            new BallInfo("melon"     , fruits[9], 389, 42, 55, 0),
+            new BallInfo("watermelon", fruits[10], 460, 40, 66, 0),
+        ].map((bi, i) => {
+            // bi.image = images[i];
+            bi.radius /= 2*dpr;
+            bi.point = 1+i*(i+3)/2;
+            return bi;
+        });
+    })();
+
+    /** 物理定数 */
+    const physics = {
+        gravity   : new Vector2D(0, 10),  // 重力加速度
+        deltaTime : 0.125,  // 時間刻み
+        elastic   : 0.0,  // 反発係数
+        damping   : 0.975,  // 速度の強制減衰の倍率
+    }
+
+    const balls = new Map();
+    class Ball {
+        static #newBallID = 0;  // ball管理用
+
+        /**
+         * @param {Vector2D} center
+         * @param {Vector2D} velocity
+         * @param {number} type
+         */
+        constructor(center, velocity, type) {
+            this.id       = Ball.#newBallID++;
+            this.center   = center;
+            this.velocity = velocity;
+            this.isActive = false;
+            this.isInit   = true;
+            this.type     = type;
+            this.info     = ballInfos[type];
+        }
+        draw() {
+            // ショートカット
+            const id        = this.id;
+            const center    = this.center;
+            const velocity  = this.velocity;
+            const isActive  = this.isActive;
+            const isInit    = this.isInit;
+            const type      = this.type;
+            const info      = this.info;
+            const name      = info.name;
+            const image     = info.image;
+            const radius    = info.radius;
+            const mass      = info.mass;
+            const point     = info.point;
+            const odds      = info.odds;
+            const gravity   = physics.gravity;
+            const deltaTime = physics.deltaTime;
+            const elastic   = physics.elastic;
+            const damping   = physics.damping;
+
+            // if (!isActive) return;
+
+            // /* 予め作成した画像を描画
+            const width = image.width;
+            const height = image.height;
+            const scale = radius/(width/2);
+            ctx.save();
+            ctx.beginPath();
+            ctx.drawImage(image, 0, 0, width, height, center.x-width*scale/2, center.y-height*scale/2, width*scale, height*scale);
+            ctx.arc(center.x, center.y, radius, 0, 2*Math.PI);
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+            // */
+
+            /* 毎フレーム図形を作成し描画
+            ctx.save();
+            ctx.beginPath();
+            ctx.fillStyle = "rgba(0, 0, 0, 1)";
+            ctx.arc(center.x, center.y, radius, 0, 2*Math.PI);
+            ctx.stroke();
+            ctx.font = "30px monospace";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText(name, center.x, center.y);
+            ctx.closePath();
+            ctx.restore();
+            */
+        }
+        update() {
+            // ショートカット
+            const id        = this.id;
+            const center    = this.center;
+            const velocity  = this.velocity;
+            const isActive  = this.isActive;
+            const isInit    = this.isInit;
+            const type      = this.type;
+            const info      = this.info;
+            const name      = info.name;
+            const image     = info.image;
+            const radius    = info.radius;
+            const mass      = info.mass;
+            const point     = info.point;
+            const odds      = info.odds;
+            const gravity   = physics.gravity;
+            const deltaTime = physics.deltaTime;
+            const elastic   = physics.elastic;
+            const damping   = physics.damping;
+
+            if (!isActive) return;
+
+            this.center = center.add(
+                velocity.mul(deltaTime)
+            );/*.add(
+                gravity.mul(0.5*deltaTime**2)
+            );*/
+            /*
+            if (velocity.x*gravity.x < 0) {
+                this.center.x += gravity.x*0.5*deltaTime**2
+            }
+            if (velocity.y*gravity.y < 0) {
+                this.center.y += gravity.y*0.5*deltaTime**2
+            }
+            */
+
+            this.velocity = velocity.add(
+                gravity.mul(deltaTime)
+            );
+            this.velocity = this.velocity.mul(damping);
+        }
+        collisionWall() {
+            // ショートカット
+            const id        = this.id;
+            const center    = this.center;
+            const velocity  = this.velocity;
+            const isActive  = this.isActive;
+            const isInit    = this.isInit;
+            const type      = this.type;
+            const info      = this.info;
+            const name      = info.name;
+            const image     = info.image;
+            const radius    = info.radius;
+            const mass      = info.mass;
+            const point     = info.point;
+            const odds      = info.odds;
+            const gravity   = physics.gravity;
+            const deltaTime = physics.deltaTime;
+            const elastic   = physics.elastic;
+            const damping   = physics.damping;
+
+            if (!isActive) return;
+
+            /** 境界座標 */
+            const bound = {
+                left  : wall.left + radius,
+                right : wall.right - radius,
+                top   : wall.top + radius,
+                bottom: wall.bottom - radius,
+            };
+            if (this.center.x < bound.left) {
+                this.center.x = bound.left;
+                this.velocity.x *= -elastic;
+            }
+            if (this.center.x > bound.right) {
+                this.center.x = bound.right;
+                this.velocity.x *= -elastic;
+            }
+            if (this.center.y < bound.top) {
+                if (!this.isInit) {
+                    gameOver();
+                }
+            } else {
+                this.isInit = false;
+            }
+            if (this.center.y > bound.bottom) {
+                this.center.y = bound.bottom;
+                this.velocity.y *= -elastic;
+            }
+        }
+        collisionBall() {
+            // ショートカット
+            const id1       = this.id;
+            const center1   = this.center;
+            const velocity1 = this.velocity;
+            const isActive1 = this.isActive;
+            const isInit1   = this.isInit;
+            const type1     = this.type;
+            const info1     = this.info;
+            const name1     = info1.name;
+            const image1    = info1.image;
+            const radius1   = info1.radius;
+            const mass1     = info1.mass;
+            const point1    = info1.point;
+            const odds1     = info1.odds;
+            const gravity   = physics.gravity;
+            const deltaTime = physics.deltaTime;
+            const elastic   = physics.elastic;
+            const damping   = physics.damping;
+
+            if (!isActive1) return;
+
+            for (const ball of [...balls.values()].toSorted((ball1, ball2) => {
+                const center1 = new Vector2D(ball1.center.y, ball1.center.x);
+                const center2 = new Vector2D(ball2.center.y, ball2.center.x);
+                if (center1.lt(center2)) return -1;
+                if (center1.gt(center2)) return 1;
+                return 0;
+            })) {
+                // ショートカット
+                const id2       = ball.id;
+                const center2   = ball.center;
+                const velocity2 = ball.velocity;
+                const isActive2 = ball.isActive;
+                const isInit2   = ball.isInit;
+                const type2     = ball.type;
+                const info2     = ball.info;
+                const name2     = info2.name;
+                const image2    = info2.image;
+                const radius2   = info2.radius;
+                const mass2     = info2.mass;
+                const point2    = info2.point;
+                const odds2     = info2.odds;
+
+                if (!isActive2) continue;
+                if (id1 === id2) continue;
+                if (center1.distance(center2) >= radius1+radius2) continue;
+
+                if (type1 === type2) {
+                    this.center = center1.add(center2).div(2);
+                    score += point1;
+                    // ballを削除
+                    balls.delete(id2);
+                    // thisを進化
+                    this.type++;
+                    if (this.type >= ballInfos.length) {
+                        score += ballInfos.slice(-1)[0].point;
+                        balls.delete(id1);
+                        continue;
+                    }
+                    this.info = ballInfos[this.type];
+                }
+
+                const YUnit = center2.sub(center1).normalize();  // Y軸(接触面法線)方向の単位ベクトル
+                const XUnit = YUnit.rotate(Math.PI/2);  // X軸(接触面接線)方向の単位ベクトル
+                const U1Velocity = new Vector2D(  // XY平面上でのthisの衝突前の速度ベクトル
+                    velocity1.dot(XUnit),  // X軸(接触面接線)方向への射影
+                    velocity1.dot(YUnit),  // Y軸(接触面接線)方向への射影
+                );
+                const U2Velocity = new Vector2D(  // XY平面上でのballの衝突前の速度ベクトル
+                    velocity2.dot(XUnit),  // X軸(接触面接線)方向への射影
+                    velocity2.dot(YUnit),  // Y軸(接触面接線)方向への射影
+                );
+                const massRatio12 = mass1 / mass2;  // ballに対するthisの質量比
+                const massRatio21 = mass2 / mass1;  // thisに対するballの質量比
+                const V1Velocity = new Vector2D(  // XY平面上でのthisの衝突後の速度ベクトル
+                    U1Velocity.x,
+                    (U1Velocity.y*(massRatio12-elastic) + U2Velocity.y*(1+elastic)) / (1+massRatio12),
+                );
+                const V2Velocity = new Vector2D(  // XY平面上でのballの衝突後の速度ベクトル
+                    U2Velocity.x,
+                    (U1Velocity.y*(1+elastic) + U2Velocity.y*(massRatio21-elastic)) / (1+massRatio21),
+                );
+                const coli1Position = center1.add(YUnit.mul(radius1));  // this視点の衝突点
+                const coli2Position = center2.sub(YUnit.mul(radius2));  // ball視点の衝突点
+                const coliPosition = coli1Position.add(coli2Position).div(2);  // thisとballの衝突点
+                this.center = coliPosition.sub(YUnit.mul(radius1));  // thisをballにY軸方向で外接
+                ball.center = coliPosition.add(YUnit.mul(radius2));  // ballをthisにY軸方向で外接
+                this.velocity = XUnit.mul(V1Velocity.x).add(YUnit.mul(V1Velocity.y));  // 元のxy平面の座標に戻す
+                ball.velocity = XUnit.mul(V2Velocity.x).add(YUnit.mul(V2Velocity.y));  // 元のxy平面の座標に戻す
+            }
+        }
+    }
+
+    /** ユーザー操作対象ball */
+    let curBall = new Ball(Vector2D.zero, Vector2D.zero, 0);
+    /** ネクスト */
+    let nextBall = new Ball(Vector2D.zero, Vector2D.zero, 0);
+    // /** シンカの輪 */
+    // const evoBalls = [];
+
+
+    /** エントリー */
+    window.onload = main;
+
+    /** メイン */
+    function main() {
+        /** 初期化 */
+        init();
+
+        /** シンカの輪 */
+        /*
+        ((x, y) => {
+            const N = ballInfos.length;
+            const PI2 = 2*Math.PI;
+            for (let i = 0; i < N; i++) {
+                const t = (i+1)*PI2/(N+1) - PI2/4;
+                const cos = Math.cos(t);
+                const sin = Math.sin(t);
+                const r = 256/2;
+                const evoBall = new Ball(new Vector2D(x+r*cos, y+r*sin+180), Vector2D.zero, i);
+                evoBalls.push(evoBall);
+            }
+        })(nextBall.center.x, wall.bottom-400);
+        */
+
+        /** 落下位置指定 */
+        canvas.onmousemove = (event) => {
+            const mouseX = event.offsetX;
+            const mouseY = event.offsetY;
+
+            if (mouseX < wall.left) return;
+            if (mouseX > wall.right) return;
+            if (mouseY < wall.top) return;
+            if (mouseY > wall.bottom) return;
+
+            let x = mouseX;
+            x = Math.max(x, wall.left+60/dpr);
+            x = Math.min(x, wall.right-85/dpr);
+            curBall.center.x = x;
+            curBall.center.y = curBall.center.y;
+        };
+
+        /** 落下開始 */
+        canvas.onmouseup = (() => {
+            let isAbled = true;  // 落下可能かどうか
+            return (event) => {
+                const mouseX = event.offsetX;
+                const mouseY = event.offsetY;
+
+                if (mouseX < wall.left || wall.right < mouseX) return;
+                if (mouseY < wall.top || wall.bottom < mouseY) return;
+
+                if (!isAbled) return;
+                isAbled = false;
+                setTimeout(() => isAbled = true, delay);
+
+                curBall.isActive = true;
+                balls.set(curBall.id, curBall);
+                const radius = ballInfos[nextBall.type].radius;
+                let x = mouseX;
+                x = Math.max(x, wall.left+60/dpr);
+                x = Math.min(x, wall.right-85/dpr);
+                curBall = new Ball(
+                    new Vector2D(x, wall.top+43/2/dpr-radius),
+                    Vector2D.zero,
+                    nextBall.type,
+                );
+                nextBall = new Ball(
+                    new Vector2D((wall.right+canvas.width)/2+15, wall.top+90),
+                    Vector2D.zero,
+                    randomIntPdf(ballInfos.map((bi) => bi.odds)),
+                );
+            };
+        })();
+
+        // console.time("loop");
+        loop();
+    }
+
+    /** 初期化 */
+    function init() {
+        score = 0;
+        requestID = 0;
+        const type = randomIntPdf(ballInfos.map((bi) => bi.odds));
+        const radius = ballInfos[type].radius;
+        curBall = new Ball(
+            new Vector2D(wall.left+60/dpr, wall.top+43/2/dpr-radius),
+            Vector2D.zero,
+            type,
+        );
+        nextBall = new Ball(
+            new Vector2D((wall.right+canvas.width)/2+15, wall.top+90),
+            Vector2D.zero,
+            randomIntPdf(ballInfos.map((bi) => bi.odds)),
+        );
+    }
+
+    /** 描画ループ */
+    function loop() {
+        // console.timeEnd("loop");
+        // console.time("loop");
+
+        requestID = requestAnimationFrame(loop);
+
+        /** 全体背景描画 */
+        (() => {
+            ctx.save();
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.restore();
+        })();
+
+        /** ゲーム背景描画 */
+        /*
+        (() => {
+            ctx.save();
+            const l = (ctx.lineWidth = 43/2/dpr)/2;
+            ctx.strokeStyle = "rgba(0, 0, 0, 1)";
+            ctx.strokeRect(wall.left-l, wall.top-l, wall.right-wall.left+2*l, wall.bottom-wall.top+2*l);
+            ctx.restore();
+        })();
+        */
+
+        /** スコア描画 */
+        ((x, y) => {
+            ctx.save();
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillStyle = "rgba(255, 255, 255, 1)";
+            // ctx.font = "52px monospace";
+            // ctx.fillText("スコア", x, y-110);
+            ctx.font = "60px monospace";
+            ctx.fillText(`${score}`, x, y-40);
+            ctx.font = "30px monospace";
+            ctx.fillText("BESTSCORE", x, y+20);
+            ctx.font = "40px monospace";
+            ctx.fillText(`${bestScore}`, x, y+50);
+            ctx.restore();
+        })(wall.left/2-18, wall.top+64);
+
+        /** ネクスト描画 */
+        ((x, y) => {
+            ctx.save();
+            // ctx.fillStyle = "rgba(255, 255, 255, 1)";
+            // ctx.font = "40px monospace";
+            // ctx.textAlign = "center";
+            // ctx.textBaseline = "middle";
+            // ctx.fillText("ネクスト", x, y);
+            nextBall.draw();
+            ctx.restore();
+        })(nextBall.center.x, nextBall.center.y-100);
+
+        /** シンカの輪描画 */
+        /*
+        ((x, y) => {
+            ctx.save();
+            ctx.font = "30px monospace";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText("シンカの輪", x, y);
+            for (const evoBall of evoBalls) {
+                const radius = evoBall.info.radius;
+                evoBall.info.radius = 61/2/dpr;
+                evoBall.draw();
+                evoBall.info.radius = radius;
+            }
+            ctx.restore();
+        })(nextBall.center.x, wall.bottom-400);
+        */
+
+        /** 操作対象描画 */
+        (() => {
+            curBall.draw();
+            ctx.save();
+            ctx.beginPath();
+            ctx.strokeStyle = "rgba(255, 255, 255, 1)";
+            ctx.lineWidth = 8/dpr;
+            ctx.moveTo(curBall.center.x, curBall.center.y+curBall.info.radius);
+            ctx.lineTo(curBall.center.x, curBall.center.y+curBall.info.radius+67/dpr);
+            ctx.moveTo(curBall.center.x, curBall.center.y+curBall.info.radius+67/dpr+43/2/dpr);
+            ctx.lineTo(curBall.center.x, wall.bottom);
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+        })();
+
+        /** ボール処理 */
+        // for (const ball of balls.values()) {
+        for (const ball of [...balls.values()].toSorted((ball1, ball2) => {
+            const center1 = new Vector2D(ball1.center.y, ball1.center.x);
+            const center2 = new Vector2D(ball2.center.y, ball2.center.x);
+            if (center1.lt(center2)) return -1;
+            if (center1.gt(center2)) return 1;
+            return 0;
+        })) {
+            ball.draw();
+            ball.update();
+            ball.collisionWall();
+            ball.collisionBall();
+            ball.collisionWall();
+            ball.collisionBall();
+        }
+    }
+
+    /** 終了 */
+    function gameOver() {
+        /** ゲームオーバー描画 */
+        ((x, y) => {
+            ctx.save();
+            ctx.font = "60px monospace";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText("ゲームオーバー", x, y);
+            ctx.restore();
+        })(canvas.width/6, canvas.height*5/6);
+
+        cancelAnimationFrame(requestID);
+    }
+
+  </script>
+</body>
+</html>

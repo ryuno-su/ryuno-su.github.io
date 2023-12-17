@@ -1,0 +1,265 @@
+html {
+    font-family: "Consolas", "MS Gothic", monospace;
+    font-size: 20px;
+    overscroll-behavior: none;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
+}
+*, *::before, *::after {
+    font-family: inherit;
+    font-size: 100%;
+}
+body {
+    background-color: rgb(200, 200, 200);
+}
+
+.area {
+    margin: 0.2rem;
+    &:not(details) {
+        display: block;
+    }
+}
+
+:focus {
+    outline: -webkit-focus-ring-color auto 1px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid black;
+}
+
+code {
+    display: inline-block;
+    background-color: #e7edf3;
+    background-color: rgb(230, 230, 230);
+    border: solid 1px #d6dde4;
+    border-radius: 3px;
+    line-height: 1;
+    padding-block: 0.2rem;
+    padding-inline: 0.2rem;
+}
+
+header {
+    display: block;
+    font-size: 0.9rem;
+    & > h1 {
+        font-size: 1.6rem;
+        margin-block-start: 0.2rem;
+        margin-block-end: 0.2rem;
+    }
+}
+
+div#edit-area {
+    & > details {
+        &#instruction-area li label {
+            width: 7.2rem;
+        }
+        &#environment-area li label {
+            width: 5.7rem;
+        }
+        &#instruction-area input {
+            width: 1.0rem;
+        }
+        &#environment-area input {
+            width: 5.3rem;
+        }
+
+        & > summary {
+            width: fit-content;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        & ul.details-content {
+            border: 1px solid black;
+            border-radius: 3px;
+            font-size: 0.9rem;
+            margin: 0px;
+            padding: 4px;
+            width: calc(99% - 4px);
+
+            display: block;
+            word-break: keep-all;
+            white-space: nowrap;
+            overflow-x: auto;
+            overscroll-behavior-x: auto;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        & li {
+            list-style: none;
+            line-height: 1.7;
+            & label {
+                display: inline-block;
+            }
+            & .label:after {
+                display: inline-block;
+                content: "=";
+                padding-inline: 0.2rem;
+            }
+            & span.comment {
+                display: inline-block;
+                padding-inline-end: 0.2rem;
+            }
+        }
+        & input {
+            appearance: none;
+            display: inline;
+            line-height: 1.2;
+            vertical-align: middle;
+            color: black;
+            background-color: white;
+            outline: 1px solid black;
+            border: none;
+            border-radius: 3px;
+            margin: 0px -0.2rem;
+            padding: 0px;
+            padding-block: calc(0.2rem - 1px);
+            padding-inline: 0.2rem;
+            &[type="number"]::-webkit-inner-spin-button,
+            &[type="number"]::-webkit-outer-spin-button {
+                appearance: none;
+            }
+            &:invalid {
+                outline: 2px dashed red;
+                outline-offset: -1px;
+            }
+            &:disabled {
+                color: rgb(170, 170, 170);
+                background-color: rgb(240, 240, 240);
+                outline-color: rgb(120, 120, 120);
+                opacity: 0.7;
+            }
+            &:focus {
+                outline: -webkit-focus-ring-color auto 1px;
+            }
+        }
+
+        .label:not(& .label) {
+            display: block;
+        }
+        .label:not(& li .label)::after {
+            content: ":";
+        }
+    }
+
+    & textarea {
+        display: block;
+        resize: vertical;
+        overflow-y: auto;
+        overscroll-behavior-y: auto;
+        padding: 4px;
+        width: calc(99% - 4px);
+        border: 1px solid black;
+        border-radius: 3px;
+        white-space: pre-wrap;
+        word-break: break-all;
+        &#source {
+            height: 5.9em;
+        }
+        &#input {
+            height: 2.9em;
+        }
+        &:disabled {
+            color: rgb(170, 170, 170);
+            background-color: rgb(240, 240, 240);
+            border-color: rgb(120, 120, 120);
+            opacity: 0.7;
+        }
+        &:focus {
+            outline: -webkit-focus-ring-color auto 1px;
+        }
+    }
+}
+
+div#run-area {
+    & ul {
+        font-size: 0.9em;
+        margin: 0px;
+        padding: 0px;
+    }
+    & li {
+        list-style: none;
+        line-height: 1.5;
+    }
+    & button {
+        appearance: none;
+        display: inline-block;
+        width: 5em;
+        cursor: pointer;
+        text-align: center;
+        color: black;
+        background-color: rgb(240, 240, 240);
+        outline: 1px solid black;
+        border: none;
+        border-radius: 3px;
+        line-height: 1;
+        padding-block: calc(0.2rem - 1px);
+        padding-inline: 0.2rem;
+        &:disabled {
+            color: rgb(170, 170, 170);
+            background-color: rgb(240, 240, 240);
+            outline-color: rgb(120, 120, 120);
+            opacity: 0.7;
+        }
+        &:focus {
+            outline: -webkit-focus-ring-color auto 1px;
+        }
+    }
+}
+
+div#program,
+div#memory,
+div#output {
+    display: block;
+    resize: vertical;
+    overflow-y: auto;
+    overscroll-behavior-y: auto;
+    padding: 4px;
+    width: calc(99% - 4px);
+    height: 5.9em;
+    border: 1px solid black;
+    border-radius: 3px;
+    white-space: pre-wrap;
+}
+div#program,
+div#output {
+    word-break: break-all;
+}
+:is(div#program, div#memory) > span.highlight {
+    background-color: lime;
+}
+
+aside {
+    display: block;
+    font-size: 0.9rem;
+    & > h2 {
+        font-size: 1.4rem;
+        margin-block-start: 0.2rem;
+        margin-block-end: 0.2rem;
+    }
+}
+
+footer {
+    display: block;
+    font-size: 0.9rem;
+}
+
+/* モバイル端末用 */
+@media
+only screen
+and (orientation: portrait)
+and (max-width: 560px) {
+    html {
+        font-size: 18px;
+    }
+    textarea#source,
+    div#program,
+    div#memory,
+    div#output {
+        height: 3.6rem;
+    }
+}

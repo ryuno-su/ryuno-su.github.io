@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brainfuck Interpreter">
+  <title>Brainfuck Interpreter</title>
+  <link rel="icon" href="brainfuck.ico">
+  <link rel="apple-touch-icon" href="brainfuck.ico">
+  <link rel="stylesheet" type="text/css" href="brainfuck.css">
+  <script type="text/javascript" src="../lib/lib.js" defer></script>
+  <!-- <script type="text/javascript" src="../lib/lib.min.js" defer></script> -->
+  <script type="text/javascript" src="brainfuck.js" defer></script>
+  <!-- <script type="text/javascript" src="brainfuck.min.js" defer></script> -->
+</head>
+
+<body>
+  <header>
+    <h1>Brainfuck Interpreter</h1>
+  </header>
+  <hr>
+
+  <main>
+    <div id="edit-area" class="area">
+      <details id="instruction-area" class="area">
+        <summary class="label" title="命令パラメータを設定します">instruction parameter</summary>
+        <ul class="details-content">
+          <li>
+            <span class="label"><label for="PTR_INCREMENT"><code>PTR_INCREMENT</code></label></span>
+            <input type="text" id="PTR_INCREMENT" name="PTR_INCREMENT" required value=">" minlength="1" maxlength="1" title="長さ1の文字列を重複なく入力してください">
+            <span class="comment">ポインタをインクリメントする</span>
+          </li>
+          <li>
+            <span class="label"><label for="PTR_DECREMENT"><code>PTR_DECREMENT</code></label></span>
+            <input type="text" id="PTR_DECREMENT" name="PTR_DECREMENT" required value="<" minlength="1" maxlength="1" title="長さ1の文字列を重複なく入力してください">
+            <span class="comment">ポインタをデクリメントする</span>
+          </li>
+          <li>
+            <span class="label"><label for="VAL_INCREMENT"><code>VAL_INCREMENT</code></label></span>
+            <input type="text" id="VAL_INCREMENT" name="VAL_INCREMENT" required value="+" minlength="1" maxlength="1" title="長さ1の文字列を重複なく入力してください">
+            <span class="comment">ポインタが指す値をインクリメントする</span>
+          </li>
+          <li>
+            <span class="label"><label for="VAL_DECREMENT"><code>VAL_DECREMENT</code></label></span>
+            <input type="text" id="VAL_DECREMENT" name="VAL_DECREMENT" required value="-" minlength="1" maxlength="1" title="長さ1の文字列を重複なく入力してください">
+            <span class="comment">ポインタが指す値をデクリメントする</span>
+          </li>
+          <li>
+            <span class="label"><label for="VAL_INPUT"><code>VAL_INPUT</code></label></span>
+            <input type="text" id="VAL_INPUT" name="VAL_INPUT" required value="," minlength="1" maxlength="1" title="長さ1の文字列を重複なく入力してください">
+            <span class="comment">入力から1文字読み込んで、ポインタが指す先に代入する</span>
+          </li>
+          <li>
+            <span class="label"><label for="VAL_OUTPUT"><code>VAL_OUTPUT</code></label></span>
+            <input type="text" id="VAL_OUTPUT" name="VAL_OUTPUT" required value="." minlength="1" maxlength="1" title="長さ1の文字列を重複なく入力してください">
+            <span class="comment">ポインタが指す値を文字として出力に書き出す</span>
+          </li>
+          <li>
+            <span class="label"><label for="LOOP_BEGIN"><code>LOOP_BEGIN</code></label></span>
+            <input type="text" id="LOOP_BEGIN" name="LOOP_BEGIN" required value="[" minlength="1" maxlength="1" title="長さ1の文字列を重複なく入力してください">
+            <span class="comment">ポインタが指す値が0なら、対応する<code>LOOP_END</code>の直後にジャンプする</span>
+          </li>
+          <li>
+            <span class="label"><label for="LOOP_END"><code>LOOP_END</code></label></span>
+            <input type="text" id="LOOP_END" name="LOOP_END" required value="]" minlength="1" maxlength="1" title="長さ1の文字列を重複なく入力してください">
+            <span class="comment">ポインタが指す値が0でないなら、対応する<code>LOOP_BEGIN</code>の直後にジャンプする</span>
+          </li>
+          <li>
+            <span class="label"><label for="BREAK_POINT"><code>BREAK_POINT</code></label></span>
+            <input type="text" id="BREAK_POINT" name="BREAK_POINT" required value="@" minlength="1" maxlength="1" title="長さ1の文字列を重複なく入力してください">
+            <span class="comment">ブレークポイント(実行を一時停止する)</span>
+          </li>
+          <li>
+            <span class="label"><label for="COMMENT_LINE"><code>COMMENT_LINE</code></label></span>
+            <input type="text" id="COMMENT_LINE" name="COMMENT_LINE" required value="#" minlength="1" maxlength="1" title="長さ1の文字列を重複なく入力してください">
+            <span class="comment">コメント行</span>
+          </li>
+        </ul>
+      </details>
+      <details id="environment-area" class="area">
+        <summary class="label" title="環境パラメータを設定します">environment parameter</summary>
+        <ul class="details-content">
+          <li>
+            <span class="label"><label for="PTR_MAX"><code>PTR_MAX</code></label></span>
+            <input type="number" id="PTR_MAX" name="PTR_MAX" required value="255" min="0" max="65535" step="1" title="0以上65535以下の整数を入力してください">
+            <span class="comment">メモリアドレスの上限値(下限値は0)</span>
+          </li>
+          <li>
+            <span class="label"><label for="VAL_MAX"><code>VAL_MAX</code></label></span>
+            <input type="number" id="VAL_MAX" name="VAL_MAX" required value="255" min="0" max="4294967295" step="1" title="0以上4294967295以下の整数を入力してください">
+            <span class="comment">メモリセルに格納できる上限値(下限値は0)</span>
+          </li>
+          <li>
+            <span class="label"><label for="STEP_MAX"><code>STEP_MAX</code></label></span>
+            <input type="number" id="STEP_MAX" name="STEP_MAX" required value="20000" min="0" max="1000000" step="1" title="0以上1000000以下の整数を入力してください">
+            <span class="comment">総実行ステップ数の上限値(無限ループ抑止)</span>
+          </li>
+          <li>
+            <span class="label"><label for="DELAY_MSEC"><code>DELAY_MSEC</code></label></span>
+            <input type="number" id="DELAY_MSEC" name="DELAY_MSEC" required value="1" min="0" max="5000" step="1" title="0以上5000以下の整数を入力してください">
+            <span class="comment">一括実行時の各命令の待機時間[ms](0[ms]は最終結果のみ表示)</span>
+          </li>
+        </ul>
+      </details>
+      <hr>
+
+      <div id="source-area" class="area">
+        <label class="label" for="source">source code</label>
+        <textarea type="text" id="source" name="program" title="ソースコードを入力してください" spellcheck="false">+[>,.]</textarea>
+      </div>
+      <div id="input-area" class="area">
+        <label class="label" for="input">input</label>
+        <textarea type="text" id="input" name="input" title="入力命令に対するデータを入力してください" spellcheck="false">Hello World!</textarea>
+      </div>
+      <div id="run-area" class="area">
+        <ul>
+          <li>
+            <button type="button" id="run" id="run" name="run" title="プログラム終端まで実行されます">RUN</button>
+            <span>一括実行</span>
+          </li>
+          <li>
+            <button type="button" id="step-run" name="stepRun" title="プログラムカウンタが指す命令が実行されます">STEPRUN</button>
+            <span>ステップ実行</span>
+          </li>
+          <li>
+            <button type="button" id="kill" name="kill" title="プログラム実行を強制終了します">KILL</button>
+            <span>強制終了</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+
+    <div id="result-area" class="area">
+      <div id="program-area" class="area">
+        <span class="label">program</span>
+        <div id="program" title="プログラムカウンタが指す命令が強調表示されます"></div>
+      </div>
+      <div id="memory-area" class="area">
+        <span class="label">memory</span>
+        <div id="memory" title="ポインタが指すメモリが強調表示されます"></div>
+      </div>
+      <div id="output-area" class="area">
+        <span class="label">output</span>
+        <div id="output" title="出力命令に対するデータが出力されます"></div>
+      </div>
+    </div>
+  </main>
+  <hr>
+
+  <aside>
+    <h2>Sample</h2>
+    <ul>
+      <li>
+        <a href="bf_samples.bf" target="_blank">sample Brainfuck code</a>
+      </li>
+      <li>
+        <a href="https://sange.fi/esoteric/brainfuck/" target="_blank">Index of /esoteric/brainfuck</a>
+      </li>
+    </ul>
+    <h2>Reference</h2>
+    <ul>
+      <li>
+        <a href="https://ja.wikipedia.org/wiki/Brainfuck" target="_blank">Brainfuck - Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.nicovideo.jp/watch/sm10384056" target="_blank">【プログラミング】Brainf*ckを作ってみた【実況解説・番外編】</a>
+      </li>
+      <li>
+        <a href="http://www.kmonos.net/alang/etc/brainfuck.php" target="_blank">Brainf*ck</a>
+      </li>
+      <li>
+        <a href="https://yukikurage.github.io/brainf__k/" target="_blank">Yuki Brainf**k</a>
+      </li>
+    </ul>
+  </aside>
+  <hr>
+
+  <footer>
+    <p>&copy;Copyright 2023 by nobody. All rights reversed.</p>
+  </footer>
+</body>
+</html>

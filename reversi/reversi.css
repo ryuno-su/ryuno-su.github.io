@@ -1,0 +1,544 @@
+html {
+    font-family: "Consolas", "MS Gothic", monospace;
+    font-size: 25px;
+    box-sizing: border-box;
+    overscroll-behavior: none;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
+}
+*, *::before, *::after {
+    font-family: inherit;
+    font-size: 100%;
+    box-sizing: inherit;
+}
+body {
+    background-color: rgb(200, 200, 200);
+}
+
+.hidden {
+    display: none;
+}
+
+.area {
+    margin: 0.2rem;
+    &:not(details) {
+        display: block;
+    }
+}
+
+:focus {
+    outline: -webkit-focus-ring-color auto 1px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid black;
+}
+
+header {
+    font-size: 0.8rem;
+    &.shown {
+        display: block;
+    }
+    &.hidden {
+        display: none;
+    }
+    & > h1 {
+        font-size: 1.4rem;
+        margin-block-start: 0.2rem;
+        margin-block-end: 0.2rem;
+    }
+}
+
+div#template-area {
+    &.shown {
+        display: block;
+    }
+    &.hidden {
+        display: none;
+    }
+}
+
+svg {
+    font-size: 80px;
+    width: 80px;
+    height: 80px;
+    & > rect.background {
+        width: 100%;
+        height: 100%;
+        fill: limegreen;
+        stroke: black;
+        stroke-width: 1.5px;
+    }
+    &.not-init_area {
+        & > rect.background {
+            fill: white;
+        }
+    }
+    &.lucky {
+        & > rect.background {
+            fill: orange;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+        & > rect.background {
+            fill: lime;
+        }
+    }
+    & > text {
+        font-size: 0.5em;
+        line-height: 0;
+        text-align: center;
+        vertical-align: middle;
+        fill: green;
+        &.shown {
+            display: inline-block;
+        }
+        &.hidden {
+            display: none;
+        }
+    }
+
+    &.cell {
+        &[data-color="none"] > circle.stone {
+            fill: none;
+        }
+        &[data-color="black"] > circle.stone {
+            fill: black;
+        }
+        &[data-color="white"] > circle.stone {
+            fill: white;
+        }
+        &[data-color="red"] > circle.stone {
+            fill: red;
+        }
+        &[data-color="blue"] > circle.stone {
+            fill: blue;
+        }
+        &[data-color="cyan"] > circle.stone {
+            fill: cyan;
+        }
+        &[data-color="magenta"] > circle.stone {
+            fill: magenta;
+        }
+        &[data-color="yellow"] > circle.stone {
+            fill: yellow;
+        }
+        &[data-color="sentinel"] > circle.stone {
+            fill: limegreen;
+        }
+    }
+
+    &.highlight {
+        & > rect.highlight-stone {
+            width: 90%;
+            height: 90%;
+            fill: none;
+            stroke-width: 2.5px;
+            stroke-dasharray: 5.0px, 5.0px;
+            &.highlight-put {
+                stroke-dasharray: none;
+            }
+        }
+        &[data-color="none"] {
+            & > rect.highlight-stone {
+                stroke: none;
+            }
+            & > circle.stone {
+                fill: none;
+            }
+        }
+        &[data-color="black"] {
+            & > rect.highlight-stone {
+                stroke: black;
+            }
+            & > circle.stone {
+                fill: black;
+            }
+        }
+        &[data-color="white"] {
+            & > rect.highlight-stone {
+                stroke: white;
+            }
+            & > circle.stone {
+                fill: white;
+            }
+        }
+        &[data-color="red"] {
+            & > rect.highlight-stone {
+                stroke: red;
+            }
+            & > circle.stone {
+                fill: red;
+            }
+        }
+        &[data-color="blue"] {
+            & > rect.highlight-stone {
+                stroke: blue;
+            }
+            & > circle.stone {
+                fill: blue;
+            }
+        }
+        &[data-color="cyan"] {
+            & > rect.highlight-stone {
+                stroke: cyan;
+            }
+            & > circle.stone {
+                fill: cyan;
+            }
+        }
+        &[data-color="magenta"] {
+            & > rect.highlight-stone {
+                stroke: magenta;
+            }
+            & > circle.stone {
+                fill: magenta;
+            }
+        }
+        &[data-color="yellow"] {
+            & > rect.highlight-stone {
+                stroke: yellow;
+            }
+            & > circle.stone {
+                fill: yellow;
+            }
+        }
+        &[data-color="sentinel"] {
+            & > rect.highlight-stone {
+                stroke: limegreen;
+            }
+            & > circle.stone {
+                fill: limegreen;
+            }
+        }
+    }
+
+    &.assist {
+        & > circle.assist-stone {
+            fill: none;
+            stroke-width: 2.5px;
+            stroke-dasharray: 5.0px, 5.0px;
+        }
+        &[data-color="none"] > circle.assist-stone {
+            stroke: none;
+        }
+        &[data-color="black"] > circle.assist-stone {
+            stroke: black;
+        }
+        &[data-color="white"] > circle.assist-stone {
+            stroke: white;
+        }
+        &[data-color="red"] > circle.assist-stone {
+            stroke: red;
+        }
+        &[data-color="blue"] > circle.assist-stone {
+            stroke: blue;
+        }
+        &[data-color="cyan"] > circle.assist-stone {
+            stroke: cyan;
+        }
+        &[data-color="magenta"] > circle.assist-stone {
+            stroke: magenta;
+        }
+        &[data-color="yellow"] > circle.assist-stone {
+            stroke: yellow;
+        }
+        &[data-color="sentinel"] > circle.assist-stone {
+            stroke: limegreen;
+        }
+    }
+}
+
+span.color-text {
+    font-weight: bold;
+    text-transform: uppercase;
+    &[data-color="none"] {
+        color: rgb(200, 200, 200);
+    }
+    &[data-color="black"] {
+        color: black;
+    }
+    &[data-color="white"] {
+        color: white;
+        :is(ul#AI_LIST &) {
+            text-shadow: 1px 1px 2px gray;
+        }
+    }
+    &[data-color="red"] {
+        color: red;
+    }
+    &[data-color="blue"] {
+        color: blue;
+    }
+    &[data-color="cyan"] {
+        color: cyan;
+    }
+    &[data-color="magenta"] {
+        color: magenta;
+    }
+    &[data-color="yellow"] {
+        color: yellow;
+        :is(ul#AI_LIST &) {
+            text-shadow: 1px 1px 2px gray;
+        }
+    }
+    &[data-color="sentinel"] {
+        color: limegreen;
+    }
+}
+
+details#parameter-area {
+    & > summary {
+        width: fit-content;
+        &:hover {
+            cursor: pointer;
+        }
+        &::after {
+            content: ":";
+        }
+    }
+    & > ul.details-content {
+        border: 1px solid black;
+        border-radius: 3px;
+        font-size: 0.9rem;
+        margin: 0px;
+        padding: 4px;
+        width: 99%;
+
+        display: block;
+        word-break: keep-all;
+        white-space: nowrap;
+        overflow-x: auto;
+        overscroll-behavior-x: auto;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        & ul#AI_LIST {
+            display: inline-block;
+            font-size: 1em;
+            margin: 0px;
+            margin-inline-end: 0.2rem;
+            width: fit-content;
+            & li {
+                vertical-align: middle;
+                margin-block-start: -0.2rem;
+                width: fit-content;
+                &.shown {
+                    display: inline-block;
+                }
+                &.hidden {
+                    display: none;
+                }
+            }
+            & label.label {
+                display: inline;
+            }
+        }
+    }
+    & li {
+        list-style: none;
+        line-height: 1.5;
+        vertical-align: middle;
+        width: fit-content;
+        &.shown {
+            display: list-item;
+        }
+        &.hidden {
+            display: none;
+        }
+        & label, & span[name="label"] {
+            display: inline-block;
+            vertical-align: middle;
+            width: 5.8rem;
+        }
+        & .label:after {
+            display: inline-block;
+            content: "=";
+            padding-inline: 0.2rem;
+        }
+    }
+    & input {
+        &[type="number"], &[type="text"] {
+            appearance: none;
+            width: 1.1rem;
+        }
+        :is(&[type="number"], &[type="text"]):invalid {
+            outline: 2px dashed red;
+            outline-offset: -1px;
+        }
+        &[type="number"]::-webkit-inner-spin-button,
+        &[type="number"]::-webkit-outer-spin-button {
+            appearance: none;
+        }
+        &[type="checkbox"] {
+            display: inline-block;
+            margin: 0px;
+            vertical-align: middle;
+            width: 1.1em;
+            height: 1.1em;
+        }
+    }
+    & ul#AI_LIST,
+    & input:is([type="number"], [type="text"]),
+    & select {
+        display: inline-block;
+        line-height: 1.1rem;
+        height: 1.1rem;
+        vertical-align: middle;
+        border: none;
+        border-radius: 3px;
+        margin-inline-start: 0em;
+
+        color: black;
+        background-color: white;
+        outline: 1px solid black;
+        opacity: 1;
+    }
+    & ul#AI_LIST.disabled,
+    & ul#AI_LIST.disabled label.label,
+    & input:disabled,
+    & select:disabled {
+        color: rgb(170, 170, 170);
+        background-color: rgba(239, 239, 239, 0.3);
+        outline-color: rgb(118, 118, 118);
+        opacity: 0.7;
+        text-shadow: none;
+    }
+    & :is(input, select, button):focus {
+        outline: -webkit-focus-ring-color auto 1px;
+    }
+    & ul#AI_LIST,
+    & input:is([type="number"], [type="text"]) {
+        padding: 0.1rem 0.1rem;
+    }
+    & select {
+        padding: 0.1rem 0.0rem;
+        outline: none;
+        border: 1px solid black;
+        &:disabled {
+            border-color: rgb(118, 118, 118);
+        }
+    }
+    & > button {
+        margin-block-start: 0.5em;
+    }
+}
+
+button {
+    appearance: none;
+    display: inline-block;
+    margin: 0px;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+    background-color: rgb(239, 239, 239);
+    outline: 1px solid black;
+    border: none;
+    border-radius: 3px;
+    line-height: 1;
+    padding: 0.1rem 0.2rem;
+    &:disabled {
+        color: rgb(170, 170, 170);
+        background-color: rgba(239, 239, 239, 0.3);
+        outline-color: rgb(118, 118, 118);
+        opacity: 0.7;
+    }
+}
+
+div#board-area {
+    max-width: calc(100vw - 0.2rem);
+    max-height: calc(100vw - 0.2rem);
+    overflow: auto;
+    overscroll-behavior: auto;
+    white-space: nowrap;
+    & > div#board {
+        display: inline-block;
+        line-height: 0;
+        border: 1.5px solid black;
+    }
+}
+
+div#info-area > div {
+    &.shown {
+        display: block;
+    }
+    &.hidden {
+        display: none;
+    }
+
+    &#turn,
+    &#message,
+    &#result,
+    &#record {
+        white-space: pre-wrap;
+    }
+    &#record {
+        word-break: break-all;
+    }
+
+    &#turn::before {
+        content: "turn: ";
+    }
+    &#message::before {
+        content: "message: ";
+    }
+    &#result::before {
+        content: "result: ";
+    }
+    &#record::before {
+        content: "record: ";
+    }
+}
+
+aside {
+    font-size: 0.8rem;
+    &.shown {
+        display: block;
+    }
+    &.hidden {
+        display: none;
+    }
+    & > h2 {
+        font-size: 1.2rem;
+        margin-block-start: 0.2rem;
+        margin-block-end: 0.2rem;
+    }
+}
+
+footer {
+    font-size: 0.8rem;
+    &.shown {
+        display: block;
+    }
+    &.hidden {
+        display: none;
+    }
+}
+
+/* モバイル端末用 */
+@media only screen
+and (orientation: portrait)
+and (max-width: 560px) {
+    html {
+        font-size: 18px;
+    }
+    svg {
+        font-size: 40px;
+        width: 40px;
+        height: 40px;
+        & > rect.background {
+            stroke-width: 0.75px;
+        }
+        &.highlight > rect.highlight-stone {
+            stroke-width: 1.25px;
+            stroke-dasharray: 2.5px, 2.5px;
+        }
+        &.assist > circle.assist-stone {
+            stroke-width: 1.25px;
+            stroke-dasharray: 2.5px, 2.5px;
+        }
+    }
+}

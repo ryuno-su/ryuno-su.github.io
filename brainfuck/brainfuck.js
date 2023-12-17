@@ -110,10 +110,16 @@ function main() {
     DOMKill.addEventListener("click", async () => {
         // console.group("kill click");  // デバッグ用
 
+        // 実行中なら確認を求める
+        if (0 < programCounter && programCounter < program.length) {
+            if (!confirm("Realy kill?")) return;
+        }
+
         isError = true;
         if (isStepRun) {
             await run();
             isStepRun = false;
+            initialize();
         }
 
         // console.groupEnd("kill click");  // デバッグ用
@@ -193,7 +199,7 @@ function main() {
         // console.group("window beforeunload");  // デバッグ用
 
         // 実行中でないなら確認を求めない
-        if (!(programCounter < program.length)) return;
+        if (!(0 < programCounter && programCounter < program.length)) return;
 
         event.preventDefault();
         event.returnValue = "";

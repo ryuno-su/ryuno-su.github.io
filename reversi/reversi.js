@@ -246,7 +246,7 @@ function main() {
         // console.group("window beforeunload");  // デバッグ用
 
         // 対局中でないなら確認を求めない
-        if (!DOMEnter.disabled || isGameOver) return;
+        if (!(DOMEnter.disabled && !isGameOver)) return;
 
         event.preventDefault();
         event.returnValue = "";
@@ -455,7 +455,6 @@ function init() {
         PARAMETERS.COLOR_NUM++;  // 番兵プレイヤー
     }
 
-
     PASS_MAX = Math.trunc(PARAMETERS.BOARD_WIDTH+PARAMETERS.BOARD_HEIGHT)/2;
     GAME_PROGRESS_MAX = PARAMETERS.BOARD_WIDTH*PARAMETERS.BOARD_HEIGHT + PASS_MAX;
     gameProgress = 0;
@@ -463,8 +462,8 @@ function init() {
     // 先手
     turn = COLOR_ID.BLACK;
     const DOMTurnColor = DOMTurn.querySelector("span.color-text");
-    DOMTurnColor.textContent = COLOR_TEXT[turn];
-    DOMTurnColor.dataset.color = COLOR_TEXT[turn].toLowerCase();
+    const DOMColor = DOMTemplateColors[turn].cloneNode(true);
+    DOMTurnColor.replaceWith(DOMColor);
 
     isOnAssist = false;
     isOnHint = false;
@@ -988,7 +987,7 @@ async function onCellPut(x, y) {
 
     // 着手
     if (!checkCanPut(x, y, turn, true)) {
-        DOMMessage.textContent = `Cannot put ${COLOR_TEXT[turn]} here.\n`;
+        DOMMessage.textContent = `Cannot put ${COLOR_TEXT[turn]} here.`;
         return;
     }
     DOMMessage.textContent = "";
@@ -1272,8 +1271,8 @@ async function changeTurn() {
     // 手番更新
     turn = nextTurn(turn);
     const DOMTurnColor = DOMTurn.querySelector("span.color-text");
-    DOMTurnColor.textContent = COLOR_TEXT[turn];
-    DOMTurnColor.dataset.color = COLOR_TEXT[turn].toLowerCase();
+    const DOMColor = DOMTemplateColors[turn].cloneNode(true);
+    DOMTurnColor.replaceWith(DOMColor);
 
     // 番兵プレイヤー判定
     isSentinelTurn = checkSentinelTurn(turn);
@@ -1287,7 +1286,7 @@ async function changeTurn() {
 
     if (isPassed) {
         if (!isSentinelTurn) {  // 番兵プレイヤーなら何もしない
-            DOMMessage.textContent = `Cannot put ${COLOR_TEXT[turn]} any position. ${COLOR_TEXT[turn]} is passed.\n`;
+            DOMMessage.textContent = `Cannot put ${COLOR_TEXT[turn]} any position. ${COLOR_TEXT[turn]} is passed.`;
             console.log(`turn: ${COLOR_TEXT[turn]}, pass`);  // ログ用
             // 無効化
             DOMAssist.disabled = true;

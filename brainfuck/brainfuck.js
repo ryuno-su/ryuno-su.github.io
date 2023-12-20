@@ -367,8 +367,7 @@ function createResult() {
         DOMSpan.className = "";
         DOMSpan.textContent = String(memory[i]).padStart(digit, "0");
         DOMMemory.appendChild(DOMSpan);
-        const DOMTextSP = document.createTextNode(" ");
-        DOMMemory.appendChild(DOMTextSP);
+        DOMMemory.appendChild(document.createTextNode(" "));
     }
 
     // 出力

@@ -128,15 +128,13 @@ const physics = {
 
 /** フルーツ */
 class Ball {
-    static newBallID = 0;  // ball管理用
-
     /**
      * @param {Vector2D} center
      * @param {Vector2D} velocity
      * @param {number} type
      */
     constructor(center, velocity, type) {
-        this.id         = Ball.newBallID++;
+        this.id         = newBallID++;
         this.center     = center;
         this.velocity   = velocity;
         this.isActive   = false;
@@ -231,7 +229,7 @@ class Ball {
             // this.velocity = this.velocity.mul(friction);
             if (this.center.distance(center) < ZERO.MILI) {
                 this.center = center;
-                this.velocity = Vector2D.zero;
+                this.velocity = Vector2D_ZERO;
             }
         }
         this.isCollided = false;
@@ -398,9 +396,11 @@ class Ball {
     }
 }
 
+let newBallID = 0;  // ball管理用
+const Vector2D_ZERO = Object.freeze(new Vector2D(0, 0));  // 零ベクトル
 let balls = new Map();  // フルーツ群
-let curBall = new Ball(Vector2D.zero, Vector2D.zero, 0);  // ユーザー操作対象
-let nextBall = new Ball(Vector2D.zero, Vector2D.zero, 0);  // ネクスト
+let curBall = new Ball(Vector2D_ZERO, Vector2D_ZERO, 0);  // ユーザー操作対象
+let nextBall = new Ball(Vector2D_ZERO, Vector2D_ZERO, 0);  // ネクスト
 
 let score = 0;  // 総得点
 let bestScore = 0;  // 最高得点
@@ -452,12 +452,12 @@ function main() {
         x = Math.min(x, wall.right-85*widthRatio*dprRatio);
         curBall = new Ball(
             new Vector2D(x, wall.top+43/2*widthRatio*dprRatio-radius),
-            Vector2D.zero,
+            Vector2D_ZERO,
             nextBall.type,
         );
         nextBall = new Ball(
             new Vector2D((wall.right+canvas.width)/2+15*widthRatio, wall.top+90*widthRatio),
-            Vector2D.zero,
+            Vector2D_ZERO,
             randomIntPdf(ballInfos.map((bi) => bi.odds)),
         );
     });
@@ -477,12 +477,12 @@ function init() {
     const radius = ballInfos[type].radius;
     curBall = new Ball(
         new Vector2D(wall.left+60*widthRatio*dprRatio, wall.top+43/2*widthRatio*dprRatio-radius),
-        Vector2D.zero,
+        Vector2D_ZERO,
         type,
     );
     nextBall = new Ball(
         new Vector2D((wall.right+canvas.width)/2+15*widthRatio, wall.top+90*widthRatio),
-        Vector2D.zero,
+        Vector2D_ZERO,
         randomIntPdf(ballInfos.map((bi) => bi.odds)),
     );
 }

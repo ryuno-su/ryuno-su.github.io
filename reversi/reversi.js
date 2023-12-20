@@ -47,7 +47,7 @@ const DEFAULT_PARAMETERS = Object.freeze({
 let PARAMETERS = structuredClone(DEFAULT_PARAMETERS);
 
 // 手番
-const COLOR_TEXT = Object.freeze([...DOMTemplateColors].map((DOMText) => DOMText.textContent.toUpperCase()));
+const COLOR_TEXT = Object.freeze([...DOMTemplateColors].map((DOMColor) => DOMColor.textContent.toUpperCase()));
 const COLOR_ID = Object.freeze(createEnum(...COLOR_TEXT));
 
 // 進捗
@@ -512,7 +512,8 @@ function setInitBoard() {
 
             /*
             // 最短5連続パス, 黒にパスさせるデバッグ用
-            if (PARAMETERS.BOARD_WIDTH === 8 && PARAMETERS.BOARD_HEIGHT === 8) {
+            if (PARAMETERS.BOARD_WIDTH  === 8
+             && PARAMETERS.BOARD_HEIGHT === 8) {
                 board[4][3] = COLOR_ID.BLACK;
                 board[4][4] = COLOR_ID.BLACK;
                 board[4][5] = COLOR_ID.BLACK;
@@ -827,8 +828,7 @@ function createBoard() {
             DOMBoard.appendChild(DOMCell);
             DOMBoardCells[y][x] = DOMBoard.querySelector(`svg[data-index="${xyToIndex(x, y)}"]`);
         }
-        const DOMTextBR = document.createElement("br");
-        DOMBoard.appendChild(DOMTextBR);
+        DOMBoard.appendChild(document.createElement("br"));
     }
 
     // console.groupEnd("createBoard");  // デバッグ用
@@ -985,12 +985,15 @@ async function onCellPut(x, y) {
         await onEnter();
     }
 
+    DOMMessage.textContent = "";
+
     // 着手
     if (!checkCanPut(x, y, turn, true)) {
-        DOMMessage.textContent = `Cannot put ${COLOR_TEXT[turn]} here.`;
+        DOMMessage.appendChild(document.createTextNode("Cannot put "));
+        DOMMessage.appendChild(DOMTemplateColors[turn].cloneNode(true));
+        DOMMessage.appendChild(document.createTextNode(" here."));
         return;
     }
-    DOMMessage.textContent = "";
 
     await changeTurn();
     await AIListPut();
@@ -1222,6 +1225,8 @@ function put(x, y, color = turn) {
 /** 手番変更 */
 async function changeTurn() {
     // console.group("changeTurn");  // デバッグ用
+    // console.log(`gameProgress = ${gameProgress}`);  // デバッグ用
+    // console.log(`turn = ${turn}, ${COLOR_TEXT[turn]}`);  // デバッグ用
 
     // 番兵プレイヤー判定
     let isSentinelTurn = checkSentinelTurn(turn);
@@ -1230,7 +1235,6 @@ async function changeTurn() {
     if (!isSentinelTurn || !isPassed) {
         gameProgress++;
     }
-    // console.log({gameProgress});  // デバッグ用
 
     // 初期配置手動モード継続判定
     if (PARAMETERS.HAND_MODE) {
@@ -1257,7 +1261,7 @@ async function changeTurn() {
 
     // 終了判定
     isGameOver = checkGameOver();
-    if (isGameOver) return;
+    if (isGameOver) return;  // 終了
 
     // アシスト非表示
     if (isOnAssist) {
@@ -1286,18 +1290,27 @@ async function changeTurn() {
 
     if (isPassed) {
         if (!isSentinelTurn) {  // 番兵プレイヤーなら何もしない
-            DOMMessage.textContent = `Cannot put ${COLOR_TEXT[turn]} any position. ${COLOR_TEXT[turn]} is passed.`;
+            DOMMessage.appendChild(document.createTextNode("Cannot put "));
+            DOMMessage.appendChild(DOMTemplateColors[turn].cloneNode(true));
+            DOMMessage.appendChild(document.createTextNode(" any position. "));
+            DOMMessage.appendChild(DOMTemplateColors[turn].cloneNode(true));
+            DOMMessage.appendChild(document.createTextNode(" is passed."));
+
             console.log(`turn: ${COLOR_TEXT[turn]}, pass`);  // ログ用
+
             // 無効化
             DOMAssist.disabled = true;
             DOMHint.disabled = true;
+
             // console.time("wait");  // デバッグ用
             await wait(PARAMETERS.DELAY_MSEC);
             // console.timeEnd("wait");  // デバッグ用
+
             // 有効化
             DOMAssist.disabled = false;
             DOMHint.disabled = false;
         }
+
         await changeTurn();
         await AIListPut();
     }
@@ -1379,7 +1392,8 @@ function checkGameOver() {
     }
 
     // 結果表示
-    let result = "";
+    let result = "";  // ログ用
+    DOMResult.textContent = "";
     let isEqAll = true;  // すべて同個数かどうか
     let maxCount = 0;  // 最大個数
     let maxColor = COLOR_ID.NONE;  // 最大個数手番
@@ -1388,7 +1402,9 @@ function checkGameOver() {
     }
     for (let c = COLOR_ID.NONE+1; c <= colorNum; c++) {
         result += `${COLOR_TEXT[c]}=${colorCounts[c]}, `;
-        if (c < colorNum && colorCounts[c] !== colorCounts[c+1]) {
+        DOMResult.appendChild(DOMTemplateColors[c].cloneNode(true));
+        DOMResult.appendChild(document.createTextNode(`=${colorCounts[c]}, `));
+        if (colorCounts[c] !== colorCounts[colorNum]) {
             isEqAll = false;
         }
         if (maxCount < colorCounts[c]) {
@@ -1398,13 +1414,14 @@ function checkGameOver() {
     }
     if (isEqAll) {  // すべて同個数なら引き分け
         result += "draw.";
+        DOMResult.appendChild(document.createTextNode("draw."));
     } else {  // 最大個数が勝ち
         result += `${COLOR_TEXT[maxColor]} won.`;
+        DOMResult.appendChild(DOMTemplateColors[maxColor].cloneNode(true));
+        DOMResult.appendChild(document.createTextNode(" won."));
     }
 
-    // DOMTurn.textContent = "";
     DOMMessage.textContent = "This game was over.";
-    DOMResult.textContent = result;
     DOMRecord.textContent = record;
 
     DOMTurn.classList.replace("shown", "hidden");
@@ -1500,7 +1517,8 @@ async function AIListPut() {
 
 /** AI着手 */
 async function AIPut() {
-    // console.group("AIPut");  // デバッグ用
+    console.group("AIPut");  // デバッグ用
+    console.log(`turn = ${turn}, ${COLOR_TEXT[turn]}`);  // デバッグ用
 
     if (!PARAMETERS.AI_LIST.includes(turn)) return;
     if (isGameOver) return;
@@ -1509,14 +1527,18 @@ async function AIPut() {
     // 無効化
     DOMAssist.disabled = true;
     DOMHint.disabled = true;
+
     // console.time("wait");  // デバッグ用
     await wait(PARAMETERS.DELAY_MSEC);
     // console.timeEnd("wait");  // デバッグ用
+
     // console.time("AIThink");  // デバッグ用
     const [AIx, AIy] = AIThink(PARAMETERS.AI_LEVEL);
     // console.timeEnd("AIThink");  // デバッグ用
+
     checkCanPut(AIx, AIy, turn, true);
     DOMMessage.textContent = "";
+
     isAITurn = false;
     // 有効化
     DOMAssist.disabled = false;
@@ -1524,7 +1546,7 @@ async function AIPut() {
 
     await changeTurn();
 
-    // console.groupEnd("AIPut");  // デバッグ用
+    console.groupEnd("AIPut");  // デバッグ用
 }
 
 /** AI思考
@@ -1536,12 +1558,13 @@ function AIThink(level = 0) {
 
     /*
     // 最短5連続パス, 黒プレイヤーにパスさせるデバッグ用
-    if (PARAMETERS.BOARD_WIDTH === 8 && PARAMETERS.BOARD_HEIGHT === 8
+    if (PARAMETERS.BOARD_WIDTH  === 8
+     && PARAMETERS.BOARD_HEIGHT === 8
      && turn === COLOR_ID.WHITE) {
-        if (checkCanPut(6, 8, COLOR_ID.WHITE, true)) return [6, 8];
-        if (checkCanPut(4, 8, COLOR_ID.WHITE, true)) return [4, 8];
-        if (checkCanPut(3, 7, COLOR_ID.WHITE, true)) return [3, 7];
-        if (checkCanPut(8, 4, COLOR_ID.WHITE, true)) return [8, 4];
+        if (checkCanPut(6, 8, COLOR_ID.WHITE, false)) return [6, 8];
+        if (checkCanPut(4, 8, COLOR_ID.WHITE, false)) return [4, 8];
+        if (checkCanPut(3, 7, COLOR_ID.WHITE, false)) return [3, 7];
+        if (checkCanPut(8, 4, COLOR_ID.WHITE, false)) return [8, 4];
     }
     */
 

@@ -1,7 +1,7 @@
 /*
 上から2番目の横棒だけ最前面
 フルーツ連射最短間隔は時間ではない
-落下させたフルーツ(balls[newID-3])が最初に着地したときに次のフルーツが落下可能になる
+投下させたフルーツ(balls[newID-3])が最初に着地したときに次のフルーツが投下可能になる
 テスト描画系全部消す
 リテラル定数->const定数
 画面拡大禁止
@@ -74,7 +74,7 @@ const wall = (() => {
     };
 })();
 
-const delay = 800;  // 落下開始可能時間間隔[ms]
+const delay = 800;  // 投下開始可能時間間隔[ms]
 
 /** ball種類別情報 */
 const ballInfos = (() => {
@@ -236,7 +236,7 @@ class Ball {
 
         return this;
     }
-    collisionWall() {
+    collideWall() {
         // ショートカット
         const id         = this.id;
         const center     = this.center;
@@ -293,7 +293,7 @@ class Ball {
 
         return this;
     }
-    collisionBall() {
+    collideBall() {
         // ショートカット
         const id1         = this.id;
         const center1     = this.center;
@@ -414,7 +414,7 @@ function main() {
     /** 初期化 */
     init();
 
-    /** 落下位置指定 */
+    /** 投下位置指定 */
     canvas.ontouchmove = (canvas.onmousemove = (event) => {
         const mouseX = event.offsetX;
         const mouseY = event.offsetY;
@@ -431,8 +431,8 @@ function main() {
         curBall.center.y = curBall.center.y;
     });
 
-    /** 落下開始 */
-    let isAbled = true;  // 落下可能かどうか
+    /** 投下開始 */
+    let isAbled = true;  // 投下可能かどうか
     canvas.ontouchend = (canvas.onmouseup = (event) => {
         const mouseX = event.offsetX;
         const mouseY = event.offsetY;
@@ -572,8 +572,8 @@ function loop() {
     })) {
         ball.draw()
             .update()
-            .collisionWall()
-            .collisionBall();
+            .collideWall()
+            .collideBall();
     }
 }
 

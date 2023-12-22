@@ -9,6 +9,9 @@ html {
 *, *::before, *::after {
     font-family: inherit;
     font-size: 100%;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
 }
 body {
     background-color: rgb(200, 200, 200);
@@ -36,7 +39,6 @@ hr {
 
 code {
     display: inline-block;
-    background-color: #e7edf3;
     background-color: rgb(230, 230, 230);
     border: solid 1px #d6dde4;
     border-radius: 3px;
@@ -58,10 +60,12 @@ header {
 div#edit-area {
     & > details {
         &#instruction-area li label {
-            width: 7.2rem;
+            width: 6.8rem;
+            margin-inline-end: 0.4rem;
         }
         &#environment-area li label {
-            width: 5.7rem;
+            width: 5.3rem;
+            margin-inline-end: 0.4rem;
         }
         &#instruction-area input {
             width: 1.0rem;

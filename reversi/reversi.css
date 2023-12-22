@@ -11,6 +11,9 @@ html {
     font-family: inherit;
     font-size: 100%;
     box-sizing: inherit;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
 }
 body {
     background-color: rgb(200, 200, 200);

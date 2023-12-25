@@ -66,16 +66,12 @@ header {
 div#edit-area {
     & > details {
         &#instruction-area li label {
-            /* width: 6.9rem; */
-            width: 7.7em;
-            /* margin-inline-end: 0.4rem; */
-            margin-inline-end: 0.4em;
+            width: 6.9rem;
+            margin-inline-end: 0.4rem;
         }
         &#environment-area li label {
-            /* width: 5.4rem; */
-            width: 6.0em;
-            /* margin-inline-end: 0.4rem; */
-            margin-inline-end: 0.4em;
+            width: 5.4rem;
+            margin-inline-end: 0.4rem;
         }
         &#instruction-area input {
             width: 1.0rem;
@@ -269,18 +265,16 @@ and (max-width: 560px) {
     html {
         font-size: 18px;
     }
-    /* div#edit-area {
-        & > details {
-            &#instruction-area li label {
-                width: 6.9rem;
-                margin-inline-end: 0.4rem;
-            }
-            &#environment-area li label {
-                width: 5.4rem;
-                margin-inline-end: 0.4rem;
-            }
+    div#edit-area > details {
+        &#instruction-area li label {
+            width: 8.0rem;
+            margin-inline-end: 1.0rem;
         }
-    } */
+        &#environment-area li label {
+            width: 6.5rem;
+            margin-inline-end: 1.0rem;
+        }
+    }
     textarea#source,
     div#program,
     div#memory,

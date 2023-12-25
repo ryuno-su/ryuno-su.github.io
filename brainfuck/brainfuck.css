@@ -1,6 +1,7 @@
 html {
     font-family: "Consolas", "MS Gothic", monospace;
     font-size: 20px;
+    background-color: rgb(200, 200, 200);
     overscroll-behavior: none;
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -9,12 +10,10 @@ html {
 *, *::before, *::after {
     font-family: inherit;
     font-size: 100%;
+    overscroll-behavior: none;
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
-}
-body {
-    background-color: rgb(200, 200, 200);
 }
 
 .hidden {
@@ -60,11 +59,11 @@ header {
 div#edit-area {
     & > details {
         &#instruction-area li label {
-            width: 6.8rem;
+            width: 6.9rem;
             margin-inline-end: 0.4rem;
         }
         &#environment-area li label {
-            width: 5.3rem;
+            width: 5.4rem;
             margin-inline-end: 0.4rem;
         }
         &#instruction-area input {
@@ -106,7 +105,6 @@ div#edit-area {
             & .label:after {
                 display: inline-block;
                 content: "=";
-                padding-inline: 0.2rem;
             }
             & span.comment {
                 display: inline-block;
@@ -161,6 +159,8 @@ div#edit-area {
         overscroll-behavior-y: auto;
         padding: 4px;
         width: calc(99% - 4px);
+        color: black;
+        background-color: white;
         border: 1px solid black;
         border-radius: 3px;
         white-space: pre-wrap;

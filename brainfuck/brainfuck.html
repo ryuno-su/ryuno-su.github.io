@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
   <meta name="description" content="Brainfuck Interpreter">
   <title>Brainfuck Interpreter</title>
   <link rel="icon" href="brainfuck.png">
@@ -90,7 +91,7 @@
           </li>
           <li>
             <span class="label"><label for="STEP_MAX"><code>STEP_MAX</code></label></span>
-            <input type="number" id="STEP_MAX" name="STEP_MAX" required value="20000" min="0" max="1000000" step="1" title="0以上1000000以下の整数を入力してください">
+            <input type="number" id="STEP_MAX" name="STEP_MAX" required value="10000" min="0" max="999999" step="1" title="0以上999999以下の整数を入力してください">
             <span class="comment">総実行ステップ数の上限値(無限ループ抑止)</span>
           </li>
           <li>

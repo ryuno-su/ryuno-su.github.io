@@ -2,6 +2,7 @@ html {
     font-family: "Consolas", "MS Gothic", monospace;
     font-size: 25px;
     box-sizing: border-box;
+    background-color: rgb(200, 200, 200);
     overscroll-behavior: none;
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -11,12 +12,10 @@ html {
     font-family: inherit;
     font-size: 100%;
     box-sizing: inherit;
+    overscroll-behavior: none;
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
-}
-body {
-    background-color: rgb(200, 200, 200);
 }
 
 .hidden {

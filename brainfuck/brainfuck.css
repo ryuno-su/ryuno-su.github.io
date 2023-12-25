@@ -267,12 +267,12 @@ and (max-width: 560px) {
     }
     div#edit-area > details {
         &#instruction-area li label {
-            width: 8.0rem;
-            margin-inline-end: 1.0rem;
+            width: 7.5rem;
+            margin-inline-end: 0.8rem;
         }
         &#environment-area li label {
-            width: 6.5rem;
-            margin-inline-end: 1.0rem;
+            width: 6.0rem;
+            margin-inline-end: 0.8rem;
         }
     }
     textarea#source,

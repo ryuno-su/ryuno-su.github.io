@@ -56,15 +56,26 @@ header {
     }
 }
 
+.label:not(details .label) {
+    display: block;
+}
+.label:not(details li .label)::after {
+    content: ":";
+}
+
 div#edit-area {
     & > details {
         &#instruction-area li label {
-            width: 6.9rem;
-            margin-inline-end: 0.4rem;
+            /* width: 6.9rem; */
+            width: 7.7em;
+            /* margin-inline-end: 0.4rem; */
+            margin-inline-end: 0.4em;
         }
         &#environment-area li label {
-            width: 5.4rem;
-            margin-inline-end: 0.4rem;
+            /* width: 5.4rem; */
+            width: 6.0em;
+            /* margin-inline-end: 0.4rem; */
+            margin-inline-end: 0.4em;
         }
         &#instruction-area input {
             width: 1.0rem;
@@ -114,6 +125,7 @@ div#edit-area {
         & input {
             appearance: none;
             display: inline;
+            font-size: 0.95em;
             line-height: 1.2;
             vertical-align: middle;
             color: black;
@@ -142,13 +154,6 @@ div#edit-area {
             &:focus {
                 outline: -webkit-focus-ring-color auto 1px;
             }
-        }
-
-        .label:not(& .label) {
-            display: block;
-        }
-        .label:not(& li .label)::after {
-            content: ":";
         }
     }
 
@@ -264,6 +269,18 @@ and (max-width: 560px) {
     html {
         font-size: 18px;
     }
+    /* div#edit-area {
+        & > details {
+            &#instruction-area li label {
+                width: 6.9rem;
+                margin-inline-end: 0.4rem;
+            }
+            &#environment-area li label {
+                width: 5.4rem;
+                margin-inline-end: 0.4rem;
+            }
+        }
+    } */
     textarea#source,
     div#program,
     div#memory,

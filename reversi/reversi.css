@@ -7,15 +7,13 @@ html {
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
+    text-rendering: optimizeSpeed;
+    scroll-behavior: smooth;
 }
 *, *::before, *::after {
     font-family: inherit;
     font-size: 100%;
     box-sizing: inherit;
-    overscroll-behavior: none;
-    text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    touch-action: manipulation;
 }
 
 .hidden {

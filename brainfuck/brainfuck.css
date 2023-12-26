@@ -6,14 +6,14 @@ html {
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
+    text-rendering: optimizeSpeed;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 *, *::before, *::after {
     font-family: inherit;
     font-size: 100%;
-    overscroll-behavior: none;
-    text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    touch-action: manipulation;
+    box-sizing: inherit;
 }
 
 .hidden {

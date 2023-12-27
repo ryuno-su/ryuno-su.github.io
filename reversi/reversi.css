@@ -337,7 +337,7 @@ details#parameter-area {
     }
     & li {
         list-style: none;
-        line-height: 1.5;
+        line-height: 1.4rem;
         vertical-align: middle;
         width: fit-content;
         &.shown {
@@ -539,7 +539,7 @@ footer {
 }
 
 /* モバイル端末用 */
-@media (max-width: 560px), (max-height: 560px) {
+@media (width < 560px), (height < 560px) {
     html {
         font-size: 18px;
     }

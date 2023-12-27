@@ -254,7 +254,7 @@ footer {
 }
 
 /* モバイル端末用 */
-@media (max-width: 560px), (max-height: 560px) {
+@media (width < 560px), (height < 560px) {
     html {
         font-size: 18px;
     }

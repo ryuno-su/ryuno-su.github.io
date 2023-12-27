@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
   <meta name="robots" content="noindex">
   <meta name="description" content="Reversi">
   <title>Reversi</title>
-  <link rel="icon" href="reversi.png">
-  <link rel="apple-touch-icon" href="reversi.png">
+  <link rel="icon" type="image/png" href="reversi.png">
+  <link rel="apple-touch-icon" type="image/png" href="reversi.png">
   <link rel="stylesheet" type="text/css" href="reversi.css">
   <script type="text/javascript" src="../lib/lib.min.js" defer></script>
   <script type="text/javascript" src="reversi.min.js" defer></script>
@@ -290,7 +290,10 @@
         <output for="progress">0%</output>
       </div>
       <div id="result" class="shown"></div>
-      <div id="record" class="hidden"></div>
+      <details id="log-area" class="shown">
+        <summary class="label">log</summary>
+        <div id="log" class="details-content"></div>
+      </details>
     </div>
   </main>
 

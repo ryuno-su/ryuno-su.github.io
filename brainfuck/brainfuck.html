@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
   <meta name="robots" content="noindex">
   <meta name="description" content="Brainfuck Interpreter">
   <title>Brainfuck Interpreter</title>
-  <link rel="icon" href="brainfuck.png">
-  <link rel="apple-touch-icon" href="brainfuck.png">
+  <link rel="icon" type="image/png" href="brainfuck.png">
+  <link rel="apple-touch-icon" type="image/png" href="brainfuck.png">
   <link rel="stylesheet" type="text/css" href="brainfuck.css">
   <script type="text/javascript" src="../lib/lib.min.js" defer></script>
   <script type="text/javascript" src="brainfuck.min.js" defer></script>
@@ -114,16 +114,16 @@
       <div id="run-area" class="area">
         <ul>
           <li>
-            <button type="button" id="run" id="run" name="run" title="プログラム終端まで実行されます">RUN</button>
-            <span>一括実行</span>
+            <button type="button" id="run" id="run" name="run" title="プログラム終端まで実行します">RUN</button>
+            <span class="comment">一括実行</span>
           </li>
           <li>
-            <button type="button" id="step-run" name="stepRun" title="プログラムカウンタが指す命令が実行されます">STEPRUN</button>
-            <span>ステップ実行</span>
+            <button type="button" id="step-run" name="stepRun" title="プログラムカウンタが指す命令を実行します">STEPRUN</button>
+            <span class="comment">ステップ実行</span>
           </li>
           <li>
             <button type="button" id="kill" name="kill" title="プログラム実行を強制終了します">KILL</button>
-            <span>強制終了</span>
+            <span class="comment">強制終了</span>
           </li>
         </ul>
       </div>
@@ -142,6 +142,10 @@
       <div id="output-area" class="area">
         <span class="label">output</span>
         <div id="output" title="出力命令に対するデータが出力されます"></div>
+      </div>
+      <div id="log-area" class="area">
+        <span class="label">log</span>
+        <div id="log" title="ログが出力されます"></div>
       </div>
     </div>
   </main>

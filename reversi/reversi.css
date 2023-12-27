@@ -22,9 +22,6 @@ html {
 
 .area {
     margin: 0.2rem;
-    &:not(details) {
-        display: block;
-    }
 }
 
 :focus {
@@ -385,7 +382,7 @@ details#parameter-area {
     & input:is([type="number"], [type="text"]),
     & select {
         display: inline-block;
-        line-height: 1.1rem;
+        line-height: 1.1;
         height: 1.1rem;
         vertical-align: middle;
         border: none;
@@ -461,35 +458,58 @@ div#board-area {
     }
 }
 
-div#info-area > div {
-    &.shown {
-        display: block;
-    }
-    &.hidden {
-        display: none;
+div#info-area {
+    & > div {
+        &.shown {
+            display: block;
+        }
+        &.hidden {
+            display: none;
+        }
+
+        &#turn,
+        &#message,
+        &#result {
+            white-space: pre-wrap;
+        }
+
+        &#turn::before {
+            content: "turn: ";
+        }
+        &#message::before {
+            content: "message: ";
+        }
+        &#result::before {
+            content: "result: ";
+        }
     }
 
-    &#turn,
-    &#message,
-    &#result,
-    &#record {
-        white-space: pre-wrap;
-    }
-    &#record {
-        word-break: break-all;
-    }
-
-    &#turn::before {
-        content: "turn: ";
-    }
-    &#message::before {
-        content: "message: ";
-    }
-    &#result::before {
-        content: "result: ";
-    }
-    &#record::before {
-        content: "record: ";
+    & details#log-area {
+        & > summary {
+            display: block;
+            list-style: none;
+            width: fit-content;
+            &:hover {
+                cursor: pointer;
+            }
+            &::after {
+                content: ":";
+            }
+        }
+        & > div#log.details-content {
+            display: block;
+            resize: vertical;
+            overflow-y: auto;
+            overscroll-behavior-y: auto;
+            padding: 4px;
+            font-size: 0.9em;
+            width: calc(99% - 4px);
+            height: 5.9em;
+            border: 1px solid black;
+            border-radius: 3px;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
     }
 }
 
@@ -519,9 +539,7 @@ footer {
 }
 
 /* モバイル端末用 */
-@media only screen
-and (orientation: portrait)
-and (max-width: 560px) {
+@media (max-width: 560px), (max-height: 560px) {
     html {
         font-size: 18px;
     }

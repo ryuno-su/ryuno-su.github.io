@@ -495,6 +495,9 @@ div#info-area {
             &::after {
                 content: ":";
             }
+            &::-webkit-details-marker {
+                display: none;
+            }
         }
         & > div#log.details-content {
             display: block;

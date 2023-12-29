@@ -9,9 +9,6 @@
    id="svg1"
    sodipodi:docname="brainfuck.svg"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
-   inkscape:export-filename="brainfuck.png"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -19,12 +16,12 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <style
      id="style1">
-      [style*=&quot;fill&quot;] {
-         fill: black;
+      g, use, rect {
+         fill: #000000;
       }
       @media (prefers-color-scheme: dark) {
-         [style*=&quot;fill&quot;] {
-            fill: white;
+         g, use, rect {
+            fill: #ffffff;
          }
       }
   </style>
@@ -40,7 +37,7 @@
      inkscape:document-units="px"
      inkscape:zoom="6.6277778"
      inkscape:cx="90.82984"
-     inkscape:cy="89.245599"
+     inkscape:cy="74.459346"
      inkscape:window-width="2256"
      inkscape:window-height="1470"
      inkscape:window-x="-11"
@@ -54,17 +51,15 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g7"
-       style="fill:#000000">
+       id="g7" >
       <use
          x="0"
          y="0"
          xlink:href="#rect1"
          id="use1-5"
-         transform="matrix(3,0,0,0.05952382,2.2678571e-6,169.28572)"
-         style="fill:#000000" />
+         transform="matrix(3,0,0,0.05952382,2.2678571e-6,169.28572)"/>
       <rect
-         style="fill:#000000;stroke-width:0.147128"
+         style="stroke-width:0.147128"
          id="rect1"
          width="10.714286"
          height="180"
@@ -75,24 +70,20 @@
          y="0"
          xlink:href="#rect1"
          id="use1"
-         transform="matrix(3,0,0,0.05952382,2.2678571e-6,2.110459e-7)"
-         style="fill:#000000" />
+         transform="matrix(3,0,0,0.05952382,2.2678571e-6,2.110459e-7)"/>
     </g>
     <g
-       id="g3"
-       style="fill:#000000">
+       id="g3" >
       <g
-         id="g2"
-         style="fill:#000000">
+         id="g2" >
         <use
            x="0"
            y="0"
            xlink:href="#rect1-0"
            id="use1-5-9"
-           transform="matrix(3,0,0,0.05952382,-360,169.28572)"
-           style="fill:#000000" />
+           transform="matrix(3,0,0,0.05952382,-360,169.28572)"/>
         <rect
-           style="fill:#000000;stroke-width:0.147128"
+           style="stroke-width:0.147128"
            id="rect1-0"
            width="10.714286"
            height="180"
@@ -103,16 +94,14 @@
            y="0"
            xlink:href="#rect1-0"
            id="use1-3"
-           transform="matrix(3,0,0,0.05952382,-360,2.478903e-6)"
-           style="fill:#000000" />
+           transform="matrix(3,0,0,0.05952382,-360,2.478903e-6)"/>
       </g>
     </g>
     <g
        id="g4"
-       transform="matrix(1.009932,0,0,0.96855483,-0.31924374,5.5971911)"
-       style="fill:#000000">
+       transform="matrix(1.009932,0,0,0.96855483,-0.31924374,5.5971911)" >
       <rect
-         style="fill:#000000;stroke-width:1.18095"
+         style="stroke-width:1.18095"
          id="rect2-8"
          width="49.993595"
          height="12.592454"
@@ -120,7 +109,7 @@
          y="85.832176"
          transform="matrix(0.93350462,0.35856537,-7.252104e-4,0.99999974,0,0)" />
       <rect
-         style="fill:#000000;stroke-width:1.18095"
+         style="stroke-width:1.18095"
          id="rect2-8-5"
          width="49.993595"
          height="12.592454"
@@ -130,10 +119,9 @@
     </g>
     <g
        id="g4-1"
-       transform="matrix(-1.009932,0,0,0.96855483,180.31924,5.5971911)"
-       style="fill:#000000">
+       transform="matrix(-1.009932,0,0,0.96855483,180.31924,5.5971911)" >
       <rect
-         style="fill:#000000;stroke-width:1.18095"
+         style="stroke-width:1.18095"
          id="rect2-8-3"
          width="49.993595"
          height="12.592454"
@@ -141,7 +129,7 @@
          y="85.832176"
          transform="matrix(0.93350462,0.35856537,-7.252104e-4,0.99999974,0,0)" />
       <rect
-         style="fill:#000000;stroke-width:1.18095"
+         style="stroke-width:1.18095"
          id="rect2-8-5-8"
          width="49.993595"
          height="12.592454"
@@ -150,40 +138,28 @@
          transform="matrix(0.93350462,-0.35856537,-7.252104e-4,-0.99999974,0,0)" />
     </g>
     <g
-       id="g5"
-       style="fill:#000000">
+       id="g5" >
       <rect
-         style="fill:#000000;stroke-width:1.05779"
+         style="stroke-width:1.05779"
          id="rect2"
          width="47.141998"
          height="10.714"
          x="32.143002"
          y="50.356998" />
       <rect
-         style="fill:#000000;stroke-width:1.05779"
+         style="stroke-width:1.05779"
          id="rect2-6-2"
          width="10.714"
          height="47.141998"
          x="50.356998"
          y="32.143002" />
     </g>
-    <g
-       id="g6"
-       style="fill:#000000">
-      <rect
-         style="fill:#000000;stroke-width:1.05779"
-         id="rect2-6"
-         width="47.141998"
-         height="10.714"
-         x="100.7145"
-         y="50.356998" />
-      <rect
-         style="fill:#000000;stroke-width:1.05779"
-         id="rect2-6-2-5"
-         width="10.714"
-         height="47.141998"
-         x="118.929"
-         y="32.143002" />
-    </g>
+    <rect
+       style="stroke-width:1.05779"
+       id="rect2-6"
+       width="47.141998"
+       height="10.714"
+       x="100.7145"
+       y="50.356998" />
   </g>
 </svg>

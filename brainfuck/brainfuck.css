@@ -2,13 +2,15 @@ html {
     font-family: "Consolas", "MS Gothic", monospace;
     font-size: 20px;
     box-sizing: border-box;
-    background-color: rgb(200, 200, 200);
+    text-rendering: optimizeSpeed;
+    scroll-behavior: smooth;
+
     overscroll-behavior: none;
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
-    text-rendering: optimizeSpeed;
-    scroll-behavior: smooth;
+
+    background-color: rgb(200, 200, 200);
 }
 *, *::before, *::after {
     font-family: inherit;
@@ -96,10 +98,6 @@ div#edit-area {
             word-break: keep-all;
             white-space: nowrap;
             overflow-x: auto;
-            overscroll-behavior-x: auto;
-            &::-webkit-scrollbar {
-                display: none;
-            }
         }
         & li {
             list-style: none;

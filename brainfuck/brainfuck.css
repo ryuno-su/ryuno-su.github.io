@@ -16,8 +16,8 @@ html {
     font-family: inherit;
     font-size: 100%;
     box-sizing: inherit;
-    text-rendering: inherit;
-    scroll-behavior: inherit;
+    text-rendering: optimizeSpeed;
+    scroll-behavior: smooth;
 
     overscroll-behavior: none;
     text-size-adjust: 100%;
@@ -159,7 +159,6 @@ div#edit-area {
         display: block;
         resize: vertical;
         overflow-y: auto;
-        overscroll-behavior-y: auto;
         padding: 4px;
         width: calc(99% - 4px);
         color: black;
@@ -227,7 +226,6 @@ div#result-area {
         display: block;
         resize: vertical;
         overflow-y: auto;
-        overscroll-behavior-y: auto;
         padding: 4px;
         width: calc(99% - 4px);
         height: 5.3em;

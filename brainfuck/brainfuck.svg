@@ -17,11 +17,11 @@
   <style
      id="style1">
       g, use, rect {
-         fill: #000000;
+         fill: black;
       }
       @media (prefers-color-scheme: dark) {
          g, use, rect {
-            fill: #ffffff;
+            fill: white;
          }
       }
   </style>
@@ -36,8 +36,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      inkscape:zoom="6.6277778"
-     inkscape:cx="90.82984"
-     inkscape:cy="74.459346"
+     inkscape:cx="90"
+     inkscape:cy="90"
      inkscape:window-width="2256"
      inkscape:window-height="1470"
      inkscape:window-x="-11"

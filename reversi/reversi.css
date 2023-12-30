@@ -16,7 +16,13 @@ html {
     font-family: inherit;
     font-size: 100%;
     box-sizing: inherit;
-    touch-action: inherit;
+    text-rendering: optimizeSpeed;
+    scroll-behavior: smooth;
+
+    overscroll-behavior: none;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
 }
 
 .hidden {
@@ -386,7 +392,6 @@ details#parameter-area {
         vertical-align: middle;
         border: none;
         border-radius: 3px;
-        margin-inline-start: 0em;
 
         color: black;
         background-color: white;
@@ -502,7 +507,6 @@ div#info-area {
             display: block;
             resize: vertical;
             overflow-y: auto;
-            overscroll-behavior-y: auto;
             padding: 4px;
             font-size: 0.9em;
             width: calc(99% - 4px);

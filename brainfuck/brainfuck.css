@@ -16,7 +16,13 @@ html {
     font-family: inherit;
     font-size: 100%;
     box-sizing: inherit;
-    touch-action: inherit;
+    text-rendering: inherit;
+    scroll-behavior: inherit;
+
+    overscroll-behavior: none;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
 }
 
 .hidden {
@@ -163,7 +169,7 @@ div#edit-area {
         white-space: pre-wrap;
         word-break: break-all;
         &#source {
-            height: 5.9em;
+            height: 5.3em;
         }
         &#input {
             height: 2.9em;
@@ -224,7 +230,7 @@ div#result-area {
         overscroll-behavior-y: auto;
         padding: 4px;
         width: calc(99% - 4px);
-        height: 5.9em;
+        height: 5.3em;
         border: 1px solid black;
         border-radius: 3px;
         white-space: pre-wrap;
@@ -273,6 +279,6 @@ footer {
     }
     div#edit-area > div.area > textarea#source,
     div#result-area > div.area > div {
-        height: 3.6rem;
+        height: 4.0rem;
     }
 }

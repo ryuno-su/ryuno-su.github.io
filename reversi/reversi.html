@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex">
   <meta name="description" content="Reversi">
   <title>Reversi</title>
-  <link rel="icon" type="image/svg+xml" href="reversi" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="reversi.svg" sizes="any">
   <link rel="apple-touch-icon" type="image/png" href="reversi.png">
   <link rel="stylesheet" type="text/css" href="reversi.css">
   <script type="text/javascript" src="../lib/lib.min.js" defer></script>
@@ -23,6 +23,7 @@
     <div id="template-area" class="area hidden">
       <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background" x="0%" y="0%"></rect>
+        <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
         <text class="hidden" x="35%" y="65%"></text>
       </svg>
       <svg class="cell" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -185,7 +186,7 @@
       <summary class="label" title="パラメータを設定します">parameter</summary>
       <ul class="details-content">
         <li class="shown">
-          <span class="label"><label for="COLOR_NUM">対戦人数</label></span>
+          <span class="label"><label for="COLOR_NUM">対局人数</label></span>
           <select id="COLOR_NUM" name="COLOR_NUM" required title="以下のいずれかの整数を選択してください">
             <option value="2" selected>2</option>
             <option value="3">3</option>

@@ -472,6 +472,7 @@ div#board-area {
         border: var(--svg-bg-stroke-length) solid black;
         max-width: 100%;
         max-height: 60vh;
+        min-height: -webkit-fill-available;
         overflow: auto;
     }
 }

@@ -32,7 +32,7 @@ html {
         --board-length: 100vw;
     }
     @media (orientation: landscape) {
-        --board-length: 70vh;
+        --board-length: 70dvh;
     }
     --svg-length: clamp(40px, var(--board-length) / 10, 80px);
     --svg-bg-stroke-length: clamp(0.75px, var(--svg-length) * 1.5 / 80, 1.5px);
@@ -471,8 +471,7 @@ div#board-area {
         white-space: nowrap;
         border: var(--svg-bg-stroke-length) solid black;
         max-width: 100%;
-        max-height: 60vh;
-        min-height: -webkit-fill-available;
+        max-height: 60dvh;
         overflow: auto;
     }
 }

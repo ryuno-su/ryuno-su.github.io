@@ -52,6 +52,14 @@ html {
     outline: -webkit-focus-ring-color auto 1px;
 }
 
+br {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 hr {
     border: none;
     border-top: 1px solid black;
@@ -327,7 +335,7 @@ details#parameter-area {
         font-size: 0.9rem;
         margin: 0px;
         padding: 4px;
-        width: 99%;
+        width: auto;
 
         display: block;
         word-break: keep-all;
@@ -357,7 +365,7 @@ details#parameter-area {
     }
     & li {
         list-style: none;
-        line-height: 1.4rem;
+        line-height: 1.4;
         vertical-align: middle;
         width: fit-content;
         &.shown {
@@ -394,16 +402,19 @@ details#parameter-area {
             display: inline-block;
             margin: 0px;
             vertical-align: middle;
-            width: 1.1em;
-            height: 1.1em;
+            width: 1lh;
+            height: 1lh;
         }
+    }
+    & ul#AI_LIST > li {
+        line-height: 1.1;
     }
     & ul#AI_LIST,
     & input:is([type="number"], [type="text"]),
     & select {
         display: inline-block;
         line-height: 1.1;
-        height: 1.1rem;
+        height: 1lh;
         vertical-align: middle;
         border: none;
         border-radius: 3px;
@@ -476,7 +487,6 @@ div#board-area {
     }
 }
 
-
 div#info-area {
     & > div {
         &.shown {
@@ -522,10 +532,11 @@ div#info-area {
             display: block;
             resize: vertical;
             overflow-y: auto;
+            margin: 0px;
             padding: 4px;
             font-size: 0.9em;
-            width: calc(99% - 4px);
-            height: 5.9em;
+            width: auto;
+            height: 3lh;
             border: 1px solid black;
             border-radius: 3px;
             white-space: pre-wrap;

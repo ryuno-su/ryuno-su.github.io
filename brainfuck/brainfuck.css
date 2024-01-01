@@ -37,6 +37,14 @@ html {
     outline: -webkit-focus-ring-color auto 1px;
 }
 
+br {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 hr {
     border: none;
     border-top: 1px solid black;
@@ -92,13 +100,13 @@ div#edit-area {
                 cursor: pointer;
             }
         }
-        & ul.details-content {
+        & > ul.details-content {
             border: 1px solid black;
             border-radius: 3px;
             font-size: 0.9rem;
             margin: 0px;
             padding: 4px;
-            width: calc(99% - 4px);
+            width: auto;
 
             display: block;
             word-break: keep-all;
@@ -125,6 +133,7 @@ div#edit-area {
             display: inline;
             font-size: 0.95em;
             line-height: 1.2;
+            height: 1lh;
             vertical-align: middle;
             color: black;
             background-color: white;
@@ -159,8 +168,9 @@ div#edit-area {
         display: block;
         resize: vertical;
         overflow-y: auto;
+        margin: 0px;
         padding: 4px;
-        width: calc(99% - 4px);
+        width: 100%;
         color: black;
         background-color: white;
         border: 1px solid black;
@@ -168,10 +178,10 @@ div#edit-area {
         white-space: pre-wrap;
         word-break: break-all;
         &#source {
-            height: 5.3em;
+            height: calc(3lh + 8px + 2px);
         }
         &#input {
-            height: 2.9em;
+            height: calc(2lh + 8px + 2px);
         }
         &:disabled {
             color: rgb(170, 170, 170);
@@ -226,9 +236,10 @@ div#result-area {
         display: block;
         resize: vertical;
         overflow-y: auto;
+        margin: 0px;
         padding: 4px;
-        width: calc(99% - 4px);
-        height: 5.3em;
+        width: auto;
+        height: calc(3lh + 8px + 2px);
         border: 1px solid black;
         border-radius: 3px;
         white-space: pre-wrap;
@@ -274,9 +285,5 @@ footer {
             font-size: 16px;
             line-height: 1.15;
         }
-    }
-    div#edit-area > div.area > textarea#source,
-    div#result-area > div.area > div {
-        height: 4.0rem;
     }
 }

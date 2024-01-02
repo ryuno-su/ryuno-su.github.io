@@ -406,6 +406,9 @@ details#parameter-area {
             vertical-align: middle;
             width: 1lh;
             height: 1lh;
+            ul#AI_LIST & {
+                line-height: 1;
+            }
         }
     }
     & ul#AI_LIST,
@@ -439,9 +442,6 @@ details#parameter-area {
     & ul#AI_LIST,
     & input:is([type="number"], [type="text"]) {
         padding: 0.1rem 0.1rem;
-    }
-    & ul#AI_LIST input[type="checkbox"] {
-        line-height: 1;
     }
     & select {
         padding: 0.1rem 0.0rem;

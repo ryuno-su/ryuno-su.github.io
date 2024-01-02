@@ -53,6 +53,8 @@ html {
 }
 
 br {
+    display: inline-block;
+    font-size: 0;
     width: 0;
     height: 0;
     margin: 0;
@@ -406,9 +408,6 @@ details#parameter-area {
             height: 1lh;
         }
     }
-    & ul#AI_LIST > li {
-        line-height: 1.1;
-    }
     & ul#AI_LIST,
     & input:is([type="number"], [type="text"]),
     & select {
@@ -441,8 +440,15 @@ details#parameter-area {
     & input:is([type="number"], [type="text"]) {
         padding: 0.1rem 0.1rem;
     }
+    & ul#AI_LIST > li {
+        line-height: 1.1;
+        & > input[type="checkbox"] {
+            line-height: 1;
+        }
+    }
     & select {
         padding: 0.1rem 0.0rem;
+        height: 1.1lh;
         outline: none;
         border: 1px solid black;
         &:disabled {
@@ -476,16 +482,15 @@ button {
 }
 
 div#board-area {
-    max-width: 100%;
-    max-height: 60dvh;
-    overflow: auto;
     & > div#board {
         display: inline-block;
         line-height: 0;
         white-space: nowrap;
         border: var(--svg-bg-stroke-length) solid black;
-    }
-}
+        max-width: 100%;
+        max-height: 60dvh;
+        overflow: auto;
+    }}
 
 div#info-area {
     & > div {

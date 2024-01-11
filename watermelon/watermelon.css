@@ -1,72 +1,72 @@
 html {
-    font-family: "Consolas", "MS Gothic", monospace;
-    font-size: 25px;
-    box-sizing: border-box;
-    overscroll-behavior: none;
-    text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
+  font-family: "Consolas", "MS Gothic", monospace;
+  font-size: 25px;
+  box-sizing: border-box;
+  overscroll-behavior: none;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 *, *::before, *::after {
-    font-family: inherit;
-    font-size: 100%;
-    box-sizing: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  box-sizing: inherit;
 }
 body {
-    background-color: black;
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-    padding: 0px;
-    margin: 0px;
+  background-color: black;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 header {
-    font-size: 0.8rem;
-    &.shown {
-        display: block;
-    }
-    &.hidden {
-        display: none;
-    }
-    & > h1 {
-        font-size: 1.4rem;
-        margin-block-start: 0.2rem;
-        margin-block-end: 0.2rem;
-    }
+  font-size: 0.8rem;
+  &.shown {
+    display: block;
+  }
+  &.hidden {
+    display: none;
+  }
+  & > h1 {
+    font-size: 1.4rem;
+    margin-block-start: 0.2rem;
+    margin-block-end: 0.2rem;
+  }
 }
 
 canvas#canvas {
-    background-image: url(images/screen.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100%;
+  background-image: url(images/screen.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
 }
 
 aside {
-    font-size: 0.8rem;
-    &.shown {
-        display: block;
-    }
-    &.hidden {
-        display: none;
-    }
-    & > h2 {
-        font-size: 1.2rem;
-        margin-block-start: 0.2rem;
-        margin-block-end: 0.2rem;
-    }
+  font-size: 0.8rem;
+  &.shown {
+    display: block;
+  }
+  &.hidden {
+    display: none;
+  }
+  & > h2 {
+    font-size: 1.2rem;
+    margin-block-start: 0.2rem;
+    margin-block-end: 0.2rem;
+  }
 }
 
 footer {
-    font-size: 0.8rem;
-    &.shown {
-        display: block;
-    }
-    &.hidden {
-        display: none;
-    }
+  font-size: 0.8rem;
+  &.shown {
+    display: block;
+  }
+  &.hidden {
+    display: none;
+  }
 }

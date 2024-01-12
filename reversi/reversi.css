@@ -1,6 +1,6 @@
 html {
   font-family: "Consolas", "MS Gothic", monospace;
-  font-size: 25px;
+  font-size: 20px;
   box-sizing: border-box;
   text-rendering: optimizeSpeed;
   scroll-behavior: smooth;
@@ -35,7 +35,7 @@ html {
     --board-length: 70dvh;
   }
   --svg-length: clamp(40px, var(--board-length) / 10, 80px);
-  --svg-bg-stroke-length: clamp(1.5px, var(--svg-length) * 1.5 / 80, 3.0px);
+  --svg-bg-stroke-length: clamp(1.0px, var(--svg-length) * 1.5 / 80, 1.5px);
   --svg-st-stroke-length: clamp(1.25px, var(--svg-length) * 2.5 / 80, 2.5px);
   --mobile-length: 560px;
 }
@@ -68,24 +68,15 @@ hr {
 }
 
 header {
-  font-size: 0.8rem;
-  &.shown {
-    display: block;
-  }
-  &.hidden {
-    display: none;
-  }
+  font-size: 0.9rem;
   & > h1 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin-block-start: 0.2rem;
     margin-block-end: 0.2rem;
   }
 }
 
 div#template-area {
-  &.shown {
-    display: block;
-  }
   &.hidden {
     display: none;
   }
@@ -125,12 +116,6 @@ svg {
     text-align: center;
     vertical-align: middle;
     fill: green;
-    &.shown {
-      display: inline-block;
-    }
-    &.hidden {
-      display: none;
-    }
   }
 
   &.cell {
@@ -346,7 +331,6 @@ details#parameter-area {
     overflow-x: auto;
     & ul#AI_LIST {
       display: inline-block;
-      font-size: 1em;
       margin: 0px;
       margin-inline-end: 0.2rem;
       width: fit-content;
@@ -356,9 +340,6 @@ details#parameter-area {
         width: fit-content;
         &.shown {
           display: inline-block;
-        }
-        &.hidden {
-          display: none;
         }
       }
       & label.label {
@@ -373,9 +354,6 @@ details#parameter-area {
     width: fit-content;
     &.shown {
       display: list-item;
-    }
-    &.hidden {
-      display: none;
     }
     & label, & span[name="label"] {
       display: inline-block;
@@ -492,7 +470,7 @@ div#board-area {
       border-spacing: 0;
       line-height: 0;
       background-color: limegreen;
-      border: var(--svg-bg-stroke-length) solid black;
+      border: calc(2 * var(--svg-bg-stroke-length)) solid black;
       & > tbody#board {
         & > tr {
           margin: 0;
@@ -574,28 +552,16 @@ div#info-area {
 }
 
 aside {
-  font-size: 0.8rem;
-  &.shown {
-    display: block;
-  }
-  &.hidden {
-    display: none;
-  }
+  font-size: 0.9rem;
   & > h2 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-block-start: 0.2rem;
     margin-block-end: 0.2rem;
   }
 }
 
 footer {
-  font-size: 0.8rem;
-  &.shown {
-    display: block;
-  }
-  &.hidden {
-    display: none;
-  }
+  font-size: 0.9rem;
 }
 
 /* モバイル端末用 */

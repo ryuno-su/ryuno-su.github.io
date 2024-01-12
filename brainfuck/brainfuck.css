@@ -261,7 +261,6 @@ div#result-area {
 }
 
 aside {
-  display: block;
   font-size: 0.9rem;
   & > h2 {
     font-size: 1.4rem;
@@ -271,7 +270,6 @@ aside {
 }
 
 footer {
-  display: block;
   font-size: 0.9rem;
 }
 

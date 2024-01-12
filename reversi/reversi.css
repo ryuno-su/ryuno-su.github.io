@@ -86,8 +86,8 @@ svg {
     width: 100%;
     height: 100%;
     fill: limegreen;
-    /* stroke: black;
-    stroke-width: calc(var(--svg-bg-stroke-length) / 2); */
+    stroke: black;
+    stroke-width: calc(var(--svg-bg-stroke-length) / 2);
   }
   &.not-init_area {
     & > rect.background {
@@ -468,18 +468,6 @@ div#board-area {
       & :is(tr, td) {
         margin: 0;
         padding: 0;
-      }
-      & tr {
-        border-block-end: var(--svg-bg-stroke-length) solid black;
-        &:last-of-type {
-          border-block-end: none;
-        }
-      }
-      & td {
-        border-inline-end: var(--svg-bg-stroke-length) solid black;
-        &:last-of-type {
-          border-inline-end: none;
-        }
       }
     }
   }

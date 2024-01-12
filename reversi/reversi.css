@@ -35,7 +35,7 @@ html {
     --board-length: 70dvh;
   }
   --svg-length: clamp(40px, var(--board-length) / 10, 80px);
-  --svg-bg-stroke-length: clamp(1.0px, var(--svg-length) * 1.5 / 80, 1.5px);
+  --svg-bg-stroke-length: clamp(1.0px, var(--svg-length) * 1.25 / 80, 1.25px);
   --svg-st-stroke-length: clamp(1.25px, var(--svg-length) * 2.5 / 80, 2.5px);
   --mobile-length: 560px;
 }
@@ -76,12 +76,6 @@ header {
   }
 }
 
-div#template-area {
-  &.hidden {
-    display: none;
-  }
-}
-
 svg {
   font-size: var(--svg-length);
   width: var(--svg-length);
@@ -92,7 +86,8 @@ svg {
     width: 100%;
     height: 100%;
     fill: limegreen;
-    fill: none;
+    stroke: black;
+    stroke-width: calc(var(--svg-bg-stroke-length) / 2);
   }
   &.not-init_area {
     & > rect.background {
@@ -469,26 +464,23 @@ div#board-area {
       border-collapse: collapse;
       border-spacing: 0;
       line-height: 0;
-      background-color: limegreen;
-      border: calc(2 * var(--svg-bg-stroke-length)) solid black;
-      & > tbody#board {
-        & > tr {
-          margin: 0;
-          padding: 0;
-          border-block-end: var(--svg-bg-stroke-length) solid black;
-          & > td {
-            margin: 0;
-            padding: 0;
-            border-inline-end: var(--svg-bg-stroke-length) solid black;
-            &:last-of-type {
-              border-inline-end: none;
-            }
-          }
-          &:last-of-type {
-            border-block-end: none;
-          }
+      border: calc(var(--svg-bg-stroke-length) * 2) solid black;
+      & :is(tr, td) {
+        margin: 0;
+        padding: 0;
+      }
+      /* & tr {
+        border-block-end: var(--svg-bg-stroke-length) solid black;
+        &:last-of-type {
+          border-block-end: none;
         }
       }
+      & td {
+        border-inline-end: var(--svg-bg-stroke-length) solid black;
+        &:last-of-type {
+          border-inline-end: none;
+        }
+      } */
     }
   }
 }

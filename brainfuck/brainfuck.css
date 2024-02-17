@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Noto+Sans+JP");
 html {
-  font-family: "Consolas", "MS Gothic", monospace;
+  font-family: "Roboto Mono", "Noto Sans JP", monospace;
+  font-weight: normal;
   font-size: 20px;
   box-sizing: border-box;
   text-rendering: optimizeSpeed;
@@ -87,11 +89,11 @@ header {
 div#edit-area {
   & > details {
     &#instruction-area li label {
-      width: 6.9rem;
+      width: 7.4rem;
       margin-inline-end: 0.4rem;
     }
     &#environment-area li label {
-      width: 5.4rem;
+      width: 5.8rem;
       margin-inline-end: 0.4rem;
     }
     &#instruction-area input {
@@ -129,6 +131,7 @@ div#edit-area {
       & .label:after {
         display: inline-block;
         content: "=";
+        padding-inline: 0.2rem;
       }
       & span.comment {
         display: inline-block;

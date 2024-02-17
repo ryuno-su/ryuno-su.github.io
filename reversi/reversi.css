@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Noto+Sans+JP");
 html {
-  font-family: "Consolas", "MS Gothic", monospace;
+  font-family: "Roboto Mono", "Noto Sans JP", monospace;
+  font-weight: normal;
   font-size: 20px;
   box-sizing: border-box;
   text-rendering: optimizeSpeed;
@@ -389,8 +391,8 @@ details#parameter-area {
   & input:is([type="number"], [type="text"]),
   & select {
     display: inline-block;
-    line-height: 1.1;
-    height: 1lh;
+    line-height: 1.05;
+    height: 1.05lh;
     vertical-align: middle;
     border: none;
     border-radius: 3px;

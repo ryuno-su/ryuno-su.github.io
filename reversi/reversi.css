@@ -31,7 +31,7 @@ html {
 :root {
   --board-length: calc(8 * 80px);
   @media (orientation: portrait) {
-    --board-length: 100vw;
+    --board-length: 99vw;
   }
   @media (orientation: landscape) {
     --board-length: 70dvh;
@@ -466,10 +466,49 @@ div#board-area {
       border-collapse: collapse;
       border-spacing: 0;
       line-height: 0;
-      border: calc(var(--svg-bg-stroke-length) * 2) solid black;
-      & :is(tr, td) {
+      & :is(tr, td, th) {
         margin: 0;
         padding: 0;
+      }
+      & th {
+        position: sticky;
+        top: 0;
+        left: 0;
+        font-size: calc(var(--svg-length) / 3.5);
+        text-align: center;
+        background-color: rgb(200, 200, 200);
+        
+      }
+      & > thead {
+        & th {
+          z-index: 2;
+          width: calc(var(--svg-length));
+          height: calc(var(--svg-length) / 2);
+        }
+        & th:first-of-type {
+          z-index: 3;
+          width: calc(var(--svg-length) / 2);
+          height: calc(var(--svg-length) / 2);
+        }
+      }
+      & > tbody {
+        & th {
+          z-index: 2;
+          width: calc(var(--svg-length) / 2);
+          height: calc(var(--svg-length));
+        }
+        & tr:first-of-type td {
+          border-top: calc(var(--svg-bg-stroke-length) * 2) solid black;
+        }
+        & tr:last-of-type td {
+          border-bottom: calc(var(--svg-bg-stroke-length) * 2) solid black;
+        }
+        & tr td:first-of-type {
+          border-left: calc(var(--svg-bg-stroke-length) * 2) solid black;
+        }
+        & tr td:last-of-type {
+          border-right: calc(var(--svg-bg-stroke-length) * 2) solid black;
+        }
       }
     }
   }

@@ -31,7 +31,7 @@ html {
 :root {
   --board-length: calc(8 * 80px);
   @media (orientation: portrait) {
-    --board-length: 100vw;
+    --board-length: 99vw;
   }
   @media (orientation: landscape) {
     --board-length: 70dvh;

@@ -11,6 +11,7 @@
   <link rel="icon" type="image/svg+xml" href="gomoku.svg" sizes="any">
   <link rel="apple-touch-icon" type="image/png" href="gomoku.png" sizes="180x180">
   <link rel="stylesheet" type="text/css" href="gomoku.css">
+  <!-- <script type="text/javascript" src="gomoku.js" defer></script> -->
   <script type="text/javascript" src="gomoku.min.js" defer></script>
 </head>
 
@@ -145,6 +146,53 @@
       </svg>
       <hr>
 
+      <svg class="hint" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect class="background" x="0%" y="0%"></rect>
+        <circle class="hint-stone" cx="50%" cy="50%" r="45%"></circle>
+        <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
+      </svg>
+      <svg class="hint" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect class="background" x="0%" y="0%"></rect>
+        <circle class="hint-stone" cx="50%" cy="50%" r="45%"></circle>
+        <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
+      </svg>
+      <svg class="hint" data-color="white" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect class="background" x="0%" y="0%"></rect>
+        <circle class="hint-stone" cx="50%" cy="50%" r="45%"></circle>
+        <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
+      </svg>
+      <svg class="hint" data-color="red" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect class="background" x="0%" y="0%"></rect>
+        <circle class="hint-stone" cx="50%" cy="50%" r="45%"></circle>
+        <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
+      </svg>
+      <svg class="hint" data-color="blue" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect class="background" x="0%" y="0%"></rect>
+        <circle class="hint-stone" cx="50%" cy="50%" r="45%"></circle>
+        <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
+      </svg>
+      <svg class="hint" data-color="cyan" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect class="background" x="0%" y="0%"></rect>
+        <circle class="hint-stone" cx="50%" cy="50%" r="45%"></circle>
+        <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
+      </svg>
+      <svg class="hint" data-color="magenta" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect class="background" x="0%" y="0%"></rect>
+        <circle class="hint-stone" cx="50%" cy="50%" r="45%"></circle>
+        <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
+      </svg>
+      <svg class="hint" data-color="yellow" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect class="background" x="0%" y="0%"></rect>
+        <circle class="hint-stone" cx="50%" cy="50%" r="45%"></circle>
+        <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
+      </svg>
+      <svg class="hint" data-color="sentinel" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect class="background" x="0%" y="0%"></rect>
+        <circle class="hint-stone" cx="50%" cy="50%" r="45%"></circle>
+        <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
+      </svg>
+      <hr>
+
       <span class="color-text" data-color="none">NONE</span>
       <span class="color-text" data-color="black">BLACK</span>
       <span class="color-text" data-color="white">WHITE</span>
@@ -182,11 +230,11 @@
         </li>
         <li class="shown">
           <span class="label"><label for="BOARD_WIDTH">盤面横幅</label></span>
-          <input type="number" id="BOARD_WIDTH" name="BOARD_WIDTH" required value="8" min="4" max="26" step="1" title="4以上20以下の整数を入力してください">
+          <input type="number" id="BOARD_WIDTH" name="BOARD_WIDTH" required value="8" min="5" max="26" step="1" title="4以上20以下の整数を入力してください">
         </li>
         <li class="shown">
           <span class="label"><label for="BOARD_HEIGHT">盤面縦幅</label></span>
-          <input type="number" id="BOARD_HEIGHT" name="BOARD_HEIGHT" required value="8" min="4" max="26" step="1" title="4以上20以下の整数を入力してください">
+          <input type="number" id="BOARD_HEIGHT" name="BOARD_HEIGHT" required value="8" min="5" max="26" step="1" title="4以上20以下の整数を入力してください">
         </li>
         <li class="shown">
           <span class="label"><span name="label">AI手番</span></span>
@@ -221,6 +269,16 @@
             </li>
           </ul>
         </li>
+        <li class="hidden">
+          <span class="label"><label for="AI_LEVEL">AIレベル</label></span>
+          <select id="AI_LEVEL" name="AI_LEVEL" required title="以下のいずれかの整数を選択してください">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </li>
         <li class="shown">
           <span class="label"><label for="DELAY_MSEC">待機時間</label></span>
           <select id="DELAY_MSEC" name="DELAY_MSEC" required title="以下のいずれかの値を選択してください">
@@ -239,9 +297,23 @@
 
     <div id="board-area" class="area">
       <div id="board-window">
-        <table>
-          <tbody id="board">
+        <table id="board">
+          <thead>
             <tr>
+              <th> </th>
+              <th>A</th>
+              <th>B</th>
+              <th>C</th>
+              <th>D</th>
+              <th>E</th>
+              <th>F</th>
+              <th>G</th>
+              <th>H</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
               <td>
                 <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="11">
                   <rect class="background" x="0%" y="0%"></rect>
@@ -292,6 +364,7 @@
               </td>
             </tr>
             <tr>
+              <th>2</th>
               <td>
                 <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="21">
                   <rect class="background" x="0%" y="0%"></rect>
@@ -342,6 +415,7 @@
               </td>
             </tr>
             <tr>
+              <th>3</th>
               <td>
                 <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="31">
                   <rect class="background" x="0%" y="0%"></rect>
@@ -392,6 +466,7 @@
               </td>
             </tr>
             <tr>
+              <th>4</th>
               <td>
                 <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="41">
                   <rect class="background" x="0%" y="0%"></rect>
@@ -442,6 +517,7 @@
               </td>
             </tr>
             <tr>
+              <th>5</th>
               <td>
                 <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="51">
                   <rect class="background" x="0%" y="0%"></rect>
@@ -492,6 +568,7 @@
               </td>
             </tr>
             <tr>
+              <th>6</th>
               <td>
                 <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="61">
                   <rect class="background" x="0%" y="0%"></rect>
@@ -542,6 +619,7 @@
               </td>
             </tr>
             <tr>
+              <th>7</th>
               <td>
                 <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="71">
                   <rect class="background" x="0%" y="0%"></rect>
@@ -592,6 +670,7 @@
               </td>
             </tr>
             <tr>
+              <th>8</th>
               <td>
                 <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="81">
                   <rect class="background" x="0%" y="0%"></rect>
@@ -646,8 +725,8 @@
       </div>
     </div>
     <div id="button-area" class="area">
-      <button type="button" id="assist" name="assist" title="着手可能なマスが強調表示されます">ASSIST</button>
-      <button type="button" id="hint" name="hint" title="各マスの評価値が表示されます">HINT</button>
+      <button type="button" id="assist" name="assist" title="4方向の連長の合計が最大になるマスが強調表示されます">ASSIST</button>
+      <button type="button" id="hint" name="hint" title="連長が勝利まで2であるマスが強調表示されます">HINT</button>
       <button type="button" id="reset" name="reset" title="対局を初期化します">RESET</button>
     </div>
     <hr>
@@ -673,28 +752,16 @@
     <h2>Reference</h2>
     <ul>
       <li>
-        <a href="https://www.othello.org/lesson/lesson/rule.html" target="_blank">オセロのルール</a>
+        <a href="https://ja.wikipedia.org/wiki/%E4%BA%94%E7%9B%AE%E4%B8%A6%E3%81%B9" target="_blank">五目並べ - Wikipedia</a>
       </li>
       <li>
-        <a href="https://www.nicovideo.jp/watch/sm8391299" target="_blank">【プログラミング】オセロを1時間で作ってみた【実況解説】</a>
+        <a href="https://ja.wikipedia.org/wiki/%E4%B8%89%E7%9B%AE%E4%B8%A6%E3%81%B9" target="_blank">三目並べ - Wikipedia</a>
       </li>
       <li>
-        <a href="https://magazine.techacademy.jp/magazine/22767" target="_blank">JavaScriptでオセロゲームを作成する方法を現役エンジニアが解説【初心者向け】</a>
+        <a href="https://noomise.com/sozai/gomoku/" target="_blank">五目並べ</a>
       </li>
       <li>
-        <a href="https://www.othello.org/lesson/lesson/term.html" target="_blank">オセロ用語の基礎知識</a>
-      </li>
-      <li>
-        <a href="https://do2.rojo.jp/shogi/javascript/mania.html?f=1" target="_blank">オセロ棋譜再生[オセ まにあ]</a>
-      </li>
-      <li>
-        <a href="https://www.hasera.net/othello/mame006.html" target="_blank">最も早い段階でのパス</a>
-      </li>
-      <li>
-        <a href="https://www.hasera.net/othello/mame007.html" target="_blank">早い段階での連続パス</a>
-      </li>
-      <li>
-        <a href="http://www.net.c.dendai.ac.jp/~ksuzuki/" target="_blank">4×4オセロ全手解析</a>
+        <a href="https://www.afsgames.com/connect5.htm" target="_blank">五目並べ | 無料ゲームは「ゲームのつぼ」</a>
       </li>
     </ul>
   </aside>

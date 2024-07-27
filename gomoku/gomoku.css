@@ -134,10 +134,6 @@ svg {
       height: 90%;
       fill: none;
       stroke-width: var(--svg-st-stroke-length);
-      stroke-dasharray: calc(var(--svg-st-stroke-length) * 2), calc(var(--svg-st-stroke-length) * 2);
-      &.highlight-put {
-        stroke-dasharray: none;
-      }
     }
     &[data-color="none"] {
       & > rect.highlight-stone {
@@ -245,6 +241,85 @@ svg {
     }
     &[data-color="sentinel"] > circle.assist-stone {
       stroke: sandybrown;
+    }
+  }
+
+  &.hint {
+    & > circle.hint-stone {
+      fill: none;
+      stroke-width: var(--svg-st-stroke-length);
+    }
+    &[data-color="none"] {
+      & > circle.hint-stone {
+        stroke: none;
+      }
+      & > circle.stone {
+        fill: none;
+      }
+    }
+    &[data-color="black"] {
+      & > circle.hint-stone {
+        stroke: black;
+      }
+      & > circle.stone {
+        fill: black;
+      }
+    }
+    &[data-color="white"] {
+      & > circle.hint-stone {
+        stroke: white;
+      }
+      & > circle.stone {
+        fill: white;
+      }
+    }
+    &[data-color="red"] {
+      & > circle.hint-stone {
+        stroke: red;
+      }
+      & > circle.stone {
+        fill: red;
+      }
+    }
+    &[data-color="blue"] {
+      & > circle.hint-stone {
+        stroke: blue;
+      }
+      & > circle.stone {
+        fill: blue;
+      }
+    }
+    &[data-color="cyan"] {
+      & > circle.hint-stone {
+        stroke: cyan;
+      }
+      & > circle.stone {
+        fill: cyan;
+      }
+    }
+    &[data-color="magenta"] {
+      & > circle.hint-stone {
+        stroke: magenta;
+      }
+      & > circle.stone {
+        fill: magenta;
+      }
+    }
+    &[data-color="yellow"] {
+      & > circle.hint-stone {
+        stroke: yellow;
+      }
+      & > circle.stone {
+        fill: yellow;
+      }
+    }
+    &[data-color="sentinel"] {
+      & > circle.hint-stone {
+        stroke: sandybrown;
+      }
+      & > circle.stone {
+        fill: sandybrown;
+      }
     }
   }
 }
@@ -449,10 +524,49 @@ div#board-area {
       border-collapse: collapse;
       border-spacing: 0;
       line-height: 0;
-      border: calc(var(--svg-bg-stroke-length) * 2) solid black;
-      & :is(tr, td) {
+      & :is(tr, td, th) {
         margin: 0;
         padding: 0;
+      }
+      & th {
+        position: sticky;
+        top: 0;
+        left: 0;
+        font-size: calc(var(--svg-length) / 3.5);
+        text-align: center;
+        background-color: rgb(200, 200, 200);
+        
+      }
+      & > thead {
+        & th {
+          z-index: 2;
+          width: calc(var(--svg-length));
+          height: calc(var(--svg-length) / 2);
+        }
+        & th:first-of-type {
+          z-index: 3;
+          width: calc(var(--svg-length) / 2);
+          height: calc(var(--svg-length) / 2);
+        }
+      }
+      & > tbody {
+        & th {
+          z-index: 2;
+          width: calc(var(--svg-length) / 2);
+          height: calc(var(--svg-length));
+        }
+        & tr:first-of-type td {
+          border-top: calc(var(--svg-bg-stroke-length) * 2) solid black;
+        }
+        & tr:last-of-type td {
+          border-bottom: calc(var(--svg-bg-stroke-length) * 2) solid black;
+        }
+        & tr td:first-of-type {
+          border-left: calc(var(--svg-bg-stroke-length) * 2) solid black;
+        }
+        & tr td:last-of-type {
+          border-right: calc(var(--svg-bg-stroke-length) * 2) solid black;
+        }
       }
     }
   }

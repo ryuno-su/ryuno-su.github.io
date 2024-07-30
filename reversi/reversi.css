@@ -54,16 +54,6 @@ html {
   outline: -webkit-focus-ring-color auto 1px;
 }
 
-br {
-  display: inline-block;
-  font-size: 0;
-  width: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
 hr {
   border: none;
   border-top: 1px solid black;
@@ -428,9 +418,6 @@ details#parameter-area {
       border-color: rgb(118, 118, 118);
     }
   }
-  & > button {
-    margin-block-start: 0.5em;
-  }
 }
 
 button {
@@ -453,13 +440,20 @@ button {
     outline-color: rgb(118, 118, 118);
     opacity: 0.7;
   }
+  details#parameter-area > & {
+    margin-block-start: 0.5rem;
+  }
+  div#button-area > & {
+    margin-block-start: 0.25rem;
+  }
 }
 
 div#board-area {
+  font-size: 0;
   & > div#board-window {
     display: inline-block;
     max-width: 100%;
-    max-height: 90vh;
+    max-height: calc(99vh - 4.5rem);
     overflow: auto;
     & > table {
       table-layout: fixed;

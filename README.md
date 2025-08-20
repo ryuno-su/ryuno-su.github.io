@@ -1,4 +1,4 @@
 # ryuno-su.github.io
 
-github pages
-https://ryuno-su.github.io
+Github Pages
+https://ryuno-su.github.io/index.html

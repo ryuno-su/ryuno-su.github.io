@@ -60,6 +60,7 @@ hr {
 }
 
 header {
+  display: block;
   font-size: 0.9rem;
   & > h1 {
     font-size: 1.6rem;

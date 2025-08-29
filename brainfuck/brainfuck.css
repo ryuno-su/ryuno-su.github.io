@@ -266,7 +266,7 @@ footer {
 }
 
 /* モバイル端末用 */
-@media (width < var(--mobile-length)), (height < var(--mobile-length)) {
+@media (width < var(--mobile-length)) or (height < var(--mobile-length)) {
   html {
     font-size: 18px;
   }

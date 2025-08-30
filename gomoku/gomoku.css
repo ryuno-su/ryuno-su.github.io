@@ -386,9 +386,15 @@ details#parameter-area {
         &.shown {
           display: inline-block;
         }
-      }
-      & label.label {
-        display: inline;
+        & label.label {
+          display: inline;
+        }
+        & .label:after {
+          padding-inline: 0.4rem 0.0rem;
+        }
+        & span:is([data-color="white"], [data-color="yellow"]) {
+          text-shadow: 0px 0px 1px black;
+        }
       }
     }
   }
@@ -403,12 +409,12 @@ details#parameter-area {
     & label, & span[name="label"] {
       display: inline-block;
       vertical-align: middle;
-      width: 5.8rem;
+      width: 3.9rem;
     }
     & .label:after {
       display: inline-block;
       content: "=";
-      padding-inline: 0.2rem;
+      padding-inline: 0.2rem 0.0rem;
     }
   }
   & input {

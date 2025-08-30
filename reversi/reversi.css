@@ -84,7 +84,7 @@ svg {
   }
   &.not-init_area {
     & > rect.background {
-      fill: white;
+      fill: none;
     }
   }
   &.lucky {
@@ -97,6 +97,9 @@ svg {
     cursor: pointer;
     & > rect.background {
       fill: lime;
+    }
+    &.not-init_area > rect.background {
+      fill: rgb(170, 170, 170);
     }
   }
   & > text {
@@ -327,8 +330,11 @@ details#parameter-area {
         & label.label {
           display: inline;
         }
+        & .label:after {
+          padding-inline: 0.4rem 0.0rem;
+        }
         & span:is([data-color="white"], [data-color="yellow"]) {
-          text-shadow: 0px 0px 2px black;
+          text-shadow: 0px 0px 1px black;
         }
       }
     }
@@ -349,7 +355,7 @@ details#parameter-area {
     & .label:after {
       display: inline-block;
       content: "=";
-      padding-inline: 0.2rem;
+      padding-inline: 0.2rem 0.0rem;
     }
   }
   & input {

@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Noto+Sans+JP");
+html {
+  font-family: "Roboto Mono", "Noto Sans JP", monospace;
+  font-weight: normal;
+  font-size: 25px;
+  box-sizing: border-box;
+  overscroll-behavior: none;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+*, *::before, *::after {
+  font-family: inherit;
+  font-size: 100%;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+header {
+  margin: 8px;
+  font-size: 0.8rem;
+  & > h1 {
+    font-size: 1.4rem;
+    margin-block-start: 0.2rem;
+    margin-block-end: 0.2rem;
+  }
+}
+
+main {
+  & > canvas#canvas {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+  }
+}
+
+aside {
+  margin: 8px;
+  font-size: 0.8rem;
+  & > h2 {
+    font-size: 1.2rem;
+    margin-block-start: 0.2rem;
+    margin-block-end: 0.2rem;
+  }
+}
+
+footer {
+  margin: 8px;
+  font-size: 0.8rem;
+}

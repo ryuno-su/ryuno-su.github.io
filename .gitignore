@@ -1,8 +1,8 @@
 /**
 
 !/index.html
-!/LICENCE
 !/README.md
+!/LICENCE
 
 !/**/
 
@@ -39,3 +39,5 @@
 !/library/class.min.js
 !/library/function.min.js
 !/library/closure.min.js
+
+!/yashima/yashima.html

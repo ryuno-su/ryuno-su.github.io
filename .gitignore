@@ -1,0 +1,39 @@
+/**
+
+!/index.html
+!/LICENCE
+!/README.md
+
+!/brainfuck/brainfuck.html
+!/brainfuck/brainfuck.css
+!/brainfuck/brainfuck.min.js
+!/brainfuck/brainfuck.ico
+!/brainfuck/brainfuck.png
+!/brainfuck/brainfuck.svg
+
+!/reversi/reversi.html
+!/reversi/reversi.css
+!/reversi/reversi.min.js
+!/reversi/reversi.ico
+!/reversi/reversi.png
+!/reversi/reversi.svg
+
+!/gomoku/gomoku.html
+!/gomoku/gomoku.css
+!/gomoku/gomoku.min.js
+!/gomoku/gomoku.ico
+!/gomoku/gomoku.png
+!/gomoku/gomoku.svg
+
+!/watermelon/watermelon.html
+!/watermelon/watermelon.css
+!/watermelon/watermelon.min.js
+# !/watermelon/watermelon.ico
+# !/watermelon/watermelon.png
+# !/watermelon/watermelon.svg
+
+!/library/library.min.js
+!/library/const.min.js
+!/library/class.min.js
+!/library/function.min.js
+!/library/closure.min.js

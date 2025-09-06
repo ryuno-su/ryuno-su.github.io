@@ -93,9 +93,9 @@ div#result-area {
     & > div {
       align-self: center;
       justify-self: end;
-    }
-    & > div[class*="-text"] {
-      font-size: max(1.8vw, 8px);
+      &[class*="-text"] {
+        font-size: max(1.8vw, 8px);
+      }
     }
   }
   & > div.countdown1 {
@@ -118,11 +118,11 @@ div#result-area {
     &.name-area {
       justify-self: start;
       margin-left: 3.9vw;
-      & > div[class*="-text"] {
-        justify-self: end;
-      }
       & > div {
         justify-self: end;
+        &[class*="-text"] {
+          justify-self: center;
+        }
       }
     }
     &.day-area {

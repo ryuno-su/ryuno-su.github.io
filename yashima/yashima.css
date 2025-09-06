@@ -91,6 +91,7 @@ div#result-area {
     align-self: center;
     justify-self: end;
     & > div {
+      align-self: center;
       justify-self: end;
     }
     & > div[class*="-text"] {
@@ -118,12 +119,16 @@ div#result-area {
       justify-self: start;
       margin-left: 3.9vw;
       & > div[class*="-text"] {
-        justify-self: center;
+        justify-self: end;
+      }
+      & > div {
+        justify-self: end;
       }
     }
-    &.day-area > div[class*="-text"] {
-      justify-self: center;
-      white-space: break-spaces;
+    &.day-area {
+      & > div[class*="-text"] {
+        white-space: break-spaces;
+      }
     }
   }
   & > div:not(.title-area) {
@@ -139,6 +144,7 @@ div#result-area {
     grid-column: 1;
     font-size: 3.0em;
     & > div[class*="-text"] {
+      justify-self: end;
       margin-right: 0.78vw;
     }
   }
@@ -154,6 +160,7 @@ div#result-area {
     grid-column: 3;
     font-size: 4.0em;
     & > div[class*="-text"] {
+      justify-self: end;
       margin-right: 0.78vw;
     }
   }
@@ -263,7 +270,7 @@ footer {
       }
       &:has(div.countdown2.hidden) {
         & > div:not(.title-area) {
-          margin-bottom: calc((100vw / 1.7 - 9.75vw - 15.6vw - 3.9vw - 3.25vw - 1.3vw) / 6);
+          margin-bottom: calc((100vw / 1.7 - 6.5vw - 10.4vw - 3.9vw - 2.6vw - 1.3vw) / 4);
         }
       }
     }

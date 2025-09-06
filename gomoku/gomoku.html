@@ -230,42 +230,42 @@
         </li>
         <li class="shown">
           <span class="label"><label for="BOARD_WIDTH">盤面横幅</label></span>
-          <input type="number" id="BOARD_WIDTH" name="BOARD_WIDTH" required value="8" min="5" max="26" step="1" title="4以上20以下の整数を入力してください">
+          <input id="BOARD_WIDTH" name="BOARD_WIDTH" type="number" value="8" required min="5" max="26" step="1" autocomplete="off" title="4以上20以下の整数を入力してください">
         </li>
         <li class="shown">
           <span class="label"><label for="BOARD_HEIGHT">盤面縦幅</label></span>
-          <input type="number" id="BOARD_HEIGHT" name="BOARD_HEIGHT" required value="8" min="5" max="26" step="1" title="4以上20以下の整数を入力してください">
+          <input id="BOARD_HEIGHT" name="BOARD_HEIGHT" type="number" value="8" required min="5" max="26" step="1" autocomplete="off" title="4以上20以下の整数を入力してください">
         </li>
         <li class="shown">
           <span class="label"><span name="label">AI手番</span></span>
           <ul id="AI_LIST">
             <li class="shown">
               <label class="label" for="ai-black"><span class="color-text" data-color="black">BLACK</span></label>
-              <input type="checkbox" id="ai-black" name="ai-color" value="black" title="AIの色を選択してください">
+              <input id="ai-black" name="ai-color" type="checkbox" value="black" title="AIの色を選択してください">
             </li>
             <li class="shown">
               <label class="label" for="ai-white"><span class="color-text" data-color="white">WHITE</span></label>
-              <input type="checkbox" id="ai-white" name="ai-color" value="white" title="AIの色を選択してください">
+              <input id="ai-white" name="ai-color" type="checkbox" value="white" title="AIの色を選択してください">
             </li>
             <li class="hidden">
               <label class="label" for="ai-red"><span class="color-text" data-color="red">RED</span></label>
-              <input type="checkbox" id="ai-red" name="ai-color" value="red" title="AIの色を選択してください">
+              <input id="ai-red" name="ai-color" type="checkbox" value="red" title="AIの色を選択してください">
             </li>
             <li class="hidden">
               <label class="label" for="ai-blue"><span class="color-text" data-color="blue">BLUE</span></label>
-              <input type="checkbox" id="ai-blue" name="ai-color" value="blue" title="AIの色を選択してください">
+              <input id="ai-blue" name="ai-color" type="checkbox" value="blue" title="AIの色を選択してください">
             </li>
             <li class="hidden">
               <label class="label" for="ai-cyan"><span class="color-text" data-color="cyan">CYAN</span></label>
-              <input type="checkbox" id="ai-cyan" name="ai-color" value="cyan" title="AIの色を選択してください">
+              <input id="ai-cyan" name="ai-color" type="checkbox" value="cyan" title="AIの色を選択してください">
             </li>
             <li class="hidden">
               <label class="label" for="ai-magenta"><span class="color-text" data-color="magenta">MAGENTA</span></label>
-              <input type="checkbox" id="ai-magenta" name="ai-color" value="magenta" title="AIの色を選択してください">
+              <input id="ai-magenta" name="ai-color" type="checkbox" value="magenta" title="AIの色を選択してください">
             </li>
             <li class="hidden">
               <label class="label" for="ai-yellow"><span class="color-text" data-color="yellow">YELLOW</span></label>
-              <input type="checkbox" id="ai-yellow" name="ai-color" value="yellow" title="AIの色を選択してください">
+              <input id="ai-yellow" name="ai-color" type="checkbox" value="yellow" title="AIの色を選択してください">
             </li>
           </ul>
         </li>
@@ -291,7 +291,7 @@
           </select>
         </li>
       </ul>
-      <button type="button" id="enter" name="enter" title="パラメータの設定を確定します">ENTER</button>
+      <button id="enter" name="enter" type="button" title="パラメータの設定を確定します">ENTER</button>
     </details>
     <hr>
 
@@ -723,9 +723,9 @@
       </table>
     </div>
     <div id="button-area" class="area">
-      <button type="button" id="assist" name="assist" title="4方向の連長の合計が最大になるマスが強調表示されます">ASSIST</button>
-      <button type="button" id="hint" name="hint" title="連長が勝利まで2であるマスが強調表示されます">HINT</button>
-      <button type="button" id="reset" name="reset" title="対局を初期化します">RESET</button>
+      <button id="assist" name="assist" type="button" title="4方向の連長の合計が最大になるマスが強調表示されます">ASSIST</button>
+      <button id="hint" name="hint" type="button" title="連長が勝利まで2であるマスが強調表示されます">HINT</button>
+      <button id="reset" name="reset" type="button" title="対局を初期化します">RESET</button>
     </div>
     <hr>
 

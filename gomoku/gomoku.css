@@ -367,7 +367,7 @@ details#parameter-area {
     border-radius: 3px;
     font-size: 0.9rem;
     margin: 0px;
-    padding: 4px;
+    padding: 0.2rem;
     width: auto;
 
     display: block;
@@ -389,7 +389,7 @@ details#parameter-area {
         & label.label {
           display: inline;
         }
-        & .label:after {
+        & .label::after {
           padding-inline: 0.4rem 0.0rem;
         }
         & span:is([data-color="white"], [data-color="yellow"]) {
@@ -411,7 +411,7 @@ details#parameter-area {
       vertical-align: middle;
       width: 3.9rem;
     }
-    & .label:after {
+    & .label::after {
       display: inline-block;
       content: "=";
       padding-inline: 0.2rem 0.0rem;

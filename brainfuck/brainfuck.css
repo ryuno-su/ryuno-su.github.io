@@ -103,7 +103,7 @@ div#edit-area {
       border-radius: 3px;
       font-size: 0.9rem;
       margin: 0px;
-      padding: 4px;
+      padding: 0.2rem;
       width: auto;
 
       display: block;
@@ -117,7 +117,7 @@ div#edit-area {
       & label {
         display: inline-block;
       }
-      & .label:after {
+      & .label::after {
         display: inline-block;
         content: "=";
         padding-inline: 0.2rem;

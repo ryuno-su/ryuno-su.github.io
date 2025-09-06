@@ -308,7 +308,7 @@ details#parameter-area {
     border-radius: 3px;
     font-size: 0.9rem;
     margin: 0px;
-    padding: 4px;
+    padding: 0.2rem;
     width: auto;
 
     display: block;
@@ -330,7 +330,7 @@ details#parameter-area {
         & label.label {
           display: inline;
         }
-        & .label:after {
+        & .label::after {
           padding-inline: 0.4rem 0.0rem;
         }
         & span:is([data-color="white"], [data-color="yellow"]) {
@@ -352,21 +352,13 @@ details#parameter-area {
       vertical-align: middle;
       width: 5.8rem;
     }
-    & .label:after {
+    & .label::after {
       display: inline-block;
       content: "=";
       padding-inline: 0.2rem 0.0rem;
     }
   }
   & input {
-    /* &[type="number"], &[type="text"] {
-      appearance: none;
-      width: 1.1rem;
-    }
-    :is(&[type="number"], &[type="text"]):invalid {
-      outline: 2px dashed red;
-      outline-offset: -1px;
-    } */
    &:is([type="number"], [type="text"]) {
       appearance: none;
       width: 1.1rem;

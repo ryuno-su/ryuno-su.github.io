@@ -71,14 +71,12 @@ header {
     margin-block-end: 0.2rem;
   }
 }
+
 div#result-area {
   font-size: max(1.3vw, 5px);
   overflow: hidden;
   width: 100%;
   height: 100vh;
-  @media (orientation: portrait) {
-    height: calc(100vw / 1.7);
-  }
   padding: 0.65vw;
   background-color: black;
   color: sandybrown;
@@ -130,7 +128,7 @@ div#result-area {
   }
   & > div:not(.title-area) {
     align-self: last baseline;
-    margin-bottom: calc((100vw / 1.7 - 9.75vw - 15.6vw - 3.9vw - 3.25vw - 1.3vw) / 6);
+    margin-bottom: calc((100vh - 9.75vw - 15.6vw - 3.9vw - 3.25vw - 1.3vw) / 6);
   }
   & > div.title-area {
     grid-column: 2;
@@ -172,7 +170,7 @@ div#result-area {
       }
     }
     & > div:not(.title-area) {
-      margin-bottom: calc((100vw / 1.7 - 6.5vw - 10.4vw - 3.9vw - 2.6vw - 1.3vw) / 4);
+      margin-bottom: calc((100vh - 6.5vw - 10.4vw - 3.9vw - 2.6vw - 1.3vw) / 4);
     }
   }
 }
@@ -256,8 +254,18 @@ footer {
 }
 
 /* モバイル端末用 */
-/* @media (width < var(--mobile-length)) or (height < var(--mobile-length)) {
-  html {
-    font-size: 10px;
+/* @media (width < var(--mobile-length)) or (height < var(--mobile-length)) { */
+  @media (orientation: portrait) {
+    div#result-area {
+      height: calc(100vw / 1.7);
+      & > div:not(.title-area) {
+        margin-bottom: calc((100vw / 1.7 - 9.75vw - 15.6vw - 3.9vw - 3.25vw - 1.3vw) / 6);
+      }
+      &:has(div.countdown2.hidden) {
+        & > div:not(.title-area) {
+          margin-bottom: calc((100vw / 1.7 - 9.75vw - 15.6vw - 3.9vw - 3.25vw - 1.3vw) / 6);
+        }
+      }
+    }
   }
-} */
+/* } */

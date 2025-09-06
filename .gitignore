@@ -43,10 +43,10 @@
 !/library/closure.min.js
 
 /yashima/*
-# !/yashima/yashima.html
-# !/yashima/yashima.css
-# !/yashima/yashima.min.js
-# !/yashima/DSEG-LICENSE.txt
+!/yashima/yashima.html
+!/yashima/yashima.css
+!/yashima/yashima.min.js
+!/yashima/DSEG-LICENSE.txt
 # !/yashima/yashima.ico
 # !/yashima/yashima.png
 # !/yashima/yashima.svg

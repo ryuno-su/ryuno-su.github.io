@@ -75,8 +75,7 @@ header {
 div#result-area {
   overflow: hidden;
   width: 100%;
-  height: 100vh;
-  /* height: calc(100vw / 1.5); */
+  height: 100dvh;
   padding: 0.5rem;
   background-color: black;
   color: sandybrown;
@@ -197,7 +196,7 @@ div#edit-area {
       line-height: 1.5;
       & label {
         display: inline-block;
-        width: 6.4rem;
+        width: 6.3rem;
       }
       & > .label::after {
         display: inline-block;
@@ -256,22 +255,11 @@ footer {
 /* モバイル端末用 */
 @media (width < var(--mobile-length)) or (height < var(--mobile-length)) {
   html {
-    font-size: 15px;
+    font-size: 10px;
   }
   @media (width < var(--mobile-length)) {
     div#result-area {
       height: calc(100vw / 1.5);
     }
   }
-  /* div#edit-area {
-    & label {
-      width: 7.2rem;
-      margin-inline-end: 0.6rem;
-    }
-    & input {
-      width: 7.2rem;
-      font-size: 16px;
-      line-height: 1.15;
-    }
-  } */
 }

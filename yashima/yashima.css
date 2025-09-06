@@ -215,7 +215,7 @@ div#edit-area {
         width: 15.0rem;
 
         appearance: none;
-        display: inline;
+        /* display: inline; */
         line-height: 1.4;
         height: 1lh;
         vertical-align: middle;
@@ -233,7 +233,7 @@ div#edit-area {
           appearance: none;
           -webkit-appearance: none;
           &::-webkit-date-and-time-value {
-            text-align: right;
+            text-align: left;
           }
         }
         &:invalid {

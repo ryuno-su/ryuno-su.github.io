@@ -92,7 +92,8 @@ div#result-area {
     justify-self: end;
     & > div {
       align-self: center;
-      justify-self: end;
+      /* justify-self: end; */
+      justify-self: center;
       &[class*="-text"] {
         font-size: max(1.8vw, 8px);
       }
@@ -119,7 +120,7 @@ div#result-area {
       justify-self: start;
       margin-left: 3.9vw;
       & > div {
-        justify-self: end;
+        /* justify-self: end; */
         &[class*="-text"] {
           justify-self: center;
         }
@@ -144,7 +145,7 @@ div#result-area {
     grid-column: 1;
     font-size: 3.0em;
     & > div[class*="-text"] {
-      justify-self: end;
+      /* justify-self: end; */
       margin-right: 0.78vw;
     }
   }
@@ -160,7 +161,7 @@ div#result-area {
     grid-column: 3;
     font-size: 4.0em;
     & > div[class*="-text"] {
-      justify-self: end;
+      /* justify-self: end; */
       margin-right: 0.78vw;
     }
   }

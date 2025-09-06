@@ -42,7 +42,9 @@
 !/library/function.min.js
 !/library/closure.min.js
 
-/yashima/*
+# /yashima/*
+/yashima/yashima.avif
+/yashima/yashima.js
 !/yashima/yashima.html
 !/yashima/yashima.css
 !/yashima/yashima.min.js

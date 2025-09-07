@@ -50,13 +50,14 @@ html {
   margin: 0.2rem;
 }
 
-:focus {
+:focus:not(div#board-area) {
   outline: -webkit-focus-ring-color auto 1px;
 }
 
 hr {
   border: none;
   border-top: 1px solid black;
+  margin-block: 0.5rem;
 }
 
 header {
@@ -397,89 +398,89 @@ details#parameter-area {
         }
       }
     }
-  }
-  & li {
-    list-style: none;
-    line-height: 1.4;
-    vertical-align: middle;
-    width: fit-content;
-    &.shown {
-      display: list-item;
-    }
-    & label, & span[name="label"] {
-      display: inline-block;
+    & li {
+      list-style: none;
+      line-height: 1.4;
       vertical-align: middle;
-      width: 3.9rem;
-    }
-    & .label::after {
-      display: inline-block;
-      content: "=";
-      padding-inline: 0.2rem 0.0rem;
-    }
-  }
-  & input {
-    &[type="number"], &[type="text"] {
-      appearance: none;
-      width: 1.1rem;
-    }
-    :is(&[type="number"], &[type="text"]):invalid {
-      outline: 2px dashed red;
-      outline-offset: -1px;
-    }
-    &[type="number"]::-webkit-inner-spin-button,
-    &[type="number"]::-webkit-outer-spin-button {
-      appearance: none;
-    }
-    &[type="checkbox"] {
-      display: inline-block;
-      margin: 0px;
-      vertical-align: middle;
-      width: 1lh;
-      height: 1lh;
-      ul#AI_LIST & {
-        line-height: 1;
+      width: fit-content;
+      &.shown {
+        display: list-item;
+      }
+      & label, & span[name="label"] {
+        display: inline-block;
+        vertical-align: middle;
+        width: 3.9rem;
+      }
+      & .label::after {
+        display: inline-block;
+        content: "=";
+        padding-inline: 0.2rem 0.0rem;
       }
     }
-  }
-  & ul#AI_LIST,
-  & input:is([type="number"], [type="text"]),
-  & select {
-    display: inline-block;
-    line-height: 1.05;
-    height: 1.05lh;
-    vertical-align: middle;
-    border: none;
-    border-radius: 3px;
+    & input {
+      &[type="number"], &[type="text"] {
+        appearance: none;
+        width: 1.1rem;
+      }
+      :is(&[type="number"], &[type="text"]):invalid {
+        outline: 2px dashed red;
+        outline-offset: -1px;
+      }
+      &[type="number"]::-webkit-inner-spin-button,
+      &[type="number"]::-webkit-outer-spin-button {
+        appearance: none;
+      }
+      &[type="checkbox"] {
+        display: inline-block;
+        margin: 0px;
+        vertical-align: middle;
+        width: 1lh;
+        height: 1lh;
+        ul#AI_LIST & {
+          line-height: 1;
+        }
+      }
+    }
+    & ul#AI_LIST,
+    & input:is([type="number"], [type="text"]),
+    & select {
+      display: inline-block;
+      line-height: 1.05;
+      height: 1.05lh;
+      vertical-align: middle;
+      border: none;
+      border-radius: 3px;
 
-    color: black;
-    background-color: white;
-    outline: 1px solid black;
-    opacity: 1;
-  }
-  & ul#AI_LIST.disabled,
-  & ul#AI_LIST.disabled label.label,
-  & input:disabled,
-  & select:disabled {
-    color: rgb(170, 170, 170);
-    background-color: rgba(239, 239, 239, 0.3);
-    outline-color: rgb(118, 118, 118);
-    opacity: 0.7;
-    text-shadow: none;
-  }
-  & :is(input, select, button):valid:focus {
-    outline: -webkit-focus-ring-color auto 1px;
-  }
-  & ul#AI_LIST,
-  & input:is([type="number"], [type="text"]) {
-    padding: 0.1rem 0.1rem;
-  }
-  & select {
-    padding: 0.1rem 0.0rem;
-    height: 1.1lh;
-    outline: none;
-    border: 1px solid black;
-    &:disabled {
-      border-color: rgb(118, 118, 118);
+      color: black;
+      background-color: white;
+      outline: 1px solid black;
+      opacity: 1;
+    }
+    & ul#AI_LIST.disabled,
+    & ul#AI_LIST.disabled label.label,
+    & input:disabled,
+    & select:disabled {
+      color: rgb(170, 170, 170);
+      background-color: rgba(239, 239, 239, 0.3);
+      outline-color: rgb(118, 118, 118);
+      opacity: 0.7;
+      text-shadow: none;
+    }
+    & :is(input, select, button):valid:focus {
+      outline: -webkit-focus-ring-color auto 1px;
+    }
+    & ul#AI_LIST,
+    & input:is([type="number"], [type="text"]) {
+      padding: 0.1rem 0.1rem;
+    }
+    & select {
+      padding: 0.1rem 0.0rem;
+      height: 1.1lh;
+      outline: none;
+      border: 1px solid black;
+      &:disabled {
+        border-color: rgb(118, 118, 118);
+      }
     }
   }
 }
@@ -515,11 +516,11 @@ button {
 div#board-area {
   font-size: 0;
   max-width: 100%;
-  max-height: calc(99dvh - 4.5rem);
+  max-height: calc(99dvh - 4.5rem + 0.2rem + 0.5rem);
   overflow: auto;
   & > table {
     table-layout: fixed;
-    border-collapse: collapse;
+    border-collapse: separate;
     border-spacing: 0;
     margin: 0 auto;
     & :is(tr, td, th) {
@@ -533,7 +534,6 @@ div#board-area {
       font-size: calc(var(--svg-length) / 3.5);
       text-align: center;
       background-color: rgb(200, 200, 200);
-      
     }
     & > thead {
       & th {

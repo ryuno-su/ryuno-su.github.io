@@ -209,7 +209,7 @@
       <ul class="details-content">
         <li class="shown">
           <span class="label"><label for="COLOR_NUM">対局人数</label></span>
-          <select id="COLOR_NUM" name="COLOR_NUM" required title="以下のいずれかの整数を選択してください">
+          <select id="COLOR_NUM" name="COLOR_NUM" required autocomplete="off" title="以下のいずれかの整数を選択してください">
             <option value="2" selected>2</option>
             <option value="3">3</option>
             <option value="4">4</option>
@@ -220,7 +220,7 @@
         </li>
         <li class="shown">
           <span class="label"><label for="WIN_LENGTH">勝利連長</label></span>
-          <select id="WIN_LENGTH" name="WIN_LENGTH" required title="以下のいずれかの整数を選択してください">
+          <select id="WIN_LENGTH" name="WIN_LENGTH" required autocomplete="off" title="以下のいずれかの整数を選択してください">
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5" selected>5</option>
@@ -271,7 +271,7 @@
         </li>
         <li class="hidden">
           <span class="label"><label for="AI_LEVEL">AIレベル</label></span>
-          <select id="AI_LEVEL" name="AI_LEVEL" required title="以下のいずれかの整数を選択してください">
+          <select id="AI_LEVEL" name="AI_LEVEL" required autocomplete="off" title="以下のいずれかの整数を選択してください">
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2" selected>2</option>
@@ -281,7 +281,7 @@
         </li>
         <li class="shown">
           <span class="label"><label for="DELAY_MSEC">待機時間</label></span>
-          <select id="DELAY_MSEC" name="DELAY_MSEC" required title="以下のいずれかの値を選択してください">
+          <select id="DELAY_MSEC" name="DELAY_MSEC" required autocomplete="off" title="以下のいずれかの値を選択してください">
             <option value="0">0ms</option>
             <option value="1">1ms</option>
             <option value="200">200ms</option>
@@ -292,6 +292,8 @@
         </li>
       </ul>
       <button id="enter" name="enter" type="button" title="パラメータの設定を確定します">ENTER</button>
+      <button id="default" name="default" type="button" title="パラメータの設定を初期化します">DEFAULT</button>
+      <button id="slide" name="slide" type="button" title="盤面位置にスライドします">SLIDE</button>
     </details>
     <hr>
 

@@ -55,6 +55,10 @@
         <rect class="background" x="0%" y="0%"></rect>
         <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
       </svg>
+      <svg class="cell" data-color="green" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect class="background" x="0%" y="0%"></rect>
+        <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
+      </svg>
       <svg class="cell" data-color="sentinel" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background" x="0%" y="0%"></rect>
         <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
@@ -101,6 +105,11 @@
         <rect class="highlight-stone" x="5%" y="5%"></rect>
         <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
       </svg>
+      <svg class="highlight" data-color="green" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect class="background" x="0%" y="0%"></rect>
+        <rect class="highlight-stone" x="5%" y="5%"></rect>
+        <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
+      </svg>
       <svg class="highlight" data-color="sentinel" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background" x="0%" y="0%"></rect>
         <rect class="highlight-stone" x="5%" y="5%"></rect>
@@ -137,6 +146,10 @@
         <circle class="assist-stone" cx="50%" cy="50%" r="40%"></circle>
       </svg>
       <svg class="assist" data-color="yellow" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect class="background" x="0%" y="0%"></rect>
+        <circle class="assist-stone" cx="50%" cy="50%" r="40%"></circle>
+      </svg>
+      <svg class="assist" data-color="green" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background" x="0%" y="0%"></rect>
         <circle class="assist-stone" cx="50%" cy="50%" r="40%"></circle>
       </svg>
@@ -186,6 +199,11 @@
         <circle class="hint-stone" cx="50%" cy="50%" r="45%"></circle>
         <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
       </svg>
+      <svg class="hint" data-color="green" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect class="background" x="0%" y="0%"></rect>
+        <circle class="hint-stone" cx="50%" cy="50%" r="45%"></circle>
+        <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
+      </svg>
       <svg class="hint" data-color="sentinel" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background" x="0%" y="0%"></rect>
         <circle class="hint-stone" cx="50%" cy="50%" r="45%"></circle>
@@ -201,6 +219,7 @@
       <span class="color-text" data-color="cyan">CYAN</span>
       <span class="color-text" data-color="magenta">MAGENTA</span>
       <span class="color-text" data-color="yellow">YELLOW</span>
+      <span class="color-text" data-color="green">GREEN</span>
       <span class="color-text" data-color="sentinel">SENTINEL</span>
     </div>
 
@@ -216,6 +235,7 @@
             <option value="5">5</option>
             <option value="6">6</option>
             <option value="7">7</option>
+            <option value="8">8</option>
           </select>
         </li>
         <li class="shown">
@@ -230,11 +250,11 @@
         </li>
         <li class="shown">
           <span class="label"><label for="BOARD_WIDTH">盤面横幅</label></span>
-          <input id="BOARD_WIDTH" name="BOARD_WIDTH" type="number" value="8" required min="5" max="26" step="1" autocomplete="off" title="4以上20以下の整数を入力してください">
+          <input id="BOARD_WIDTH" name="BOARD_WIDTH" type="number" value="8" required min="5" max="26" step="1" pattern="^([1-9][0-9]*|0)$" inputmode="numeric" autocomplete="off" title="4以上20以下の整数を入力してください">
         </li>
         <li class="shown">
           <span class="label"><label for="BOARD_HEIGHT">盤面縦幅</label></span>
-          <input id="BOARD_HEIGHT" name="BOARD_HEIGHT" type="number" value="8" required min="5" max="26" step="1" autocomplete="off" title="4以上20以下の整数を入力してください">
+          <input id="BOARD_HEIGHT" name="BOARD_HEIGHT" type="number" value="8" required min="5" max="26" step="1" pattern="^([1-9][0-9]*|0)$" inputmode="numeric" autocomplete="off" title="4以上20以下の整数を入力してください">
         </li>
         <li class="shown">
           <span class="label"><span name="label">AI手番</span></span>
@@ -267,6 +287,10 @@
               <label class="label" for="ai-yellow"><span class="color-text" data-color="yellow">YELLOW</span></label>
               <input id="ai-yellow" name="ai-color" type="checkbox" value="yellow" title="AIの色を選択してください">
             </li>
+            <li class="hidden">
+              <label class="label" for="ai-green"><span class="color-text" data-color="green">GREEN</span></label>
+              <input id="ai-green" name="ai-color" type="checkbox" value="green" title="AIの色を選択してください">
+            </li>
           </ul>
         </li>
         <li class="hidden">
@@ -291,9 +315,17 @@
           </select>
         </li>
       </ul>
-      <button id="enter" name="enter" type="button" title="パラメータの設定を確定します">ENTER</button>
-      <button id="default" name="default" type="button" title="パラメータの設定を初期化します">DEFAULT</button>
-      <button id="slide" name="slide" type="button" title="盤面位置にスライドします">SLIDE</button>
+      <ul class="button-list">
+        <li>
+          <button id="enter" name="enter" type="button" title="パラメータの設定を確定します">ENTER</button>
+        </li>
+        <li>
+          <button id="default" name="default" type="button" title="パラメータの設定を初期化します">DEFAULT</button>
+        </li>
+        <li>
+          <button id="slide" name="slide" type="button" title="盤面位置にスライドします">SLIDE</button>
+        </li>
+      </ul>
     </details>
     <hr>
 
@@ -725,9 +757,17 @@
       </table>
     </div>
     <div id="button-area" class="area">
-      <button id="assist" name="assist" type="button" title="4方向の連長の合計が最大になるマスが強調表示されます">ASSIST</button>
-      <button id="hint" name="hint" type="button" title="連長が勝利まで2であるマスが強調表示されます">HINT</button>
-      <button id="reset" name="reset" type="button" title="対局を初期化します">RESET</button>
+      <ul class="button-list">
+        <li>
+          <button id="assist" name="assist" type="button" title="着手可能なマスが強調表示されます">ASSIST</button>
+        </li>
+        <li>
+          <button id="hint" name="hint" type="button" title="各マスの評価値が表示されます">HINT</button>
+        </li>
+        <li>
+          <button id="reset" name="reset" type="button" title="対局を初期化します">RESET</button>
+        </li>
+      </ul>
     </div>
     <hr>
 
@@ -789,11 +829,6 @@
       <li>
         <a href="https://www.afsgames.com/connect5.htm" target="_blank">
           五目並べ | 無料ゲームは「ゲームのつぼ」 - ゲームのつぼ
-        </a>
-      </li>
-      <li>
-        <a href="https://play.google.com/store/apps/details?id=jp.co.unbalance.android.gomoku&hl=ja" target="_blank">
-          みんなの五目並べ ～連珠と五目の最強AI搭載～ - Google Play
         </a>
       </li>
     </ul>

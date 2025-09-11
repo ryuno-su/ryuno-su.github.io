@@ -83,22 +83,22 @@
         <ul class="details-content">
           <li>
             <span class="label"><label for="PTR_MAX"><code>PTR_MAX</code></label></span>
-            <input id="PTR_MAX" name="PTR_MAX" type="number" value="255" required min="0" max="65535" step="1" autocomplete="off" title="0以上65535以下の整数を入力してください">
+            <input id="PTR_MAX" name="PTR_MAX" type="number" value="255" required min="0" max="65535" step="1" pattern="^([1-9][0-9]*|0)$" inputmode="numeric" autocomplete="off" title="0以上65535以下の整数を入力してください">
             <span class="comment">メモリアドレスの上限値(下限値は0)</span>
           </li>
           <li>
             <span class="label"><label for="VAL_MAX"><code>VAL_MAX</code></label></span>
-            <input id="VAL_MAX" name="VAL_MAX" type="number" value="255" required min="0" max="4294967295" step="1" autocomplete="off" title="0以上4294967295以下の整数を入力してください">
+            <input id="VAL_MAX" name="VAL_MAX" type="number" value="255" required min="0" max="4294967295" step="1" pattern="^([1-9][0-9]*|0)$" inputmode="numeric" autocomplete="off" title="0以上4294967295以下の整数を入力してください">
             <span class="comment">メモリセルに格納できる上限値(下限値は0)</span>
           </li>
           <li>
             <span class="label"><label for="STEP_MAX"><code>STEP_MAX</code></label></span>
-            <input id="STEP_MAX" name="STEP_MAX" type="number" value="10000" required min="0" max="999999" step="1" autocomplete="off" title="0以上999999以下の整数を入力してください">
+            <input id="STEP_MAX" name="STEP_MAX" type="number" value="10000" required min="0" max="999999" step="1" pattern="^([1-9][0-9]*|0)$" inputmode="numeric" autocomplete="off" title="0以上999999以下の整数を入力してください">
             <span class="comment">実行ステップ数の上限値(999999を指定すると上限解除)</span>
           </li>
           <li>
             <span class="label"><label for="DELAY_MSEC"><code>DELAY_MSEC</code></label></span>
-            <input id="DELAY_MSEC" name="DELAY_MSEC" type="number" value="1" required min="0" max="5000" step="1" autocomplete="off" title="0以上5000以下の整数を入力してください">
+            <input id="DELAY_MSEC" name="DELAY_MSEC" type="number" value="1" required min="0" max="5000" step="1" pattern="^([1-9][0-9]*|0)$" inputmode="numeric" autocomplete="off" title="0以上5000以下の整数を入力してください">
             <span class="comment">一括実行時の各命令の待機時間[ms](0[ms]は最終結果のみ表示)</span>
           </li>
         </ul>
@@ -163,7 +163,7 @@
       </li>
       <li>
         <a href="https://www.nicovideo.jp/watch/sm10384056" target="_blank">
-          【プログラミング】Brainf*ckを作ってみた【実況解説・番外編】 - ニコニコ
+          【プログラミング】Brainf*ckを作ってみた【実況解説・番外編】 - ニコニコ動画
         </a>
       </li>
       <li>

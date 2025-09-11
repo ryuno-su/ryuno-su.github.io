@@ -79,7 +79,7 @@ svg {
   & > rect.background {
     width: 100%;
     height: 100%;
-    fill: limegreen;
+    fill: limegreen;    
     stroke: black;
     stroke-width: calc(var(--svg-bg-stroke-length) / 2);
   }
@@ -135,6 +135,10 @@ svg {
     }
     &[data-color="yellow"] > circle.stone {
       fill: yellow;
+    }
+    &[data-color="orange"] > circle.stone {
+      /* fill: orange; */
+      fill: rgb(255, 127, 0);
     }
     &[data-color="sentinel"] > circle.stone {
       fill: limegreen;
@@ -216,6 +220,16 @@ svg {
         fill: yellow;
       }
     }
+    &[data-color="orange"] {
+      & > rect.highlight-stone {
+        /* stroke: orange; */
+        stroke: rgb(255, 127, 0);
+      }
+      & > circle.stone {
+        /* fill: orange; */
+        fill: rgb(255, 127, 0);
+      }
+    }
     &[data-color="sentinel"] {
       & > rect.highlight-stone {
         stroke: limegreen;
@@ -256,6 +270,10 @@ svg {
     &[data-color="yellow"] > circle.assist-stone {
       stroke: yellow;
     }
+    &[data-color="orange"] > circle.assist-stone {
+      /* stroke: orange; */
+      stroke: rgb(255, 127, 0);
+    }
     &[data-color="sentinel"] > circle.assist-stone {
       stroke: limegreen;
     }
@@ -288,6 +306,10 @@ span.color-text {
   }
   &[data-color="yellow"] {
     color: yellow;
+  }
+  &[data-color="orange"] {
+    /* color: orange; */
+    color: rgb(255, 127, 0);
   }
   &[data-color="sentinel"] {
     color: limegreen;
@@ -332,8 +354,11 @@ details#parameter-area {
         & .label::after {
           padding-inline: 0.4rem 0.0rem;
         }
+        /* & span[data-color="white"] {
+          color: rgb(200, 200, 200);
+        } */
         & span:is([data-color="white"], [data-color="yellow"]) {
-          text-shadow: 0px 0px 1px black;
+          text-shadow: 0px 0px 2px black;
         }
       }
     }
@@ -357,7 +382,7 @@ details#parameter-area {
       }
     }
     & input {
-    &:is([type="number"], [type="text"]) {
+      &:is([type="number"], [type="text"]) {
         appearance: none;
         width: 1.1rem;
         &:invalid {
@@ -424,31 +449,44 @@ details#parameter-area {
   }
 }
 
-button {
-  appearance: none;
+ul.button-list {
   display: inline-block;
-  cursor: pointer;
-  text-align: center;
-  text-transform: uppercase;
-  color: black;
-  background-color: rgb(239, 239, 239);
-  outline: 1px solid black;
-  border: none;
-  border-radius: 3px;
-  line-height: 1;
   margin: 0px;
-  padding: 0.1rem 0.2rem;
-  &:disabled {
-    color: rgb(170, 170, 170);
-    background-color: rgba(239, 239, 239, 0.3);
-    outline-color: rgb(118, 118, 118);
-    opacity: 0.7;
+  padding: 0px;
+  width: fit-content;
+  & > li {
+    display: inline-block;
+    list-style: none;
+    margin-block-start: -0.3rem;
+    vertical-align: middle;
+    width: fit-content;
+    & > button {
+      appearance: none;
+      display: inline-block;
+      cursor: pointer;
+      text-align: center;
+      text-transform: uppercase;
+      color: black;
+      background-color: rgb(239, 239, 239);
+      outline: 1px solid black;
+      border: none;
+      border-radius: 3px;
+      line-height: 1;
+      margin: 0px;
+      padding: 0.1rem 0.2rem;
+      &:disabled {
+        color: rgb(170, 170, 170);
+        background-color: rgba(239, 239, 239, 0.3);
+        outline-color: rgb(118, 118, 118);
+        opacity: 0.7;
+      }
+    }
   }
   details#parameter-area > & {
     margin-block-start: 0.5rem;
   }
   div#button-area > & {
-    margin-block-start: 0.25rem;
+    margin-block-start: 0.2rem;
   }
 }
 
@@ -459,8 +497,7 @@ div#board-area {
   overflow: auto;
   & > table {
     table-layout: fixed;
-    border-collapse: collapse;
-    /* border-collapse: separate; */
+    border-collapse: separate;
     border-spacing: 0;
     margin: 0 auto;
     & :is(tr, td, th) {

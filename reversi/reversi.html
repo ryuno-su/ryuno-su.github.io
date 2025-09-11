@@ -63,6 +63,11 @@
         <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
         <text class="hidden" x="35%" y="65%"></text>
       </svg>
+      <svg class="cell" data-color="orange" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect class="background" x="0%" y="0%"></rect>
+        <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
+        <text class="hidden" x="35%" y="65%"></text>
+      </svg>
       <svg class="cell" data-color="sentinel" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background" x="0%" y="0%"></rect>
         <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
@@ -118,6 +123,12 @@
         <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
         <text class="hidden" x="35%" y="65%"></text>
       </svg>
+      <svg class="highlight" data-color="orange" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect class="background" x="0%" y="0%"></rect>
+        <rect class="highlight-stone" x="5%" y="5%"></rect>
+        <circle class="stone" cx="50%" cy="50%" r="40%"></circle>
+        <text class="hidden" x="35%" y="65%"></text>
+      </svg>
       <svg class="highlight" data-color="sentinel" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background" x="0%" y="0%"></rect>
         <rect class="highlight-stone" x="5%" y="5%"></rect>
@@ -166,6 +177,11 @@
         <circle class="assist-stone" cx="50%" cy="50%" r="40%"></circle>
         <text class="hidden" x="35%" y="65%"></text>
       </svg>
+      <svg class="assist" data-color="orange" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect class="background" x="0%" y="0%"></rect>
+        <circle class="assist-stone" cx="50%" cy="50%" r="40%"></circle>
+        <text class="hidden" x="35%" y="65%"></text>
+      </svg>
       <svg class="assist" data-color="sentinel" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background" x="0%" y="0%"></rect>
         <circle class="assist-stone" cx="50%" cy="50%" r="40%"></circle>
@@ -181,6 +197,7 @@
       <span class="color-text" data-color="cyan">CYAN</span>
       <span class="color-text" data-color="magenta">MAGENTA</span>
       <span class="color-text" data-color="yellow">YELLOW</span>
+      <span class="color-text" data-color="orange">ORANGE</span>
       <span class="color-text" data-color="sentinel">SENTINEL</span>
       <hr>
     </div>
@@ -197,15 +214,16 @@
             <option value="5">5</option>
             <option value="6">6</option>
             <option value="7">7</option>
+            <option value="8">8</option>
           </select>
         </li>
         <li class="shown">
           <span class="label"><label for="BOARD_WIDTH">盤面横幅</label></span>
-          <input id="BOARD_WIDTH" name="BOARD_WIDTH" type="number" value="8" required min="4" max="26" step="1" autocomplete="off" title="4以上20以下の整数を入力してください">
+          <input id="BOARD_WIDTH" name="BOARD_WIDTH" type="number" value="8" required min="4" max="26" step="1" pattern="^([1-9][0-9]*|0)$" inputmode="numeric" autocomplete="off" title="4以上20以下の整数を入力してください">
         </li>
         <li class="shown">
           <span class="label"><label for="BOARD_HEIGHT">盤面縦幅</label></span>
-          <input id="BOARD_HEIGHT" name="BOARD_HEIGHT" type="number" value="8" required min="4" max="26" step="1" autocomplete="off" title="4以上20以下の整数を入力してください">
+          <input id="BOARD_HEIGHT" name="BOARD_HEIGHT" type="number" value="8" required min="4" max="26" step="1" pattern="^([1-9][0-9]*|0)$" inputmode="numeric" autocomplete="off" title="4以上20以下の整数を入力してください">
         </li>
         <li class="shown">
           <span class="label"><span name="label">AI手番</span></span>
@@ -237,6 +255,10 @@
             <li class="hidden">
               <label class="label" for="ai-yellow"><span class="color-text" data-color="yellow">YELLOW</span></label>
               <input id="ai-yellow" name="ai-color" type="checkbox" value="yellow" title="AIの色を選択してください">
+            </li>
+            <li class="hidden">
+              <label class="label" for="ai-orange"><span class="color-text" data-color="orange">ORANGE</span></label>
+              <input id="ai-orange" name="ai-color" type="checkbox" value="orange" title="AIの色を選択してください">
             </li>
           </ul>
         </li>
@@ -812,6 +834,11 @@
     <h2>Reference</h2>
     <ul>
       <li>
+        <a href="https://ja.wikipedia.org/wiki/%E3%82%AA%E3%82%BB%E3%83%AD_(%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B2%E3%83%BC%E3%83%A0)" target="_blank">
+          オセロ (ボードゲーム) - Wikipedia
+        </a>
+      </li>
+      <li>
         <a href="https://www.othello.org/lesson/lesson/rule.html" target="_blank">
           オセロのルール - Othello! JAPAN
         </a>
@@ -823,12 +850,7 @@
       </li>
       <li>
         <a href="https://www.nicovideo.jp/watch/sm8391299" target="_blank">
-          【プログラミング】オセロを1時間で作ってみた【実況解説】 - ニコニコ
-        </a>
-      </li>
-      <li>
-        <a href="https://magazine.techacademy.jp/magazine/22767" target="_blank">
-          JavaScriptでオセロゲームを作成する方法を現役エンジニアが解説【初心者向け】 - テックアカデミー
+          【プログラミング】オセロを1時間で作ってみた【実況解説】 - ニコニコ動画
         </a>
       </li>
       <li>

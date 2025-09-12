@@ -14,6 +14,17 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <style
+     id="style1">
+      rect {
+         stroke: black;
+      }
+      @media (prefers-color-scheme: dark) {
+         rect {
+            stroke: white;
+         }
+      }
+  </style>
   <sodipodi:namedview
      id="namedview1"
      pagecolor="#ffffff"
@@ -47,7 +58,6 @@
          width="50%"
          height="50%"
          fill="limegreen"
-         stroke="black"
          stroke-width="1.7"
          id="rect1" />
       <circle
@@ -65,7 +75,6 @@
          width="50%"
          height="50%"
          fill="limegreen"
-         stroke="black"
          stroke-width="1.7"
          id="rect2" />
       <circle
@@ -83,7 +92,6 @@
          width="50%"
          height="50%"
          fill="limegreen"
-         stroke="black"
          stroke-width="1.7"
          id="rect3" />
       <circle
@@ -101,7 +109,6 @@
          width="50%"
          height="50%"
          fill="limegreen"
-         stroke="black"
          stroke-width="1.7"
          id="rect4" />
       <circle

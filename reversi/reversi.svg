@@ -2,27 +2,38 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   id="svg1"
    width="180"
    height="180"
    viewBox="0 0 180 180"
    version="1.1"
-   id="svg1"
    sodipodi:docname="reversi.svg"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <style
      id="style1">
-      rect {
+      rect.background {
+         fill: limegreen;
          stroke: black;
-      }
-      @media (prefers-color-scheme: dark) {
-         rect {
+         stroke-width: 2;
+         @media (prefers-color-scheme: dark) {
             stroke: white;
          }
+      }
+      circle.stone#circle1 {
+         fill: white;
+      }
+      circle.stone#circle2 {
+         fill: black;
+      }
+      circle.stone#circle3 {
+         fill: red;
+      }
+      circle.stone#circle4 {
+         fill: blue;
       }
   </style>
   <sodipodi:namedview
@@ -47,76 +58,80 @@
   <defs
      id="defs1" />
   <g
+     id="layer1"
      inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1">
+     inkscape:groupmode="layer">
     <g
-       id="g1">
+       id="g1"
+       class="cell"
+       inkscape:label="NE">
       <rect
+         id="rect1"
+         class="background"
          x="0%"
          y="0%"
          width="50%"
-         height="50%"
-         fill="limegreen"
-         stroke-width="1.7"
-         id="rect1" />
+         height="50%" />
       <circle
+         id="circle1"
+         class="stone"
          cx="25%"
          cy="25%"
-         r="20%"
-         fill="white"
-         id="circle1" />
+         r="20%" />
     </g>
     <g
-       id="g2">
+       id="g2"
+       class="cell"
+       inkscape:label="NW">
       <rect
+         id="rect2"
+         class="background"
          x="50%"
          y="0%"
          width="50%"
-         height="50%"
-         fill="limegreen"
-         stroke-width="1.7"
-         id="rect2" />
+         height="50%" />
       <circle
+         id="circle2"
+         class="stone"
          cx="75%"
          cy="25%"
-         r="20%"
-         fill="black"
-         id="circle2" />
+         r="20%" />
     </g>
     <g
-       id="g3">
+       id="g3"
+       class="cell"
+       inkscape:label="SE">
       <rect
+         id="rect3"
+         class="background"
          x="0%"
          y="50%"
          width="50%"
-         height="50%"
-         fill="limegreen"
-         stroke-width="1.7"
-         id="rect3" />
+         height="50%" />
       <circle
+         id="circle3"
+         class="stone"
          cx="25%"
          cy="75%"
-         r="20%"
-         fill="black"
-         id="circle3" />
+         r="20%" />
     </g>
     <g
-       id="g4">
+       id="g4"
+       class="cell"
+       inkscape:label="SW">
       <rect
+         id="rect4"
+         class="background"
          x="50%"
          y="50%"
          width="50%"
-         height="50%"
-         fill="limegreen"
-         stroke-width="1.7"
-         id="rect4" />
+         height="50%" />
       <circle
+         id="circle4"
+         class="stone"
          cx="75%"
          cy="75%"
-         r="20%"
-         fill="white"
-         id="circle4" />
+         r="20%" />
     </g>
   </g>
 </svg>

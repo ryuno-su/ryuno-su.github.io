@@ -2,17 +2,18 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   id="svg1"
    width="180"
    height="180"
    viewBox="0 0 180 180"
    version="1.1"
-   id="svg1"
    sodipodi:docname="brainfuck.svg"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+   <!-- fill="white"> apple-touch-icon png -->
   <style
      id="style1">
       rect {
@@ -35,8 +36,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      inkscape:zoom="6.6277778"
-     inkscape:cx="90.07544"
-     inkscape:cy="89.094719"
+     inkscape:cx="90.15088"
+     inkscape:cy="89.245599"
      inkscape:window-width="2256"
      inkscape:window-height="1470"
      inkscape:window-x="-11"
@@ -46,120 +47,175 @@
   <defs
      id="defs1" />
   <g
+     id="layer1"
      inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1">
+     inkscape:groupmode="layer">
+     <!-- transform="matrix(0.77777778,0,0,0.77777778,20,20)"> apple-touch-icon png -->
     <g
-       data-name="["
-       id="g1">
+       id="g1"
+       inkscape:label="[">
+       <!--
+       x="0"
+       y="0"
+       width="30"
+       height="180"
+       -->
       <rect
+         id="rect1-1"
          x="0"
          y="0"
          width="30"
-         height="10"
-         id="rect1-1" />
+         height="10" />
       <rect
+         id="rect1-2"
          x="0"
          y="0"
          width="10"
-         height="180"
-         id="rect1-2" />
+         height="180" />
       <rect
+         id="rect1-3"
          x="0"
          y="170"
          width="30"
-         height="10"
-         id="rect1-3" />
+         height="10" />
     </g>
     <g
-       data-name="]"
-       id="g2">
+       id="g2"
+       inkscape:label="]">
+       <!--
+       x="150"
+       y="0"
+       width="30"
+       height="180"
+       -->
       <rect
+         id="rect2-1"
          x="150"
          y="0"
          width="30"
-         height="10"
-         id="rect2-1" />
+         height="10" />
       <rect
+         id="rect2-2"
          x="170"
          y="0"
          width="10"
-         height="180"
-         id="rect2-2" />
+         height="180" />
       <rect
+         id="rect2-3"
          x="150"
          y="170"
          width="30"
-         height="10"
-         id="rect2-3" />
+         height="10" />
     </g>
     <g
-       data-name="+"
-       id="g3">
+       id="g3"
+       inkscape:label="+">
+       <!--
+       x="30"
+       y="30"
+       width="50"
+       height="50"
+       -->
       <rect
+         id="rect3-1"
          x="30"
          y="50"
          width="50"
-         height="10"
-         id="rect3-1" />
+         height="10" />
       <rect
+         id="rect3-2"
          x="50"
          y="30"
          width="10"
-         height="50"
-         id="rect3-2" />
+         height="50" />
     </g>
     <g
-       data-name="-"
-       id="g4">
+       id="g4"
+       inkscape:label="-">
+       <!--
+       x="100"
+       y="50"
+       width="50"
+       height="10"
+       -->
       <rect
+         id="rect4-1"
          x="100"
          y="50"
          width="50"
-         height="10"
-         id="rect4-1" />
+         height="10" />
     </g>
     <g
-       data-name="&gt;"
        id="g5"
-       transform="matrix(1.1547,0,0,0.792481,-8.5085287,25.939887)">
+       inkscape:label="&gt;"
+       transform="matrix(1.1547005,0,0,0.76340565,-8.5085335,28.657062)">
+       <!--
+       x="30"
+       y="100"
+       width="50"
+       height="50"
+       translate() scale() -> matrix()
+       -->
       <rect
+         id="rect5-1"
          x="38.508533"
          y="74.199234"
          width="50"
-         height="11.547006"
-         transform="matrix(0.8660254,0.5,0,1,0,0)"
-         style="stroke-width:1.07457"
-         id="rect5-1" />
+         height="13.95"
+         transform="matrix(0.8660254,0.5,0,1,0,0)" />
+         <!--
+         平行四辺形の高さ=約10 -> height="13.95"
+         角度=約30deg
+         skew() rotate() translate() -> matrix()
+         -->
       <rect
+         id="rect5-2"
          x="38.508533"
          y="164.25377"
          width="50"
-         height="11.547006"
-         transform="matrix(0.8660254,-0.5,0,1,0,0)"
-         style="stroke-width:1.07457"
-         id="rect5-2" />
+         height="13.95"
+         transform="matrix(0.8660254,-0.5,0,1,0,0)" />
+         <!--
+         平行四辺形の高さ=約10 -> height="13.95"
+         角度=約30deg
+         skew() rotate() translate() -> matrix()
+         -->
     </g>
     <g
-       data-name="&lt;"
        id="g6"
-       transform="matrix(1.1547,0,0,0.792481,-19.337492,25.939887)">
+       inkscape:label="&lt;"
+       transform="matrix(1.1547005,0,0,0.76340565,-19.337547,28.657062)">
+       <!--
+       x="100"
+       y="100"
+       width="50"
+       height="50"
+       translate() scale() -> matrix()
+       -->
       <rect
+         id="rect6-1"
          x="119.33755"
          y="178.12228"
          width="50"
-         height="11.547006"
-         transform="matrix(0.8660254,-0.5,0,1,0,0)"
-         style="stroke-width:1.07457"
-         id="rect6-1" />
+         height="13.95"
+         transform="matrix(0.8660254,-0.5,0,1,0,0)" />
+         <!--
+         平行四辺形の高さ=約10 -> height="13.95"
+         角度=約30deg
+         skew() rotate() translate() -> matrix()
+         -->
       <rect
+         id="rect6-2"
          x="119.33755"
          y="60.330715"
          width="50"
-         height="11.547006"
-         transform="matrix(0.8660254,0.5,0,1,0,0)"
-         style="stroke-width:1.07457"
-         id="rect6-2" />
+         height="13.95"
+         transform="matrix(0.8660254,0.5,0,1,0,0)" />
+         <!--
+         平行四辺形の高さ=約10 -> height="13.95"
+         角度=約30deg
+         skew() rotate() translate() -> matrix()
+         -->
     </g>
   </g>
 </svg>

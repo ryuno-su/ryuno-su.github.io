@@ -7,9 +7,9 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="Brainfuck">
   <title>Brainfuck</title>
-  <link rel="icon" href="/brainfuck.ico" sizes="32x32">
-  <link rel="icon" type="image/svg+xml" href="/brainfuck.svg" sizes="any">
-  <link rel="apple-touch-icon" type="image/png" href="/brainfuck.png" sizes="180x180">
+  <link rel="icon" href="brainfuck.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="brainfuck.svg" sizes="any">
+  <link rel="apple-touch-icon" type="image/png" href="brainfuck.png" sizes="180x180">
   <link rel="stylesheet" type="text/css" href="brainfuck.css">
   <!-- <script type="text/javascript" src="brainfuck.js" defer></script> -->
   <script type="text/javascript" src="brainfuck.min.js" defer></script>
@@ -28,52 +28,52 @@
         <ul class="details-content">
           <li>
             <span class="label"><label for="PTR_INCREMENT"><code>PTR_INCREMENT</code></label></span>
-            <input id="PTR_INCREMENT" name="PTR_INCREMENT" type="text" value=">" required minlength="1" maxlength="1" inputmode="url" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
+            <input id="PTR_INCREMENT" name="PTR_INCREMENT" type="text" value=">" required minlength="1" maxlength="1" inputmode="text" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
             <span class="comment">ポインタをインクリメントする</span>
           </li>
           <li>
             <span class="label"><label for="PTR_DECREMENT"><code>PTR_DECREMENT</code></label></span>
-            <input id="PTR_DECREMENT" name="PTR_DECREMENT" type="text" value="<" required minlength="1" maxlength="1" inputmode="url" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
+            <input id="PTR_DECREMENT" name="PTR_DECREMENT" type="text" value="<" required minlength="1" maxlength="1" inputmode="text" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
             <span class="comment">ポインタをデクリメントする</span>
           </li>
           <li>
             <span class="label"><label for="VAL_INCREMENT"><code>VAL_INCREMENT</code></label></span>
-            <input id="VAL_INCREMENT" name="VAL_INCREMENT" type="text" value="+" required minlength="1" maxlength="1" inputmode="url" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
+            <input id="VAL_INCREMENT" name="VAL_INCREMENT" type="text" value="+" required minlength="1" maxlength="1" inputmode="text" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
             <span class="comment">ポインタが指す値をインクリメントする</span>
           </li>
           <li>
             <span class="label"><label for="VAL_DECREMENT"><code>VAL_DECREMENT</code></label></span>
-            <input id="VAL_DECREMENT" name="VAL_DECREMENT" type="text" value="-" required minlength="1" maxlength="1" inputmode="url" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
+            <input id="VAL_DECREMENT" name="VAL_DECREMENT" type="text" value="-" required minlength="1" maxlength="1" inputmode="text" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
             <span class="comment">ポインタが指す値をデクリメントする</span>
           </li>
           <li>
             <span class="label"><label for="VAL_INPUT"><code>VAL_INPUT</code></label></span>
-            <input id="VAL_INPUT" name="VAL_INPUT" type="text" value="," required minlength="1" maxlength="1" inputmode="url" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
+            <input id="VAL_INPUT" name="VAL_INPUT" type="text" value="," required minlength="1" maxlength="1" inputmode="text" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
             <span class="comment">入力から1文字読み込んで、ポインタが指す先に代入する</span>
           </li>
           <li>
             <span class="label"><label for="VAL_OUTPUT"><code>VAL_OUTPUT</code></label></span>
-            <input id="VAL_OUTPUT" name="VAL_OUTPUT" type="text" value="." required minlength="1" maxlength="1" inputmode="url" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
+            <input id="VAL_OUTPUT" name="VAL_OUTPUT" type="text" value="." required minlength="1" maxlength="1" inputmode="text" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
             <span class="comment">ポインタが指す値を文字として出力に書き出す</span>
           </li>
           <li>
             <span class="label"><label for="LOOP_BEGIN"><code>LOOP_BEGIN</code></label></span>
-            <input id="LOOP_BEGIN" name="LOOP_BEGIN" type="text" value="[" required minlength="1" maxlength="1" inputmode="url" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
+            <input id="LOOP_BEGIN" name="LOOP_BEGIN" type="text" value="[" required minlength="1" maxlength="1" inputmode="text" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
             <span class="comment">ポインタが指す値が0なら、対応する<code>LOOP_END</code>の直後にジャンプする</span>
           </li>
           <li>
             <span class="label"><label for="LOOP_END"><code>LOOP_END</code></label></span>
-            <input id="LOOP_END" name="LOOP_END" type="text" value="]" required minlength="1" maxlength="1" inputmode="url" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
+            <input id="LOOP_END" name="LOOP_END" type="text" value="]" required minlength="1" maxlength="1" inputmode="text" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
             <span class="comment">ポインタが指す値が0でないなら、対応する<code>LOOP_BEGIN</code>の直後にジャンプする</span>
           </li>
           <li>
             <span class="label"><label for="BREAK_POINT"><code>BREAK_POINT</code></label></span>
-            <input id="BREAK_POINT" name="BREAK_POINT" type="text" value="@" required minlength="1" maxlength="1" inputmode="url" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
+            <input id="BREAK_POINT" name="BREAK_POINT" type="text" value="@" required minlength="1" maxlength="1" inputmode="text" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
             <span class="comment">ブレークポイント(実行を一時停止する)</span>
           </li>
           <li>
             <span class="label"><label for="COMMENT_LINE"><code>COMMENT_LINE</code></label></span>
-            <input id="COMMENT_LINE" name="COMMENT_LINE" type="text" value="#" required minlength="1" maxlength="1" inputmode="url" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
+            <input id="COMMENT_LINE" name="COMMENT_LINE" type="text" value="#" required minlength="1" maxlength="1" inputmode="text" autocomplete="off" spellcheck="false" title="長さ1の文字列を重複なく入力してください">
             <span class="comment">コメント行</span>
           </li>
         </ul>
@@ -107,11 +107,11 @@
 
       <div id="source-area" class="area">
         <label class="label" for="source">source code</label>
-        <textarea type="text" id="source" name="program" inputmode="url" autocomplete="off" spellcheck="false" title="ソースコードを入力してください"> ++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.</textarea>
+        <textarea type="text" id="source" name="program" inputmode="text" autocomplete="off" spellcheck="false" title="ソースコードを入力してください"> ++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.</textarea>
       </div>
       <div id="input-area" class="area">
         <label class="label" for="input">input</label>
-        <textarea type="text" id="input" name="input" inputmode="url" autocomplete="off" spellcheck="false" title="入力命令に対するデータを入力してください"></textarea>
+        <textarea type="text" id="input" name="input" inputmode="text" autocomplete="off" spellcheck="false" title="入力命令に対するデータを入力してください"></textarea>
       </div>
       <div id="run-area" class="area">
         <ul>

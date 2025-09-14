@@ -3,15 +3,6 @@
 !/LICENCE
 !/index.html
 !/404.html
-!/brainfuck.ico
-!/reversi.ico
-!/gomoku.ico
-!/brainfuck.png
-!/reversi.png
-!/gomoku.png
-!/brainfuck.svg
-!/reversi.svg
-!/gomoku.svg
 
 /brainfuck/*
 !/brainfuck/brainfuck.html

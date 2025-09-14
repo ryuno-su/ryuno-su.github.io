@@ -412,11 +412,8 @@ details#parameter-area {
         & .label::after {
           padding-inline: 0.4rem 0.0rem;
         }
-        /* & span[data-color="white"] {
-          color: rgb(200, 200, 200);
-        } */
         & span:is([data-color="white"], [data-color="yellow"]) {
-          text-shadow: 0px 0px 2px black;
+          text-shadow: 0px 0px 1.5px black;
         }
       }
     }
@@ -551,7 +548,7 @@ ul.button-list {
 div#board-area {
   font-size: 0;
   max-width: 100%;
-  max-height: calc(99dvh - 4.5rem + 0.2rem + 0.5rem);
+  max-height: calc(99dvh - 0.2rem - 1.4rem - 0.5rem - 0.2rem - 1.4rem - 1.4rem);
   overflow: auto;
   & > table {
     table-layout: fixed;
@@ -677,6 +674,8 @@ footer {
 
 /* モバイル端末用 */
 @media (width < var(--mobile-length)) or (height < var(--mobile-length)) {
+/* デバッグ用 */
+/* @media (orientation: portrait) { */
   html {
     font-size: 18px;
   }

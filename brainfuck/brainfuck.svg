@@ -13,18 +13,29 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-   <!-- fill="white"> apple-touch-icon png -->
+  <!-- style="background-color: white;"> --> <!-- export apple-touch-icon png -->
   <style
      id="style1">
       rect {
          fill: black;
-      }
-      @media (prefers-color-scheme: dark) {
-         rect {
+         @media (prefers-color-scheme: dark) {
             fill: white;
          }
       }
   </style>
+  <!-- export apple-touch-icon png -->
+  <!--
+  <style
+     id="style2"
+     class="apple-touch-icon-png">
+      svg#svg1 {
+         background-color: white;
+      }
+      g#layer1 {
+         transform: matrix(0.77777778,0,0,0.77777778,20,20);
+      }
+  </style>
+  -->
   <sodipodi:namedview
      id="namedview1"
      pagecolor="#ffffff"
@@ -35,22 +46,29 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     inkscape:zoom="6.6277778"
-     inkscape:cx="90.15088"
-     inkscape:cy="89.245599"
+     inkscape:zoom="5.78"
+     inkscape:cx="90.224913"
+     inkscape:cy="89.359862"
      inkscape:window-width="2256"
      inkscape:window-height="1470"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     inkscape:export-bgcolor="#ffffffff" />
   <defs
      id="defs1" />
   <g
      id="layer1"
      inkscape:label="Layer 1"
      inkscape:groupmode="layer">
-     <!-- transform="matrix(0.77777778,0,0,0.77777778,20,20)"> apple-touch-icon png -->
+     <!-- transform="matrix(0.83333333,0,0,0.83333333,15,15)"> --> <!-- export apple-touch-icon png -->
+     <!-- transform="matrix(0.77777778,0,0,0.77777778,20,20)"> --> <!-- export apple-touch-icon png -->
+     <!--
+     padding=15px -> 拡大縮小150px
+     padding=20px -> 拡大縮小140px
+     scale() translate() -> matrix()
+     -->
     <g
        id="g1"
        inkscape:label="[">
@@ -65,19 +83,22 @@
          x="0"
          y="0"
          width="30"
-         height="10" />
+         height="10"
+         fill="#000000" />
       <rect
          id="rect1-2"
          x="0"
          y="0"
          width="10"
-         height="180" />
+         height="180"
+         fill="#000000" />
       <rect
          id="rect1-3"
          x="0"
          y="170"
          width="30"
-         height="10" />
+         height="10"
+         fill="#000000" />
     </g>
     <g
        id="g2"
@@ -93,19 +114,22 @@
          x="150"
          y="0"
          width="30"
-         height="10" />
+         height="10"
+         fill="#000000" />
       <rect
          id="rect2-2"
          x="170"
          y="0"
          width="10"
-         height="180" />
+         height="180"
+         fill="#000000" />
       <rect
          id="rect2-3"
          x="150"
          y="170"
          width="30"
-         height="10" />
+         height="10"
+         fill="#000000" />
     </g>
     <g
        id="g3"
@@ -121,13 +145,15 @@
          x="30"
          y="50"
          width="50"
-         height="10" />
+         height="10"
+         fill="#000000" />
       <rect
          id="rect3-2"
          x="50"
          y="30"
          width="10"
-         height="50" />
+         height="50"
+         fill="#000000" />
     </g>
     <g
        id="g4"
@@ -143,7 +169,8 @@
          x="100"
          y="50"
          width="50"
-         height="10" />
+         height="10"
+         fill="#000000" />
     </g>
     <g
        id="g5"
@@ -154,7 +181,7 @@
        y="100"
        width="50"
        height="50"
-       translate() scale() -> matrix()
+       scale() translate() -> matrix()
        -->
       <rect
          id="rect5-1"
@@ -162,11 +189,12 @@
          y="74.199234"
          width="50"
          height="13.95"
-         transform="matrix(0.8660254,0.5,0,1,0,0)" />
+         transform="matrix(0.8660254,0.5,0,1,0,0)"
+         fill="#000000" />
          <!--
          平行四辺形の高さ=約10 -> height="13.95"
-         角度=約30deg
-         skew() rotate() translate() -> matrix()
+         傾斜,回転角度=約30deg
+         translate() rotate() skew() -> matrix()
          -->
       <rect
          id="rect5-2"
@@ -174,11 +202,12 @@
          y="164.25377"
          width="50"
          height="13.95"
-         transform="matrix(0.8660254,-0.5,0,1,0,0)" />
+         transform="matrix(0.8660254,-0.5,0,1,0,0)"
+         fill="#000000" />
          <!--
          平行四辺形の高さ=約10 -> height="13.95"
-         角度=約30deg
-         skew() rotate() translate() -> matrix()
+         傾斜,回転角度=約30deg
+         translate() rotate() skew() -> matrix()
          -->
     </g>
     <g
@@ -190,7 +219,7 @@
        y="100"
        width="50"
        height="50"
-       translate() scale() -> matrix()
+       scale() translate() -> matrix()
        -->
       <rect
          id="rect6-1"
@@ -198,11 +227,12 @@
          y="178.12228"
          width="50"
          height="13.95"
-         transform="matrix(0.8660254,-0.5,0,1,0,0)" />
+         transform="matrix(0.8660254,-0.5,0,1,0,0)"
+         fill="#000000" />
          <!--
          平行四辺形の高さ=約10 -> height="13.95"
-         角度=約30deg
-         skew() rotate() translate() -> matrix()
+         傾斜,回転角度=約30deg
+         translate() rotate() skew() -> matrix()
          -->
       <rect
          id="rect6-2"
@@ -210,11 +240,12 @@
          y="60.330715"
          width="50"
          height="13.95"
-         transform="matrix(0.8660254,0.5,0,1,0,0)" />
+         transform="matrix(0.8660254,0.5,0,1,0,0)"
+         fill="#000000" />
          <!--
          平行四辺形の高さ=約10 -> height="13.95"
-         角度=約30deg
-         skew() rotate() translate() -> matrix()
+         傾斜,回転角度=約30deg
+         translate() rotate() skew() -> matrix()
          -->
     </g>
   </g>

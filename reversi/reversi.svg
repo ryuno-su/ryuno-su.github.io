@@ -30,10 +30,10 @@
          fill: black;
       }
       circle.stone#circle3 {
-         fill: red;
+         fill: black;
       }
       circle.stone#circle4 {
-         fill: blue;
+         fill: white;
       }
   </style>
   <sodipodi:namedview
@@ -46,7 +46,7 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     inkscape:zoom="6.6277778"
+     inkscape:zoom="5.78"
      inkscape:cx="90"
      inkscape:cy="90"
      inkscape:window-width="2256"
@@ -71,13 +71,17 @@
          x="0%"
          y="0%"
          width="50%"
-         height="50%" />
+         height="50%"
+         fill="limegreen"
+         stroke="black"
+         stroke-width="2" />
       <circle
          id="circle1"
          class="stone"
          cx="25%"
          cy="25%"
-         r="20%" />
+         r="20%"
+         fill="white" />
     </g>
     <g
        id="g2"
@@ -89,13 +93,17 @@
          x="50%"
          y="0%"
          width="50%"
-         height="50%" />
+         height="50%"
+         fill="limegreen"
+         stroke="black"
+         stroke-width="2" />
       <circle
          id="circle2"
          class="stone"
          cx="75%"
          cy="25%"
-         r="20%" />
+         r="20%"
+         fill="black" />
     </g>
     <g
        id="g3"
@@ -107,13 +115,17 @@
          x="0%"
          y="50%"
          width="50%"
-         height="50%" />
+         height="50%"
+         fill="limegreen"
+         stroke="black"
+         stroke-width="2" />
       <circle
          id="circle3"
          class="stone"
          cx="25%"
          cy="75%"
-         r="20%" />
+         r="20%"
+         fill="black" />
     </g>
     <g
        id="g4"
@@ -125,13 +137,17 @@
          x="50%"
          y="50%"
          width="50%"
-         height="50%" />
+         height="50%"
+         fill="limegreen"
+         stroke="black"
+         stroke-width="2" />
       <circle
          id="circle4"
          class="stone"
          cx="75%"
          cy="75%"
-         r="20%" />
+         r="20%"
+         fill="white" />
     </g>
   </g>
 </svg>

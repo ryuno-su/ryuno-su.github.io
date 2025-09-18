@@ -42,6 +42,7 @@
 !/library/class.min.js
 !/library/function.min.js
 !/library/closure.min.js
+!/library/prototype.min.js
 
 /yashima/*
 !/yashima/yashima.html

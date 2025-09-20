@@ -268,17 +268,17 @@ footer {
 
 /* モバイル端末用 */
 /* @media (width < var(--mobile-length)) or (height < var(--mobile-length)) { */
-  @media (orientation: portrait) {
-    div#result-area {
-      height: calc(100vw / 1.7);
+/* デバッグ用 */
+@media (orientation: portrait) {
+  div#result-area {
+    height: calc(100vw / 1.7);
+    & > div:not(.title-area) {
+      margin-bottom: calc((100vw / 1.7 - 9.75vw - 15.6vw - 3.9vw - 3.25vw - 1.3vw) / 6);
+    }
+    &:has(div.countdown2.hidden) {
       & > div:not(.title-area) {
-        margin-bottom: calc((100vw / 1.7 - 9.75vw - 15.6vw - 3.9vw - 3.25vw - 1.3vw) / 6);
-      }
-      &:has(div.countdown2.hidden) {
-        & > div:not(.title-area) {
-          margin-bottom: calc((100vw / 1.7 - 6.5vw - 10.4vw - 3.9vw - 2.6vw - 1.3vw) / 4);
-        }
+        margin-bottom: calc((100vw / 1.7 - 6.5vw - 10.4vw - 3.9vw - 2.6vw - 1.3vw) / 4);
       }
     }
   }
-/* } */
+}

@@ -257,7 +257,7 @@
           <input id="BOARD_HEIGHT" name="BOARD_HEIGHT" type="number" value="8" required min="5" max="26" step="1" pattern="^([1-9][0-9]*|0)$" inputmode="numeric" autocomplete="off" title="4以上20以下の整数を入力してください">
         </li>
         <li class="shown">
-          <span class="label"><span name="label">AI手番</span></span>
+          <span class="label"><label for="ai-black">AI手番</label></span>
           <ul id="AI_LIST">
             <li class="shown">
               <label class="label" for="ai-black"><span class="color-text" data-color="black">BLACK</span></label>
@@ -308,6 +308,8 @@
           <select id="DELAY_MSEC" name="DELAY_MSEC" required autocomplete="off" title="以下のいずれかの値を選択してください">
             <option value="0">0ms</option>
             <option value="1">1ms</option>
+            <option value="20">20ms</option>
+            <option value="50">50ms</option>
             <option value="200">200ms</option>
             <option value="500" selected>500ms</option>
             <option value="2000">2000ms</option>

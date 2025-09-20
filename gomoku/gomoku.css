@@ -30,13 +30,8 @@ html {
 /* CSS変数定義 */
 :root {
   --board-length: calc(8 * 80px);
-  @media (orientation: portrait) {
-    --board-length: 99vw;
-  }
-  @media (orientation: landscape) {
-    --board-length: 70dvh;
-  }
-  --svg-length: clamp(40px, var(--board-length) / 10, 80px);
+  --board-length: 70dvh;
+  --svg-length: clamp(40px, var(--board-length) / (8 + 2), 80px);
   --svg-bg-stroke-length: clamp(1.0px, var(--svg-length) * 1.25 / 80, 1.25px);
   --svg-st-stroke-length: clamp(1.25px, var(--svg-length) * 2.5 / 80, 2.5px);
   --mobile-length: 560px;
@@ -50,8 +45,8 @@ html {
   margin: 0.2rem;
 }
 
-:focus:not(div#board-area) {
-  outline: -webkit-focus-ring-color auto 1px;
+:focus {
+  outline: 1px auto -webkit-focus-ring-color;
 }
 
 hr {
@@ -75,6 +70,7 @@ svg {
   height: var(--svg-length);
   margin: 0;
   padding: 0;
+  cursor: pointer;
   & > rect.background {
     width: 100%;
     height: 100%;
@@ -83,7 +79,6 @@ svg {
     stroke-width: calc(var(--svg-bg-stroke-length) / 2);
   }
   &:hover {
-    cursor: pointer;
     & > rect.background {
       fill: gold;
     }
@@ -115,6 +110,7 @@ svg {
       fill: yellow;
     }
     &[data-color="green"] > circle.stone {
+      /* fill: green; */
       fill: limegreen;
     }
     &[data-color="sentinel"] > circle.stone {
@@ -195,9 +191,11 @@ svg {
     }
     &[data-color="green"] {
       & > rect.highlight-stone {
+        /* stroke: green; */
         stroke: limegreen;
       }
       & > circle.stone {
+        /* fill: green; */
         fill: limegreen;
       }
     }
@@ -242,6 +240,7 @@ svg {
       stroke: yellow;
     }
     &[data-color="green"] > circle.assist-stone {
+      /* stroke: green; */
       stroke: limegreen;
     }
     &[data-color="sentinel"] > circle.assist-stone {
@@ -320,9 +319,11 @@ svg {
     }
     &[data-color="green"] {
       & > circle.hint-stone {
+        /* stroke: green; */
         stroke: limegreen;
       }
       & > circle.stone {
+        /* fill: green; */
         fill: limegreen;
       }
     }
@@ -365,6 +366,7 @@ span.color-text {
     color: yellow;
   }
   &[data-color="green"] {
+    /* color: green; */
     color: limegreen;
   }
   &[data-color="sentinel"] {
@@ -375,9 +377,7 @@ span.color-text {
 details#parameter-area {
   & > summary {
     width: fit-content;
-    &:hover {
-      cursor: pointer;
-    }
+    cursor: pointer;
     &::after {
       content: ":";
     }
@@ -399,10 +399,16 @@ details#parameter-area {
       margin: 0px;
       margin-inline-end: 0.2rem;
       width: fit-content;
+      &.disabled {
+        & label.label {
+          opacity: 0.7;
+        }
+        & input[type="checkbox"] {
+          opacity: 1;
+        }
+      }
       & li {
-        vertical-align: middle;
         margin-block-start: -0.2rem;
-        width: fit-content;
         &.shown {
           display: inline-block;
         }
@@ -413,8 +419,21 @@ details#parameter-area {
           padding-inline: 0.4rem 0.0rem;
         }
         & span:is([data-color="white"], [data-color="yellow"]) {
-          text-shadow: 0px 0px 1.5px black;
+          text-shadow: 0px 0px 2px black;
         }
+        & input[type="checkbox"] {
+          line-height: 1;
+        }
+      }
+    }
+    & select {
+      margin-inline-start: -0.5px;
+      padding-block: 0.0rem 0.2rem;
+      height: 1.1lh;
+      outline: none;
+      border: 1px solid black;
+      &:disabled {
+        border-color: rgb(120, 120, 120);
       }
     }
     & li {
@@ -425,7 +444,7 @@ details#parameter-area {
       &.shown {
         display: list-item;
       }
-      & label, & span[name="label"] {
+      & label {
         display: inline-block;
         vertical-align: middle;
         width: 3.9rem;
@@ -437,13 +456,14 @@ details#parameter-area {
       }
     }
     & input {
-      &[type="number"], &[type="text"] {
+      border: none;
+      &:is([type="number"], [type="text"]) {
         appearance: none;
         width: 1.1rem;
-      }
-      :is(&[type="number"], &[type="text"]):invalid {
-        outline: 2px dashed red;
-        outline-offset: -1px;
+        &:invalid {
+          outline: 2px dashed red;
+          outline-offset: -1px;
+        }
       }
       &[type="number"]::-webkit-inner-spin-button,
       &[type="number"]::-webkit-outer-spin-button {
@@ -452,13 +472,27 @@ details#parameter-area {
       &[type="checkbox"] {
         display: inline-block;
         margin: 0px;
+        margin-inline-start: -1px;
         vertical-align: middle;
         width: 1lh;
         height: 1lh;
-        ul#AI_LIST & {
-          line-height: 1;
-        }
+
+        color: black;
+        background-color: white;
+        opacity: 1;
       }
+    }
+    & .label:has(+ :is(.disabled, :disabled)) {
+      cursor: default;
+      & > label {
+        cursor: default;
+      }
+    }
+    & :is(label, .label, input:not([type="number"], [type="text"]), select) {
+      cursor: pointer;
+    }
+    & :is(input, select):valid:focus {
+      outline: 1px auto -webkit-focus-ring-color;
     }
     & ul#AI_LIST,
     & input:is([type="number"], [type="text"]),
@@ -467,6 +501,7 @@ details#parameter-area {
       line-height: 1.05;
       height: 1.05lh;
       vertical-align: middle;
+      text-align: left;
       border: none;
       border-radius: 3px;
 
@@ -476,30 +511,17 @@ details#parameter-area {
       opacity: 1;
     }
     & ul#AI_LIST.disabled,
-    & ul#AI_LIST.disabled label.label,
     & input:disabled,
     & select:disabled {
+      cursor: default;
       color: rgb(170, 170, 170);
-      background-color: rgba(239, 239, 239, 0.3);
-      outline-color: rgb(118, 118, 118);
+      background-color: rgba(240, 240, 240, 0.3);
+      outline-color: rgb(120, 120, 120);
       opacity: 0.7;
-      text-shadow: none;
-    }
-    & :is(input, select, button):valid:focus {
-      outline: -webkit-focus-ring-color auto 1px;
     }
     & ul#AI_LIST,
     & input:is([type="number"], [type="text"]) {
       padding: 0.1rem 0.1rem;
-    }
-    & select {
-      padding: 0.1rem 0.0rem;
-      height: 1.1lh;
-      outline: none;
-      border: 1px solid black;
-      &:disabled {
-        border-color: rgb(118, 118, 118);
-      }
     }
   }
 }
@@ -522,17 +544,20 @@ ul.button-list {
       text-align: center;
       text-transform: uppercase;
       color: black;
-      background-color: rgb(239, 239, 239);
+      background-color: rgb(240, 240, 240);
       outline: 1px solid black;
       border: none;
       border-radius: 3px;
       line-height: 1;
       margin: 0px;
       padding: 0.1rem 0.2rem;
+      &:focus {
+        outline: 1px auto -webkit-focus-ring-color;
+      }
       &:disabled {
         color: rgb(170, 170, 170);
-        background-color: rgba(239, 239, 239, 0.3);
-        outline-color: rgb(118, 118, 118);
+        background-color: rgba(240, 240, 240, 0.3);
+        outline-color: rgb(120, 120, 120);
         opacity: 0.7;
       }
     }
@@ -548,8 +573,11 @@ ul.button-list {
 div#board-area {
   font-size: 0;
   max-width: 100%;
-  max-height: calc(99dvh - 0.2rem - 1.4rem - 0.5rem - 0.2rem - 1.4rem - 1.4rem);
+  max-height: calc(100dvh - 0.2rem - 0.2rem - 1.5rem - 0.2rem  - 0.5rem - 0.2rem - 1.3rem - 1.3rem - 0.2rem);
   overflow: auto;
+  &:focus {
+    outline-offset: 1px;
+  }
   & > table {
     table-layout: fixed;
     border-collapse: separate;
@@ -625,21 +653,37 @@ div#info-area {
     &#result::before {
       content: "result: ";
     }
+
+    &#wait {
+      & > progress#progress {
+        appearance: none;
+        -webkit-appearance: none;
+        background-color: rgb(200, 200, 200);
+        width: 50vw;
+        height: 10px;
+        border-radius: 5px;
+      }
+      ::-webkit-progress-bar {
+        background-color: rgb(200, 200, 200);
+        width: 50vw;
+        height: 10px;
+        border-radius: 5px;
+      }
+      ::-webkit-progress-value {
+        background-color: sandybrown;
+        width: 50vw;
+        height: 10px;
+        border-radius: 5px;
+      }
+    }
   }
 
   & details#log-area {
     & > summary {
-      display: block;
-      list-style: none;
       width: fit-content;
-      &:hover {
-        cursor: pointer;
-      }
+      cursor: pointer;
       &::after {
         content: ":";
-      }
-      &::-webkit-details-marker {
-        display: none;
       }
     }
     & > div#log.details-content {
@@ -678,5 +722,21 @@ footer {
 /* @media (orientation: portrait) { */
   html {
     font-size: 18px;
+  }
+  details#parameter-area {
+    & > ul.details-content {
+      & ul#AI_LIST {
+        & li {
+          & span:is([data-color="white"], [data-color="yellow"]) {
+            text-shadow: 0px 0px 1px black;
+          }
+        }
+      }
+    }
+  }
+}
+@media (orientation: portrait) {
+  :root {
+    --board-length: 99vw;
   }
 }

@@ -46,12 +46,15 @@ html {
 }
 
 :focus {
-  outline: 1px auto -webkit-focus-ring-color;
+  outline: 2px solid black;
+  outline-offset: -1px;
+  border: none;
+  border-radius: 3px;
 }
 
 hr {
   border: none;
-  border-top: 1px solid black;
+  border-block-start: 1px solid black;
   margin-block: 0.5rem;
 }
 
@@ -68,8 +71,8 @@ svg {
   font-size: var(--svg-length);
   width: var(--svg-length);
   height: var(--svg-length);
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   cursor: pointer;
   & > rect.background {
     width: 100%;
@@ -84,7 +87,7 @@ svg {
     }
   }
   &.lucky {
-    background: conic-gradient(in hsl longer hue, hsl(0turn 100% 50%), hsl(1turn 100% 50%));
+    background-image: conic-gradient(in hsl longer hue, hsl(0turn 100% 50%), hsl(1turn 100% 50%));
     & > rect.background {
       fill: none;
     }
@@ -416,6 +419,9 @@ details#parameter-area {
         color: black;
         background-color: white;
         opacity: 1;
+        &:focus {
+          outline: 1px auto black;
+        }
       }
     }
     & .label:has(+ :is(.disabled, :disabled)) {
@@ -424,11 +430,17 @@ details#parameter-area {
         cursor: default;
       }
     }
-    & :is(label, .label, input:not([type="number"], [type="text"]), select) {
+    & label,
+    & .label,
+    & input[type="checkbox"],
+    & select {
       cursor: pointer;
     }
-    & :is(input, select):valid:focus {
-      outline: 1px auto -webkit-focus-ring-color;
+    & :is(input:is([type="number"], [type="text"]), select):valid:focus {
+      outline: 2px solid black;
+      outline-offset: -1px;
+      border: none;
+      border-radius: 3px;
     }
     & ul#AI_LIST,
     & input:is([type="number"], [type="text"]),
@@ -488,7 +500,10 @@ ul.button-list {
       margin: 0px;
       padding: 0.1rem 0.2rem;
       &:focus {
-        outline: 1px auto -webkit-focus-ring-color;
+        outline: 2px solid black;
+        outline-offset: -1px;
+        border: none;
+        border-radius: 3px;
       }
       &:disabled {
         color: rgb(170, 170, 170);
@@ -507,26 +522,26 @@ ul.button-list {
 }
 
 div#board-area {
-  font-size: 0;
+  font-size: 0px;
   max-width: 100%;
   max-height: calc(100dvh - 0.2rem - 0.2rem - 1.5rem - 0.2rem  - 0.5rem - 0.2rem - 1.3rem - 1.3rem - 0.2rem);
   overflow: auto;
   &:focus {
-    outline-offset: 1px;
+    outline-offset: 0px;
   }
   & > table {
     table-layout: fixed;
     border-collapse: separate;
-    border-spacing: 0;
-    margin: 0 auto;
+    border-spacing: 0px;
+    margin: 0px auto;
     & :is(tr, td, th) {
-      margin: 0;
-      padding: 0;
+      margin: 0px;
+      padding: 0px;
     }
     & th {
       position: sticky;
-      top: 0;
-      left: 0;
+      top: 0px;
+      left: 0px;
       font-size: calc(var(--svg-length) / 3.5);
       text-align: center;
       background-color: rgb(200, 200, 200);
@@ -553,13 +568,13 @@ div#board-area {
         border-top: calc(var(--svg-bg-stroke-length) * 2) solid black;
       }
       & tr:last-of-type td {
-        border-bottom: calc(var(--svg-bg-stroke-length) * 2) solid black;
+        border-block-end: calc(var(--svg-bg-stroke-length) * 2) solid black;
       }
       & tr td:first-of-type {
         border-left: calc(var(--svg-bg-stroke-length) * 2) solid black;
       }
       & tr td:last-of-type {
-        border-right: calc(var(--svg-bg-stroke-length) * 2) solid black;
+        border-inline-end: calc(var(--svg-bg-stroke-length) * 2) solid black;
       }
     }
   }
@@ -607,7 +622,7 @@ div#info-area {
       }
       ::-webkit-progress-value {
         background-color: limegreen;
-        width: calc(90vw - 10rem - 2rem);
+        max-width: calc(90vw - 10rem - 2rem);
         height: 10px;
         border-radius: 5px;
       }
@@ -664,7 +679,7 @@ footer {
       & ul#AI_LIST {
         & li {
           & span:is([data-color="white"], [data-color="yellow"]) {
-            text-shadow: 0px 0px 1px black;
+            text-shadow: 0px 0px 0.5px gray;
           }
         }
       }

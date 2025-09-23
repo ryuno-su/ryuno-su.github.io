@@ -679,7 +679,7 @@ footer {
       & ul#AI_LIST {
         & li {
           & span:is([data-color="white"], [data-color="yellow"]) {
-            text-shadow: 0px 0px 0.5px gray;
+            text-shadow: 0px 0px 0.1px gray;
           }
         }
       }

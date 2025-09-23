@@ -333,6 +333,7 @@ details#parameter-area {
     word-break: keep-all;
     white-space: nowrap;
     overflow-x: auto;
+    touch-action: manipulation;
     & ul#AI_LIST {
       display: inline-block;
       margin: 0px;
@@ -348,6 +349,7 @@ details#parameter-area {
       }
       & li {
         margin-block-start: -0.2rem;
+        vertical-align: middle;
         &.shown {
           display: inline-block;
         }
@@ -378,7 +380,6 @@ details#parameter-area {
     & li {
       list-style: none;
       line-height: 1.4;
-      vertical-align: middle;
       width: fit-content;
       &.shown {
         display: list-item;
@@ -397,7 +398,7 @@ details#parameter-area {
     & input {
       border: none;
       &:is([type="number"], [type="text"]) {
-        appearance: none;
+        /* appearance: none; */
         width: 1.1rem;
         &:invalid {
           outline: 2px dashed red;
@@ -409,16 +410,10 @@ details#parameter-area {
         appearance: none;
       }
       &[type="checkbox"] {
-        display: inline-block;
         margin: 0px;
         margin-inline-start: -1px;
-        vertical-align: middle;
         width: 1lh;
         height: 1lh;
-
-        color: black;
-        background-color: white;
-        opacity: 1;
         &:focus {
           outline: 1px auto black;
         }
@@ -443,20 +438,23 @@ details#parameter-area {
       border-radius: 3px;
     }
     & ul#AI_LIST,
-    & input:is([type="number"], [type="text"]),
+    & input,
     & select {
       display: inline-block;
-      line-height: 1.05;
-      height: 1.05lh;
       vertical-align: middle;
-      text-align: left;
-      border: none;
-      border-radius: 3px;
-
       color: black;
       background-color: white;
-      outline: 1px solid black;
       opacity: 1;
+    }
+    & ul#AI_LIST,
+    & input:is([type="number"], [type="text"]),
+    & select {
+      line-height: 1.05;
+      height: 1.05lh;
+      text-align: left;
+      outline: 1px solid black;
+      border: none;
+      border-radius: 3px;
     }
     & ul#AI_LIST.disabled,
     & input:disabled,
@@ -486,7 +484,7 @@ ul.button-list {
     vertical-align: middle;
     width: fit-content;
     & > button {
-      appearance: none;
+      /* appearance: none; */
       display: inline-block;
       cursor: pointer;
       text-align: center;
@@ -526,6 +524,7 @@ div#board-area {
   max-width: 100%;
   max-height: calc(100dvh - 0.2rem - 0.2rem - 1.5rem - 0.2rem  - 0.5rem - 0.2rem - 1.3rem - 1.3rem - 0.2rem);
   overflow: auto;
+  touch-action: manipulation;
   &:focus {
     outline-offset: 0px;
   }
@@ -641,6 +640,7 @@ div#info-area {
       display: block;
       resize: vertical;
       overflow-y: auto;
+      touch-action: manipulation;
       margin: 0px;
       padding: 4px;
       font-size: 0.9em;

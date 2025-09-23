@@ -43,7 +43,6 @@ html {
 
 .area {
   margin: 0.2rem;
-  touch-action: manipulation;
 }
 
 :focus {
@@ -334,6 +333,7 @@ details#parameter-area {
     word-break: keep-all;
     white-space: nowrap;
     overflow-x: auto;
+    touch-action: manipulation;
     & ul#AI_LIST {
       display: inline-block;
       margin: 0px;
@@ -420,8 +420,10 @@ details#parameter-area {
     }
     & .label:has(+ :is(.disabled, :disabled)) {
       cursor: default;
+      touch-action: manipulation;
       & > label {
         cursor: default;
+        touch-action: manipulation;
       }
     }
     & label,
@@ -463,6 +465,7 @@ details#parameter-area {
       background-color: rgba(240, 240, 240, 0.3);
       outline-color: rgb(120, 120, 120);
       opacity: 0.7;
+      touch-action: manipulation;
     }
     & ul#AI_LIST,
     & input:is([type="number"], [type="text"]) {
@@ -506,6 +509,7 @@ ul.button-list {
         background-color: rgba(240, 240, 240, 0.3);
         outline-color: rgb(120, 120, 120);
         opacity: 0.7;
+        touch-action: manipulation;
       }
     }
   }
@@ -522,6 +526,7 @@ div#board-area {
   max-width: 100%;
   max-height: calc(100dvh - 0.2rem - 0.2rem - 1.5rem - 0.2rem  - 0.5rem - 0.2rem - 1.3rem - 1.3rem - 0.2rem);
   overflow: auto;
+  touch-action: manipulation;
   &:focus {
     outline-offset: 0px;
   }
@@ -541,6 +546,7 @@ div#board-area {
       font-size: calc(var(--svg-length) / 3.5);
       text-align: center;
       background-color: rgb(200, 200, 200);
+      touch-action: manipulation;
     }
     & > thead {
       & th {
@@ -637,6 +643,7 @@ div#info-area {
       display: block;
       resize: vertical;
       overflow-y: auto;
+      touch-action: manipulation;
       margin: 0px;
       padding: 4px;
       font-size: 0.9em;
@@ -675,13 +682,13 @@ footer {
       & ul#AI_LIST {
         & li {
           & span:is([data-color="white"], [data-color="yellow"]) {
-            text-shadow: 0px 0px 0.4px gray;
+            text-shadow: 0px 0px 0.2px gray;
           }
         }
       }
       & select {
-        padding-block: 0.0rem 0.2rem;
-        height: 1.4lh;
+        padding-block: 0.0rem 0.1rem;
+        height: 1.5lh;
       }
     }
   }

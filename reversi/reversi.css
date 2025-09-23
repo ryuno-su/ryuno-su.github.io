@@ -333,7 +333,6 @@ details#parameter-area {
     word-break: keep-all;
     white-space: nowrap;
     overflow-x: auto;
-    touch-action: manipulation;
     & ul#AI_LIST {
       display: inline-block;
       margin: 0px;
@@ -398,7 +397,6 @@ details#parameter-area {
     & input {
       border: none;
       &:is([type="number"], [type="text"]) {
-        /* appearance: none; */
         width: 1.1rem;
         &:invalid {
           outline: 2px dashed red;
@@ -484,7 +482,6 @@ ul.button-list {
     vertical-align: middle;
     width: fit-content;
     & > button {
-      /* appearance: none; */
       display: inline-block;
       cursor: pointer;
       text-align: center;
@@ -524,7 +521,6 @@ div#board-area {
   max-width: 100%;
   max-height: calc(100dvh - 0.2rem - 0.2rem - 1.5rem - 0.2rem  - 0.5rem - 0.2rem - 1.3rem - 1.3rem - 0.2rem);
   overflow: auto;
-  touch-action: manipulation;
   &:focus {
     outline-offset: 0px;
   }
@@ -640,7 +636,6 @@ div#info-area {
       display: block;
       resize: vertical;
       overflow-y: auto;
-      touch-action: manipulation;
       margin: 0px;
       padding: 4px;
       font-size: 0.9em;
@@ -668,9 +663,9 @@ footer {
 }
 
 /* モバイル端末用 */
-@media (width < var(--mobile-length)) or (height < var(--mobile-length)) {
+/* @media (width < var(--mobile-length)) or (height < var(--mobile-length)) { */
 /* デバッグ用 */
-/* @media (orientation: portrait) { */
+@media (orientation: portrait) {
   html {
     font-size: 18px;
   }
@@ -682,6 +677,10 @@ footer {
             text-shadow: 0px 0px 0.1px gray;
           }
         }
+      }
+      & select {
+        padding-block: 0.0rem 0.2rem;
+        height: 1.5lh;
       }
     }
   }

@@ -43,6 +43,7 @@ html {
 
 .area {
   margin: 0.2rem;
+  touch-action: manipulation;
 }
 
 :focus {
@@ -367,7 +368,7 @@ details#parameter-area {
       }
     }
     & select {
-      margin-inline-start: -0.5px;
+      margin-inline-start: -0.45px;
       padding-block: 0.0rem 0.2rem;
       height: 1.1lh;
       outline: none;
@@ -663,9 +664,9 @@ footer {
 }
 
 /* モバイル端末用 */
-/* @media (width < var(--mobile-length)) or (height < var(--mobile-length)) { */
+@media (width < var(--mobile-length)) or (height < var(--mobile-length)) {
 /* デバッグ用 */
-@media (orientation: portrait) {
+/* @media (orientation: portrait) { */
   html {
     font-size: 18px;
   }
@@ -674,13 +675,13 @@ footer {
       & ul#AI_LIST {
         & li {
           & span:is([data-color="white"], [data-color="yellow"]) {
-            text-shadow: 0px 0px 0.1px gray;
+            text-shadow: 0px 0px 0.3px gray;
           }
         }
       }
       & select {
         padding-block: 0.0rem 0.2rem;
-        height: 1.5lh;
+        height: 1.3lh;
       }
     }
   }

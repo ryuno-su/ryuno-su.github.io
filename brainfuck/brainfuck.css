@@ -41,38 +41,34 @@ html {
 }
 
 :focus {
-  outline: -webkit-focus-ring-color auto 1px;
+  /* outline: 1px auto -webkit-focus-ring-color; */
+  outline: 2px solid black;
+  outline-offset: -1px;
+  border: none;
+  border-radius: 3px;
 }
 
 hr {
   border: none;
   border-top: 1px solid black;
+  margin-block: 0.5rem;
 }
 
 code {
   display: inline-block;
   background-color: rgb(230, 230, 230);
-  border: solid 1px #d6dde4;
+  border: solid 1px rgb(214, 221, 228);
   border-radius: 3px;
   line-height: 1;
-  padding-block: 0.2rem;
-  padding-inline: 0.2rem;
+  padding: 0.2rem 0.2rem;
 }
 
 header {
   font-size: 0.9rem;
   & > h1 {
     font-size: 1.6rem;
-    margin-block-start: 0.2rem;
-    margin-block-end: 0.2rem;
+    margin-block: 0.2rem 0.2rem;
   }
-}
-
-.label:not(details .label) {
-  display: block;
-}
-.label:not(details li .label)::after {
-  content: ":";
 }
 
 div#edit-area {
@@ -92,16 +88,17 @@ div#edit-area {
       width: 5.3rem;
     }
 
-    & > summary {
+    & > summary.label {
       width: fit-content;
-      &:hover {
-        cursor: pointer;
+      cursor: pointer;
+      &::after {
+        content: ":";
       }
     }
     & > ul.details-content {
       border: 1px solid black;
       border-radius: 3px;
-      font-size: 0.9rem;
+      font-size: 0.9em;
       margin: 0px;
       padding: 0.2rem;
       width: auto;
@@ -110,55 +107,51 @@ div#edit-area {
       word-break: keep-all;
       white-space: nowrap;
       overflow-x: auto;
-    }
-    & li {
-      list-style: none;
-      line-height: 1.7;
-      & label {
-        display: inline-block;
-      }
-      & .label::after {
-        display: inline-block;
-        content: "=";
-        padding-inline: 0.2rem;
-      }
-      & span.comment {
-        display: inline-block;
-        padding-inline-end: 0.2rem;
-      }
-    }
-    & input {
-      appearance: none;
-      display: inline;
-      font-size: 0.95em;
-      line-height: 1.2;
-      height: 1lh;
-      vertical-align: middle;
-      color: black;
-      background-color: white;
-      outline: 1px solid black;
-      border: none;
-      border-radius: 3px;
-      margin: 0px -0.2rem;
-      padding: 0px;
-      padding-block: calc(0.2rem - 1px);
-      padding-inline: 0.2rem;
-      &[type="number"]::-webkit-inner-spin-button,
-      &[type="number"]::-webkit-outer-spin-button {
-        appearance: none;
-      }
-      &:invalid {
-        outline: 2px dashed red;
-        outline-offset: -1px;
-      }
-      &:disabled {
-        color: rgb(170, 170, 170);
-        background-color: rgb(240, 240, 240);
-        outline-color: rgb(120, 120, 120);
-        opacity: 0.7;
-      }
-      &:valid:focus {
-        outline: -webkit-focus-ring-color auto 1px;
+      & > li {
+        list-style: none;
+        line-height: 1.7;
+        & label {
+          display: inline-block;
+        }
+        & > .label::after {
+          display: inline-block;
+          content: "=";
+          padding-inline: 0.2rem 0.2rem;
+        }
+        & > span.comment {
+          display: inline-block;
+          padding-inline-end: 0.2rem;
+        }
+        & input {
+          line-height: 1.15;
+          height: 1lh;
+          color: black;
+          background-color: white;
+          outline: 1px solid black;
+          border: none;
+          border-radius: 3px;
+          margin: 0.0rem -0.2rem;
+          padding-block: calc(0.2rem - 1px);
+          padding-inline: 0.2rem;
+          &[type="number"]::-webkit-inner-spin-button,
+          &[type="number"]::-webkit-outer-spin-button {
+            appearance: none;
+          }
+          &:invalid {
+            outline: 2px dashed red;
+            outline-offset: -1px;
+          }
+          &:disabled {
+            color: rgb(170, 170, 170);
+            background-color: rgb(240, 240, 240);
+            outline-color: rgb(120, 120, 120);
+            opacity: 0.7;
+          }
+          &:valid:focus {
+            outline: 2px solid black;
+            outline-offset: -1px;
+          }
+        }
       }
     }
   }
@@ -189,44 +182,47 @@ div#edit-area {
       opacity: 0.7;
     }
     &:focus {
-      outline: -webkit-focus-ring-color auto 1px;
+      outline: 2px solid black;
+      outline-offset: -1px;
     }
   }
-}
 
-div#run-area {
-  & ul {
-    font-size: 0.9em;
-    margin: 0px;
-    padding: 0px;
-  }
-  & li {
-    list-style: none;
-    line-height: 1.5;
-  }
-  & button {
-    appearance: none;
-    display: inline-block;
-    width: 5em;
-    cursor: pointer;
-    text-align: center;
-    text-transform: uppercase;
-    color: black;
-    background-color: rgb(240, 240, 240);
-    outline: 1px solid black;
-    border: none;
-    border-radius: 3px;
-    line-height: 1;
-    padding-block: calc(0.2rem - 1px);
-    padding-inline: 0.2rem;
-    &:disabled {
-      color: rgb(170, 170, 170);
-      background-color: rgb(240, 240, 240);
-      outline-color: rgb(120, 120, 120);
-      opacity: 0.7;
-    }
-    &:focus {
-      outline: -webkit-focus-ring-color auto 1px;
+  & > div#run-area {
+    margin-block-start: 0.5rem;
+    & ul.button-list {
+      font-size: 0.9rem;
+      margin: 0px;
+      padding: 0px;
+      & > li {
+        list-style: none;
+        line-height: 1.5;
+        & > button {
+          appearance: none;
+          display: inline-block;
+          width: 4.5rem;
+          cursor: pointer;
+          text-align: center;
+          text-transform: uppercase;
+          color: black;
+          background-color: rgb(240, 240, 240);
+          outline: 1px solid black;
+          border: none;
+          border-radius: 3px;
+          line-height: 1;
+          padding-block: calc(0.2rem - 1px);
+          padding-inline: 0.2rem;
+          &:focus {
+            outline: 2px solid black;
+            outline-offset: -1px;
+          }
+          &:disabled {
+            color: rgb(170, 170, 170);
+            background-color: rgb(240, 240, 240);
+            outline-color: rgb(120, 120, 120);
+            opacity: 0.7;
+          }
+        }
+      }
     }
   }
 }
@@ -256,8 +252,7 @@ aside {
   font-size: 0.9rem;
   & > h2 {
     font-size: 1.4rem;
-    margin-block-start: 0.2rem;
-    margin-block-end: 0.2rem;
+    margin-block: 0.2rem 0.2rem;
   }
 }
 
@@ -267,6 +262,8 @@ footer {
 
 /* モバイル端末用 */
 @media (width < var(--mobile-length)) or (height < var(--mobile-length)) {
+/* デバッグ用 */
+/* @media (orientation: portrait) { */
   html {
     font-size: 18px;
   }

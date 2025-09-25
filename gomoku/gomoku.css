@@ -46,12 +46,16 @@ html {
 }
 
 :focus {
-  outline: 1px auto -webkit-focus-ring-color;
+  /* outline: 1px auto -webkit-focus-ring-color; */
+  outline: 2px solid black;
+  outline-offset: -1px;
+  border: none;
+  border-radius: 3px;
 }
 
 hr {
   border: none;
-  border-top: 1px solid black;
+  border-block-start: 1px solid black;
   margin-block: 0.5rem;
 }
 
@@ -59,8 +63,7 @@ header {
   font-size: 0.9rem;
   & > h1 {
     font-size: 1.6rem;
-    margin-block-start: 0.2rem;
-    margin-block-end: 0.2rem;
+    margin-block: 0.2rem 0.2rem;
   }
 }
 
@@ -68,8 +71,8 @@ svg {
   font-size: var(--svg-length);
   width: var(--svg-length);
   height: var(--svg-length);
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   cursor: pointer;
   & > rect.background {
     width: 100%;
@@ -375,7 +378,7 @@ span.color-text {
 }
 
 details#parameter-area {
-  & > summary {
+  & > summary.label {
     width: fit-content;
     cursor: pointer;
     &::after {
@@ -409,6 +412,7 @@ details#parameter-area {
       }
       & li {
         margin-block-start: -0.2rem;
+        vertical-align: middle;
         &.shown {
           display: inline-block;
         }
@@ -427,7 +431,7 @@ details#parameter-area {
       }
     }
     & select {
-      margin-inline-start: -0.5px;
+      margin-inline-start: -0.45px;
       padding-block: 0.0rem 0.2rem;
       height: 1.1lh;
       outline: none;
@@ -439,7 +443,6 @@ details#parameter-area {
     & li {
       list-style: none;
       line-height: 1.4;
-      vertical-align: middle;
       width: fit-content;
       &.shown {
         display: list-item;
@@ -458,7 +461,6 @@ details#parameter-area {
     & input {
       border: none;
       &:is([type="number"], [type="text"]) {
-        appearance: none;
         width: 1.1rem;
         &:invalid {
           outline: 2px dashed red;
@@ -470,16 +472,13 @@ details#parameter-area {
         appearance: none;
       }
       &[type="checkbox"] {
-        display: inline-block;
         margin: 0px;
         margin-inline-start: -1px;
-        vertical-align: middle;
         width: 1lh;
         height: 1lh;
-
-        color: black;
-        background-color: white;
-        opacity: 1;
+        &:focus {
+          outline: 1px auto black;
+        }
       }
     }
     & .label:has(+ :is(.disabled, :disabled)) {
@@ -488,27 +487,39 @@ details#parameter-area {
         cursor: default;
       }
     }
-    & :is(label, .label, input:not([type="number"], [type="text"]), select) {
+    & label,
+    & .label,
+    & input[type="checkbox"],
+    & select {
       cursor: pointer;
     }
-    & :is(input, select):valid:focus {
-      outline: 1px auto -webkit-focus-ring-color;
+    & :is(input:is([type="number"], [type="text"]), select):valid:focus {
+      outline: 2px solid black;
+      outline-offset: -1px;
+      border: none;
+      border-radius: 3px;
+    }
+    & > li > input[type="checkbox"] {
+      line-height: 1.3;
+    }
+    & ul#AI_LIST,
+    & input,
+    & select {
+      display: inline-block;
+      line-height: 1.15;
+      height: 1lh;
+      vertical-align: middle;
+      color: black;
+      background-color: white;
+      opacity: 1;
     }
     & ul#AI_LIST,
     & input:is([type="number"], [type="text"]),
     & select {
-      display: inline-block;
-      line-height: 1.05;
-      height: 1.05lh;
-      vertical-align: middle;
       text-align: left;
+      outline: 1px solid black;
       border: none;
       border-radius: 3px;
-
-      color: black;
-      background-color: white;
-      outline: 1px solid black;
-      opacity: 1;
     }
     & ul#AI_LIST.disabled,
     & input:disabled,
@@ -538,7 +549,6 @@ ul.button-list {
     vertical-align: middle;
     width: fit-content;
     & > button {
-      appearance: none;
       display: inline-block;
       cursor: pointer;
       text-align: center;
@@ -552,7 +562,10 @@ ul.button-list {
       margin: 0px;
       padding: 0.1rem 0.2rem;
       &:focus {
-        outline: 1px auto -webkit-focus-ring-color;
+        outline: 2px solid black;
+        outline-offset: -1px;
+        border: none;
+        border-radius: 3px;
       }
       &:disabled {
         color: rgb(170, 170, 170);
@@ -571,26 +584,26 @@ ul.button-list {
 }
 
 div#board-area {
-  font-size: 0;
+  font-size: 0px;
   max-width: 100%;
   max-height: calc(100dvh - 0.2rem - 0.2rem - 1.5rem - 0.2rem  - 0.5rem - 0.2rem - 1.3rem - 1.3rem - 0.2rem);
   overflow: auto;
   &:focus {
-    outline-offset: 1px;
+    outline-offset: 0px;
   }
   & > table {
     table-layout: fixed;
     border-collapse: separate;
-    border-spacing: 0;
-    margin: 0 auto;
+    border-spacing: 0px;
+    margin: 0px auto;
     & :is(tr, td, th) {
-      margin: 0;
-      padding: 0;
+      margin: 0px;
+      padding: 0px;
     }
     & th {
       position: sticky;
-      top: 0;
-      left: 0;
+      top: 0px;
+      left: 0px;
       font-size: calc(var(--svg-length) / 3.5);
       text-align: center;
       background-color: rgb(200, 200, 200);
@@ -614,16 +627,16 @@ div#board-area {
         height: calc(var(--svg-length));
       }
       & tr:first-of-type td {
-        border-top: calc(var(--svg-bg-stroke-length) * 2) solid black;
+        border-block-start: calc(var(--svg-bg-stroke-length) * 2) solid black;
       }
       & tr:last-of-type td {
-        border-bottom: calc(var(--svg-bg-stroke-length) * 2) solid black;
+        border-block-end: calc(var(--svg-bg-stroke-length) * 2) solid black;
       }
       & tr td:first-of-type {
-        border-left: calc(var(--svg-bg-stroke-length) * 2) solid black;
+        border-inline-start: calc(var(--svg-bg-stroke-length) * 2) solid black;
       }
       & tr td:last-of-type {
-        border-right: calc(var(--svg-bg-stroke-length) * 2) solid black;
+        border-inline-end: calc(var(--svg-bg-stroke-length) * 2) solid black;
       }
     }
   }
@@ -659,19 +672,19 @@ div#info-area {
         appearance: none;
         -webkit-appearance: none;
         background-color: rgb(200, 200, 200);
-        width: 50vw;
+        width: calc(90vw - 10rem - 2rem);
         height: 10px;
         border-radius: 5px;
       }
       ::-webkit-progress-bar {
         background-color: rgb(200, 200, 200);
-        width: 50vw;
+        width: calc(90vw - 10rem - 2rem);
         height: 10px;
         border-radius: 5px;
       }
       ::-webkit-progress-value {
         background-color: sandybrown;
-        width: 50vw;
+        max-width: calc(90vw - 10rem - 2rem);
         height: 10px;
         border-radius: 5px;
       }
@@ -707,8 +720,7 @@ aside {
   font-size: 0.9rem;
   & > h2 {
     font-size: 1.4rem;
-    margin-block-start: 0.2rem;
-    margin-block-end: 0.2rem;
+    margin-block: 0.2rem 0.2rem;
   }
 }
 
@@ -728,9 +740,13 @@ footer {
       & ul#AI_LIST {
         & li {
           & span:is([data-color="white"], [data-color="yellow"]) {
-            text-shadow: 0px 0px 1px black;
+            text-shadow: 0px 0px 0.2px gray;
           }
         }
+      }
+      & select {
+        padding-block: 0.0rem 0.2rem;
+        height: 1.4lh;
       }
     }
   }

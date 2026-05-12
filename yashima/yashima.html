@@ -12,8 +12,8 @@
   <!-- <link rel="apple-touch-icon" type="image/png" href="yashima.png" sizes="180x180"> -->
   <link rel="stylesheet" type="text/css" href="yashima.css">
   <!-- <link rel="stylesheet" type="text/css" href="yashima.pure.css"> -->
-  <!-- <script type="text/javascript" src="yashima.js" defer></script> -->
-  <script type="text/javascript" src="yashima.min.js" defer></script>
+  <script type="text/javascript" src="yashima.js" defer></script>
+  <!-- <script type="text/javascript" src="yashima.min.js" defer></script> -->
 </head>
 
 <body>
@@ -86,7 +86,7 @@
         </li>
         <li class="countdown1">
           <span class="label"><label for="date1">期限日時1</label></span>
-          <input id="date1" name="date1" type="datetime-local" value="" min="0001-01-01T00:00:00" max="9999-12-31T23:59:59" step="1" autocomplete="off" title="期限日時を入力してください">
+          <input id="date1" name="date1" type="datetime-local" value="" min="0001-01-01T00:00:00" max="9999-12-31T23:59:59" step="1" pattern="^([0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2})$" autocomplete="off" title="期限日時を入力してください">
         </li>
         <li class="countdown2">
           <span class="label"><label for="name2">TODO名2</label></span>
@@ -98,9 +98,15 @@
         </li>
         <li class="countdown2">
           <span class="label"><label for="date2">期限日時2</label></span>
-          <input id="date2" name="date2" type="datetime-local" value="" min="0001-01-01T00:00:00" max="9999-12-31T23:59:59" step="1" autocomplete="off" title="期限日時を入力してください">
+          <input id="date2" name="date2" type="datetime-local" value="" min="0001-01-01T00:00:00" max="9999-12-31T23:59:59" step="1" pattern="^([0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2})$" autocomplete="off" title="期限日時を入力してください">
         </li>
       </ul>
+
+      <h2>URL saved Parameter</h2>
+      <div>
+        <a id="url-saved-parameter" href="" title="パラメータ保存済みURL"></a>
+      </div>
+      <button id="copy" name="copy" type="button" title="パラメータ保存済みURLをコピーします">COPY</button>
     </div>
   </main>
 

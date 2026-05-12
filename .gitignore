@@ -49,7 +49,12 @@
 !/yashima/yashima.html
 !/yashima/yashima.css
 !/yashima/yashima.min.js
+!/yashima/yashima.ico
+!/yashima/yashima.png
+!/yashima/yashima.svg
 !/yashima/DSEG-LICENSE.txt
-# !/yashima/yashima.ico
-# !/yashima/yashima.png
-# !/yashima/yashima.svg
+/yashima/fonts/*
+/yashima/fonts/DSEG7-Classic/*
+!/yashima/fonts/DSEG7-Classic/DSEG7Classic-Bold.woff2
+!/yashima/fonts/DSEG7-Classic/DSEG7Classic-Bold.woff
+!/yashima/fonts/DSEG7-Classic/DSEG7Classic-Bold.ttf

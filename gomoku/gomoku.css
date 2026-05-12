@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Noto+Sans+JP");
+
 html {
   font-family: "Roboto Mono", "Noto Sans JP", monospace;
   font-weight: normal;
@@ -725,7 +726,7 @@ aside {
   & a[target="_blank"]::after {
     content: "↗";
     font-size: 0.7rem;
-    margin-left: 0.2rem;
+    margin-inline-start: 0.2rem;
   }
 }
 

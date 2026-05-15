@@ -63,24 +63,47 @@ hr {
   border-top: 1px solid black;
 }
 
-button {
+ul.button-list {
   display: inline-block;
-  cursor: pointer;
-  text-align: center;
-  text-transform: uppercase;
-  color: black;
-  background-color: rgb(240, 240, 240);
-  outline: 1px solid black;
-  border: none;
-  border-radius: 3px;
-  line-height: 1;
   margin: 0px;
-  padding: 0.1rem 0.2rem;
-  &:focus {
-    outline: 2px solid black;
-    outline-offset: -1px;
-    border: none;
-    border-radius: 3px;
+  padding: 0px;
+  width: fit-content;
+  & > li {
+    display: inline-block;
+    list-style: none;
+    margin-block-start: -0.3rem;
+    vertical-align: middle;
+    width: fit-content;
+    & > button {
+      display: inline-block;
+      cursor: pointer;
+      text-align: center;
+      text-transform: uppercase;
+      color: black;
+      background-color: rgb(240, 240, 240);
+      outline: 1px solid black;
+      border: none;
+      border-radius: 3px;
+      line-height: 1;
+      margin: 0px;
+      padding: 0.1rem 0.2rem;
+      &:focus {
+        outline: 2px solid black;
+        outline-offset: -1px;
+        border: none;
+        border-radius: 3px;
+      }
+    }
+  }
+  div#result-area + & {
+    /* margin-block-start: 0.4rem; */
+    margin-block-start: 0.45rem;
+    /* margin-inline-start: 0.1rem; */
+    margin-inline-start: 0.9rem;
+  }
+  div#info-area & {
+    margin-block-start: -0.1rem;
+    margin-inline-start: 0.5rem;
   }
 }
 
@@ -168,6 +191,13 @@ div#result-area {
   & > div.name-area {
     grid-column: 1;
     font-size: 3.0em;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
     & > div:is(.name, .name-text) {
       word-break: break-all;
       white-space: pre-wrap;
@@ -202,11 +232,6 @@ div#result-area {
     & > div:not(.title-area) {
       margin-bottom: calc((100vh - 6.5vw - 10.4vw - 3.9vw - 2.6vw - 1.3vw) / 4);
     }
-  }
-
-  & + button#fullscreen {
-    /* margin-block-start: -0.1rem; */
-    margin-inline-start: 0.1rem;
   }
 }
 
@@ -279,6 +304,14 @@ div#edit-area {
       }
     }
   }
+}
+
+div#info-area {
+  & > h2 {
+    font-size: 1.2rem;
+    margin-block-start: 0.2rem;
+    margin-block-end: 0.2rem;
+  }
   /* & > h3 {
     font-size: 1.0rem;
     margin-block-start: 0.2rem;
@@ -286,17 +319,19 @@ div#edit-area {
     margin-inline-start: 0.5rem;
   } */
   & > div {
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 0.5rem;
     /* margin: 0.4rem;
     margin-inline-start: 1.0rem; */
+    padding: 0.2rem;
+    width: auto;
+    line-height: 1;
     & > a#url-saved-parameter {
       font-size: 0.9rem;
       word-break: break-all;
       white-space: pre-wrap;
     }
-  }
-  & > button#copy {
-    margin-inline-start: 0.5rem;
-    /* margin-inline-start: 1.0rem; */
   }
 }
 
@@ -321,6 +356,7 @@ footer {
 /* モバイル端末用 */
 /* @media (width < var(--mobile-length)) or (height < var(--mobile-length)) { */
 /* デバッグ用 */
+/* @media (orientation: portrait) { */
 @media (orientation: portrait) {
   div#result-area {
     height: calc(100vw / 1.7);

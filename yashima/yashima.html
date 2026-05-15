@@ -71,18 +71,26 @@
           <div class="time-text">Time</div>
         </div>
     </div>
-    <button id="fullscreen" name="fullscreen" type="button" title="全画面表示にします(PCのみ)">FULLSCREEN</button>
+    <ul class="button-list">
+      <li>
+        <button id="full" name="full" type="button" title="全画面表示にします(PCのみ)">FULL</button>
+      </li>
+      <li>
+        <button id="slide" name="slide" type="button" title="タイマー画面位置にスライドします">SLIDE</button>
+      </li>
+    </ul>
 
     <div id="edit-area" class="area">
+      <hr>
       <h2>Parameter</h2>
       <ul>
         <li class="countdown1">
           <span class="label"><label for="name1">TODO名1</label></span>
-          <input id="name1" name="name1" type="text" value="TODO名1" max="24" autocomplete="off" title="TODO名を入力してください">
+          <input id="name1" name="name1" type="text" value="TODO名1" autocomplete="off" title="TODO名を入力してください">
         </li>
         <li class="countdown1">
           <span class="label"><label for="name-text1">TODO-name1</label></span>
-          <input id="name-text1" name="nameText1" type="text" value="TODO-name1" max="35" autocomplete="off" title="TODO-nameを入力してください">
+          <input id="name-text1" name="nameText1" type="text" value="TODO-name1" autocomplete="off" title="TODO-nameを入力してください">
         </li>
         <li class="countdown1">
           <span class="label"><label for="date1">期限日時1</label></span>
@@ -90,23 +98,30 @@
         </li>
         <li class="countdown2">
           <span class="label"><label for="name2">TODO名2</label></span>
-          <input id="name2" name="name2" type="text" value="TODO名2" max="24" autocomplete="off" title="TODO名を入力してください">
+          <input id="name2" name="name2" type="text" value="TODO名2" autocomplete="off" title="TODO名を入力してください">
         </li>
         <li class="countdown2">
           <span class="label"><label for="name-text2">TODO-name2</label></span>
-          <input id="name-text2" name="nameText2" type="text" value="TODO-name2" max="35" autocomplete="off" title="TODO-nameを入力してください">
+          <input id="name-text2" name="nameText2" type="text" value="TODO-name2" autocomplete="off" title="TODO-nameを入力してください">
         </li>
         <li class="countdown2">
           <span class="label"><label for="date2">期限日時2</label></span>
           <input id="date2" name="date2" type="datetime-local" value="" min="0001-01-01T00:00:00" max="9999-12-31T23:59:59" step="1" pattern="^([0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2})$" autocomplete="off" title="期限日時を入力してください">
         </li>
       </ul>
+    </div>
 
+    <div id="info-area" class="area">
+      <hr>
       <h2>URL saved Parameter</h2>
       <div>
         <a id="url-saved-parameter" href="" title="パラメータ保存済みURL"></a>
       </div>
-      <button id="copy" name="copy" type="button" title="パラメータ保存済みURLをコピーします">COPY</button>
+      <ul class="button-list">
+        <li>
+          <button id="copy" name="copy" type="button" title="パラメータ保存済みURLをコピーします">COPY</button>
+        </li>
+      </ul>
     </div>
   </main>
 

@@ -1,9 +1,11 @@
 /*
 !/README.md
 !/LICENCE
+!/.gitignore
 !/index.html
 !/404.html
 
+!/brainfuck/
 /brainfuck/*
 !/brainfuck/brainfuck.html
 !/brainfuck/brainfuck.css
@@ -12,6 +14,7 @@
 !/brainfuck/brainfuck.png
 !/brainfuck/brainfuck.svg
 
+!/reversi/
 /reversi/*
 !/reversi/reversi.html
 !/reversi/reversi.css
@@ -20,6 +23,7 @@
 !/reversi/reversi.png
 !/reversi/reversi.svg
 
+!/gomoku/
 /gomoku/*
 !/gomoku/gomoku.html
 !/gomoku/gomoku.css
@@ -28,6 +32,7 @@
 !/gomoku/gomoku.png
 !/gomoku/gomoku.svg
 
+!/watermelon/
 /watermelon/*
 # !/watermelon/watermelon.html
 # !/watermelon/watermelon.css
@@ -36,6 +41,7 @@
 # !/watermelon/watermelon.png
 # !/watermelon/watermelon.svg
 
+!/library/
 /library/*
 !/library/library.min.js
 !/library/const.min.js
@@ -45,6 +51,7 @@
 !/library/prototype.min.js
 !/library/coroutine.min.js
 
+!/yashima/
 /yashima/*
 !/yashima/yashima.html
 !/yashima/yashima.css
@@ -53,7 +60,9 @@
 !/yashima/yashima.png
 !/yashima/yashima.svg
 !/yashima/DSEG-LICENSE.txt
+!/yashima/fonts/
 /yashima/fonts/*
+!/yashima/fonts/DSEG7-Classic/
 /yashima/fonts/DSEG7-Classic/*
 !/yashima/fonts/DSEG7-Classic/DSEG7Classic-Bold.woff2
 !/yashima/fonts/DSEG7-Classic/DSEG7Classic-Bold.woff

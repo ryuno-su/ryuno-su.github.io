@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Noto+Sans+JP");
+
 @font-face {
   font-family: "DSEG7-Classic";
   src: url("fonts/DSEG7-Classic/DSEG7Classic-Bold.woff2") format("woff2"),
@@ -6,8 +8,6 @@
   font-weight: bold;
   font-style: normal;
 }
-
-@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Noto+Sans+JP");
 
 html {
   font-family: "Roboto Mono", "Noto Sans JP", monospace;
@@ -63,6 +63,27 @@ hr {
   border-top: 1px solid black;
 }
 
+button {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  color: black;
+  background-color: rgb(240, 240, 240);
+  outline: 1px solid black;
+  border: none;
+  border-radius: 3px;
+  line-height: 1;
+  margin: 0px;
+  padding: 0.1rem 0.2rem;
+  &:focus {
+    outline: 2px solid black;
+    outline-offset: -1px;
+    border: none;
+    border-radius: 3px;
+  }
+}
+
 header {
   font-size: 0.9rem;
   & > h1 {
@@ -73,6 +94,7 @@ header {
 }
 
 div#result-area {
+  font-family: "Noto Sans JP", monospace;
   font-size: max(1.3vw, 5px);
   width: 100%;
   height: 100vh;
@@ -141,11 +163,20 @@ div#result-area {
   & > div.title-area {
     grid-column: 2;
     justify-self: start;
-    font-size: 2.0em;
+    font-size: 2.8em;
   }
   & > div.name-area {
     grid-column: 1;
     font-size: 3.0em;
+    & > div:is(.name, .name-text) {
+      word-break: break-all;
+      white-space: pre-wrap;
+    }
+    & > div.name {
+      /* font-family: "MinchoStdN-ExtraBold", serif; */
+      font-family: serif;
+      font-weight: bold;
+    }
   }
   & > div.day-area {
     grid-column: 2;
@@ -171,6 +202,11 @@ div#result-area {
     & > div:not(.title-area) {
       margin-bottom: calc((100vh - 6.5vw - 10.4vw - 3.9vw - 2.6vw - 1.3vw) / 4);
     }
+  }
+
+  & + button#fullscreen {
+    /* margin-block-start: -0.1rem; */
+    margin-inline-start: 0.1rem;
   }
 }
 
@@ -250,34 +286,17 @@ div#edit-area {
     margin-inline-start: 0.5rem;
   } */
   & > div {
-    word-break: break-all;
     /* margin: 0.4rem;
     margin-inline-start: 1.0rem; */
     & > a#url-saved-parameter {
       font-size: 0.9rem;
+      word-break: break-all;
+      white-space: pre-wrap;
     }
   }
   & > button#copy {
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
-    text-transform: uppercase;
-    color: black;
-    background-color: rgb(240, 240, 240);
-    outline: 1px solid black;
-    border: none;
-    border-radius: 3px;
-    line-height: 1;
-    margin: 0px;
     margin-inline-start: 0.5rem;
     /* margin-inline-start: 1.0rem; */
-    padding: 0.1rem 0.2rem;
-    &:focus {
-      outline: 2px solid black;
-      outline-offset: -1px;
-      border: none;
-      border-radius: 3px;
-    }
   }
 }
 

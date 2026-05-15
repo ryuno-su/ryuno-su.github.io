@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Noto+Sans+JP");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Noto+Sans+JP&family=Noto+Serif+JP:wght@900&display=swap");
 
 @font-face {
   font-family: "DSEG7-Classic";
@@ -140,6 +140,7 @@ div#result-area {
       &[class*="-text"] {
         font-size: max(1.8vw, 8px);
         justify-self: end;
+        margin-block-start: 0.5vw;
         margin-inline-end: 0.78vw;
       }
     }
@@ -178,6 +179,7 @@ div#result-area {
   }
   & > div:is(.day-area, .time-area) > div:is(.day, .time) {
     font-family: "DSEG7-Classic";
+    font-weight: bold;
   }
   & > div:not(.title-area) {
     align-self: last baseline;
@@ -203,9 +205,10 @@ div#result-area {
       white-space: pre-wrap;
     }
     & > div.name {
-      /* font-family: "MinchoStdN-ExtraBold", serif; */
-      font-family: serif;
-      font-weight: bold;
+      font-family: "Noto Serif JP", serif;
+      font-weight: 900;
+      /* transform: scaleY(1.1); */
+      line-height: 1.1;
     }
   }
   & > div.day-area {

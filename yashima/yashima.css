@@ -200,6 +200,8 @@ div#result-area {
     text-overflow: ellipsis;
     -webkit-line-clamp: 3;
     line-clamp: 3;
+    transform: scaleY(1.1);
+    line-height: 1.1;
     & > div:is(.name, .name-text) {
       word-break: break-all;
       white-space: pre-wrap;
@@ -207,8 +209,10 @@ div#result-area {
     & > div.name {
       font-family: "Noto Serif JP", serif;
       font-weight: 900;
-      /* transform: scaleY(1.1); */
-      line-height: 1.1;
+    }
+    & > div.name-text {
+      transform: scaleY(calc(1 / 1.1));
+      line-height: calc(1 / 1.1);
     }
   }
   & > div.day-area {

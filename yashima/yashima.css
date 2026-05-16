@@ -208,6 +208,8 @@ div#result-area {
     }
     & > div.name {
       font-family: "Noto Serif JP", serif;
+      font-feature-settings: "palt";
+      font-variant-east-asian: proportional-width;
       font-weight: 900;
     }
     & > div.name-text {

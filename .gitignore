@@ -59,9 +59,9 @@
 !/yashima/yashima.ico
 !/yashima/yashima.png
 !/yashima/yashima.svg
-!/yashima/DSEG-LICENSE.txt
 !/yashima/fonts/
 /yashima/fonts/*
+!/yashima/fonts/DSEG-LICENSE.txt
 !/yashima/fonts/DSEG7-Classic/
 /yashima/fonts/DSEG7-Classic/*
 !/yashima/fonts/DSEG7-Classic/DSEG7Classic-Bold.woff2

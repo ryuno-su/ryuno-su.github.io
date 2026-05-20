@@ -44,6 +44,14 @@ html {
 
 body {
   margin: 0;
+  & > :not(main) {  /* iphone デバッグ用 */
+    padding-left: env(safe-area-inset-left);  /* iphone デバッグ用 */
+    padding-right: env(safe-area-inset-right);  /* iphone デバッグ用 */
+  }  /* iphone デバッグ用 */
+  & > main > :not(div#result-area) {
+    padding-left: env(safe-area-inset-left);  /* iphone デバッグ用 */
+    padding-right: env(safe-area-inset-right);  /* iphone デバッグ用 */
+  }  /* iphone デバッグ用 */
 }
 
 .hidden {

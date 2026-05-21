@@ -110,41 +110,41 @@ svg {
   }
 
   &.cell {
-    &[data-color="none"] > circle.stone {
+    &[data-color="none"] > circle.disc {
       fill: none;
     }
-    &[data-color="black"] > circle.stone {
+    &[data-color="black"] > circle.disc {
       fill: black;
     }
-    &[data-color="white"] > circle.stone {
+    &[data-color="white"] > circle.disc {
       fill: white;
     }
-    &[data-color="red"] > circle.stone {
+    &[data-color="red"] > circle.disc {
       fill: red;
     }
-    &[data-color="blue"] > circle.stone {
+    &[data-color="blue"] > circle.disc {
       fill: blue;
     }
-    &[data-color="cyan"] > circle.stone {
+    &[data-color="cyan"] > circle.disc {
       fill: cyan;
     }
-    &[data-color="magenta"] > circle.stone {
+    &[data-color="magenta"] > circle.disc {
       fill: magenta;
     }
-    &[data-color="yellow"] > circle.stone {
+    &[data-color="yellow"] > circle.disc {
       fill: yellow;
     }
-    &[data-color="orange"] > circle.stone {
+    &[data-color="orange"] > circle.disc {
       /* fill: orange; */
       fill: rgb(255, 127, 0);
     }
-    &[data-color="sentinel"] > circle.stone {
+    &[data-color="sentinel"] > circle.disc {
       fill: limegreen;
     }
   }
 
   &.highlight {
-    & > rect.highlight-stone {
+    & > rect.highlight-disc {
       width: 90%;
       height: 90%;
       fill: none;
@@ -155,124 +155,124 @@ svg {
       }
     }
     &[data-color="none"] {
-      & > rect.highlight-stone {
+      & > rect.highlight-disc {
         stroke: none;
       }
-      & > circle.stone {
+      & > circle.disc {
         fill: none;
       }
     }
     &[data-color="black"] {
-      & > rect.highlight-stone {
+      & > rect.highlight-disc {
         stroke: black;
       }
-      & > circle.stone {
+      & > circle.disc {
         fill: black;
       }
     }
     &[data-color="white"] {
-      & > rect.highlight-stone {
+      & > rect.highlight-disc {
         stroke: white;
       }
-      & > circle.stone {
+      & > circle.disc {
         fill: white;
       }
     }
     &[data-color="red"] {
-      & > rect.highlight-stone {
+      & > rect.highlight-disc {
         stroke: red;
       }
-      & > circle.stone {
+      & > circle.disc {
         fill: red;
       }
     }
     &[data-color="blue"] {
-      & > rect.highlight-stone {
+      & > rect.highlight-disc {
         stroke: blue;
       }
-      & > circle.stone {
+      & > circle.disc {
         fill: blue;
       }
     }
     &[data-color="cyan"] {
-      & > rect.highlight-stone {
+      & > rect.highlight-disc {
         stroke: cyan;
       }
-      & > circle.stone {
+      & > circle.disc {
         fill: cyan;
       }
     }
     &[data-color="magenta"] {
-      & > rect.highlight-stone {
+      & > rect.highlight-disc {
         stroke: magenta;
       }
-      & > circle.stone {
+      & > circle.disc {
         fill: magenta;
       }
     }
     &[data-color="yellow"] {
-      & > rect.highlight-stone {
+      & > rect.highlight-disc {
         stroke: yellow;
       }
-      & > circle.stone {
+      & > circle.disc {
         fill: yellow;
       }
     }
     &[data-color="orange"] {
-      & > rect.highlight-stone {
+      & > rect.highlight-disc {
         /* stroke: orange; */
         stroke: rgb(255, 127, 0);
       }
-      & > circle.stone {
+      & > circle.disc {
         /* fill: orange; */
         fill: rgb(255, 127, 0);
       }
     }
     &[data-color="sentinel"] {
-      & > rect.highlight-stone {
+      & > rect.highlight-disc {
         stroke: limegreen;
       }
-      & > circle.stone {
+      & > circle.disc {
         fill: limegreen;
       }
     }
   }
 
   &.assist {
-    & > circle.assist-stone {
+    & > circle.assist-disc {
       fill: none;
       stroke-width: var(--svg-st-stroke-length);
       stroke-dasharray: calc(var(--svg-st-stroke-length) * 2), calc(var(--svg-st-stroke-length) * 2);
     }
-    &[data-color="none"] > circle.assist-stone {
+    &[data-color="none"] > circle.assist-disc {
       stroke: none;
     }
-    &[data-color="black"] > circle.assist-stone {
+    &[data-color="black"] > circle.assist-disc {
       stroke: black;
     }
-    &[data-color="white"] > circle.assist-stone {
+    &[data-color="white"] > circle.assist-disc {
       stroke: white;
     }
-    &[data-color="red"] > circle.assist-stone {
+    &[data-color="red"] > circle.assist-disc {
       stroke: red;
     }
-    &[data-color="blue"] > circle.assist-stone {
+    &[data-color="blue"] > circle.assist-disc {
       stroke: blue;
     }
-    &[data-color="cyan"] > circle.assist-stone {
+    &[data-color="cyan"] > circle.assist-disc {
       stroke: cyan;
     }
-    &[data-color="magenta"] > circle.assist-stone {
+    &[data-color="magenta"] > circle.assist-disc {
       stroke: magenta;
     }
-    &[data-color="yellow"] > circle.assist-stone {
+    &[data-color="yellow"] > circle.assist-disc {
       stroke: yellow;
     }
-    &[data-color="orange"] > circle.assist-stone {
+    &[data-color="orange"] > circle.assist-disc {
       /* stroke: orange; */
       stroke: rgb(255, 127, 0);
     }
-    &[data-color="sentinel"] > circle.assist-stone {
+    &[data-color="sentinel"] > circle.assist-disc {
       stroke: limegreen;
     }
   }

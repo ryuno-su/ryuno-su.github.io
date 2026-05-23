@@ -44,11 +44,9 @@ html {
 
 body {
   margin: 0;
-  & > :not(main) {  /* iphone デバッグ用 */
-    padding-left: env(safe-area-inset-left);  /* iphone デバッグ用 */
-    padding-right: env(safe-area-inset-right);  /* iphone デバッグ用 */
-  }  /* iphone デバッグ用 */
-  & > main > :not(div#result-area) {
+  & > :not(main),  /* iphone デバッグ用 */
+  & > main > :not(div#result-area),  /* iphone デバッグ用 */
+  & > main > div#result-area > div#result-content {  /* iphone デバッグ用 */
     padding-left: env(safe-area-inset-left);  /* iphone デバッグ用 */
     padding-right: env(safe-area-inset-right);  /* iphone デバッグ用 */
   }  /* iphone デバッグ用 */
@@ -128,126 +126,144 @@ div#result-area {
   font-family: "Noto Sans JP", monospace;
   font-size: max(1.3vw, 5px);
   width: 100%;
-  height: 100vh;
   padding: 0.65vw;
   background-color: black;
   color: sandybrown;
-
-  display: grid;
-  grid-template: repeat(3, min-content 1fr) / 10.5fr 9fr 9fr;
-  grid-gap: 0.65vw 1.95vw;
-  & div {
-    line-height: 1.0;
-  }
-  & > div {
-    align-self: center;
-    justify-self: end;
+  & > div#result-content {
+    height: 100vh;
+    display: grid;
+    grid-template: repeat(3, min-content 1fr) / 10.5fr 9fr 9fr;
+    grid-gap: 0.65vw 1.95vw;
+    & div {
+      line-height: 1.0;
+    }
     & > div {
       align-self: center;
       justify-self: end;
-      &[class*="-text"] {
-        font-size: max(1.8vw, 8px);
-        justify-self: end;
-        margin-block-start: 0.5vw;
-        margin-inline-end: 0.78vw;
-      }
-    }
-  }
-  & > div.countdown1 {
-    grid-row: 2;
-    &.title-area {
-      grid-row: 1;
-    }
-  }
-  & > div.countdown2 {
-    grid-row: 4;
-    &.title-area {
-      grid-row: 3;
-    }
-  }
-  & > div.live {
-    grid-row: 6;
-    &.title-area {
-      grid-row: 5;
-    }
-    &.name-area {
-      justify-self: center;
-      margin-inline-start: 3.9vw;
       & > div {
-        justify-self: center;
-      }
-    }
-    &.day-area {
-      & > div[class*="-text"] {
-        & > span.month-string {
-          margin-inline-end: 9.3vw;
+        align-self: center;
+        justify-self: end;
+        &[class*="-text"] {
+          font-size: max(1.8vw, 8px);
+          justify-self: end;
+          margin-block-start: 0.5vw;
+          margin-inline-end: 0.78vw;
         }
       }
     }
-  }
-  & > div:is(.day-area, .time-area) > div:is(.day, .time) {
-    font-family: "DSEG7-Classic";
-    font-weight: bold;
-  }
-  & > div:not(.title-area) {
-    align-self: last baseline;
-    margin-bottom: calc((100vh - 9.75vw - 15.6vw - 3.9vw - 3.25vw - 1.3vw) / 6);
-  }
-  & > div.title-area {
-    grid-column: 2;
-    justify-self: start;
-    font-size: 2.8em;
-  }
-  & > div.name-area {
-    grid-column: 1;
-    font-size: 3.0em;
-
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    transform: scaleY(1.1);
-    line-height: 1.1;
-    & > div:is(.name, .name-text) {
-      word-break: break-all;
-      white-space: pre-wrap;
+    & > div.countdown1 {
+      grid-row: 2;
+      &.title-area {
+        grid-row: 1;
+      }
     }
-    & > div.name {
-      font-family: "Noto Serif JP", serif;
-      font-feature-settings: "palt";
-      font-variant-east-asian: proportional-width;
-      font-weight: 900;
-    }
-    & > div.name-text {
-      transform: scaleY(calc(1 / 1.1));
-      line-height: calc(1 / 1.1);
-    }
-  }
-  & > div.day-area {
-    grid-column: 2;
-    justify-self: center;
-    font-size: 4.0em;
-  }
-  & > div.time-area {
-    grid-column: 3;
-    font-size: 4.0em;
-  }
-
-  &:has(div.countdown2.hidden) {
-    grid-template: repeat(2, min-content 1fr) / 10.5fr 9fr 9fr;
-    & > div.countdown2.hidden {
-      display: none;
-    }
-    & > div.live {
+    & > div.countdown2 {
       grid-row: 4;
       &.title-area {
         grid-row: 3;
       }
     }
+    & > div.live {
+      grid-row: 6;
+      &.title-area {
+        grid-row: 5;
+      }
+      &.name-area {
+        justify-self: center;
+        margin-inline-start: 3.9vw;
+        & > div {
+          justify-self: center;
+        }
+      }
+      &.day-area {
+        & > div[class*="-text"] {
+          & > span.month-string {
+            margin-inline-end: 9.3vw;
+          }
+        }
+      }
+    }
+    & > div:is(.day-area, .time-area) > div:is(.day, .time) {
+      font-family: "DSEG7-Classic";
+      font-weight: bold;
+    }
     & > div:not(.title-area) {
-      margin-bottom: calc((100vh - 6.5vw - 10.4vw - 3.9vw - 2.6vw - 1.3vw) / 4);
+      align-self: last baseline;
+      margin-bottom: calc((100vh - 9.75vw - 15.6vw - 3.9vw - 3.25vw - 1.3vw) / 6);
+    }
+    & > div.title-area {
+      grid-column: 2;
+      justify-self: start;
+      font-size: 2.8em;
+    }
+    & > div.name-area {
+      grid-column: 1;
+      font-size: 3.0em;
+
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      transform: scaleY(1.1);
+      line-height: 1.1;
+      & > div:is(.name, .name-text) {
+        word-break: break-all;
+        white-space: pre-wrap;
+      }
+      & > div.name {
+        font-family: "Noto Serif JP", serif;
+        font-feature-settings: "palt";
+        font-variant-east-asian: proportional-width;
+        font-weight: 900;
+      }
+      & > div.name-text {
+        transform: scaleY(calc(1 / 1.1));
+        line-height: calc(1 / 1.1);
+      }
+      & > div.name-text {  /* iphone デバッグ用 */
+        font-size: max(1.8vw, 8px);  /* iphone デバッグ用 */
+        justify-self: end;  /* iphone デバッグ用 */
+        margin-block-start: 0.5vw;  /* iphone デバッグ用 */
+        margin-inline-end: 0.78vw;  /* iphone デバッグ用 */
+      }  /* iphone デバッグ用 */
+    }
+    & > div.day-area {
+      grid-column: 2;
+      justify-self: center;
+      font-size: 4.0em;
+      & > div.day-text {  /* iphone デバッグ用 */
+        font-size: max(1.8vw, 8px);  /* iphone デバッグ用 */
+        justify-self: end;  /* iphone デバッグ用 */
+        margin-block-start: 0.5vw;  /* iphone デバッグ用 */
+        margin-inline-end: 0.78vw;  /* iphone デバッグ用 */
+      }  /* iphone デバッグ用 */
+    }
+    & > div.time-area {
+      grid-column: 3;
+      font-size: 4.0em;
+      & > div.time-text {  /* iphone デバッグ用 */
+        font-size: max(1.8vw, 8px);  /* iphone デバッグ用 */
+        justify-self: end;  /* iphone デバッグ用 */
+        margin-block-start: 0.5vw;  /* iphone デバッグ用 */
+        margin-inline-end: 0.78vw;  /* iphone デバッグ用 */
+      }  /* iphone デバッグ用 */
+    }
+    &:has(div.countdown2.hidden) {
+      grid-template: repeat(2, min-content 1fr) / 10.5fr 9fr 9fr;
+      & > div.countdown2.hidden {
+        display: none;
+      }
+      & > div.live {
+        grid-row: 4;
+        &.title-area {
+          grid-row: 3;
+        }
+      }
+      & > div:not(.title-area) {
+        margin-bottom: calc((100vh - 6.5vw - 10.4vw - 3.9vw - 2.6vw - 1.3vw) / 4);
+      }
     }
   }
 }
@@ -376,13 +392,15 @@ footer {
 /* @media (orientation: portrait) { */
 @media (orientation: portrait) {
   div#result-area {
-    height: calc(100vw / 1.7);
-    & > div:not(.title-area) {
-      margin-bottom: calc((100vw / 1.7 - 9.75vw - 15.6vw - 3.9vw - 3.25vw - 1.3vw) / 6);
-    }
-    &:has(div.countdown2.hidden) {
+    & > div#result-content {
+      height: calc(100vw / 1.7);
       & > div:not(.title-area) {
-        margin-bottom: calc((100vw / 1.7 - 6.5vw - 10.4vw - 3.9vw - 2.6vw - 1.3vw) / 4);
+        margin-bottom: calc((100vw / 1.7 - 9.75vw - 15.6vw - 3.9vw - 3.25vw - 1.3vw) / 6);
+      }
+      &:has(div.countdown2.hidden) {
+        & > div:not(.title-area) {
+          margin-bottom: calc((100vw / 1.7 - 6.5vw - 10.4vw - 3.9vw - 2.6vw - 1.3vw) / 4);
+        }
       }
     }
   }

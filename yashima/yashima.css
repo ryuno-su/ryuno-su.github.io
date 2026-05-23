@@ -44,12 +44,12 @@ html {
 
 body {
   margin: 0;
-  & > :not(main),  /* iphone デバッグ用 */
-  & > main > :not(div#result-area),  /* iphone デバッグ用 */
-  & > main > div#result-area > div#result-content {  /* iphone デバッグ用 */
-    padding-left: env(safe-area-inset-left);  /* iphone デバッグ用 */
-    padding-right: env(safe-area-inset-right);  /* iphone デバッグ用 */
-  }  /* iphone デバッグ用 */
+  & > :not(main),
+  & > main > :not(div#result-area),
+  & > main > div#result-area > div#result-content {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
 }
 
 .hidden {
@@ -136,16 +136,17 @@ div#result-area {
     grid-gap: 0.65vw 1.95vw;
     & div {
       line-height: 1.0;
+      justify-self: end;  /* iphone デバッグ用 */
     }
     & > div {
       align-self: center;
-      justify-self: end;
+      justify-self: end;  /* iphone デバッグ用 */
       & > div {
         align-self: center;
-        justify-self: end;
+        justify-self: end;  /* iphone デバッグ用 */
         &[class*="-text"] {
           font-size: max(1.8vw, 8px);
-          justify-self: end;
+          justify-self: end;  /* iphone デバッグ用 */
           margin-block-start: 0.5vw;
           margin-inline-end: 0.78vw;
         }
@@ -222,33 +223,24 @@ div#result-area {
         transform: scaleY(calc(1 / 1.1));
         line-height: calc(1 / 1.1);
       }
-      & > div.name-text {  /* iphone デバッグ用 */
-        font-size: max(1.8vw, 8px);  /* iphone デバッグ用 */
+      & > div.name-text {
         justify-self: end;  /* iphone デバッグ用 */
-        margin-block-start: 0.5vw;  /* iphone デバッグ用 */
-        margin-inline-end: 0.78vw;  /* iphone デバッグ用 */
-      }  /* iphone デバッグ用 */
+      }
     }
     & > div.day-area {
       grid-column: 2;
       justify-self: center;
       font-size: 4.0em;
-      & > div.day-text {  /* iphone デバッグ用 */
-        font-size: max(1.8vw, 8px);  /* iphone デバッグ用 */
+      & > div.day-text {
         justify-self: end;  /* iphone デバッグ用 */
-        margin-block-start: 0.5vw;  /* iphone デバッグ用 */
-        margin-inline-end: 0.78vw;  /* iphone デバッグ用 */
-      }  /* iphone デバッグ用 */
+      }
     }
     & > div.time-area {
       grid-column: 3;
       font-size: 4.0em;
-      & > div.time-text {  /* iphone デバッグ用 */
-        font-size: max(1.8vw, 8px);  /* iphone デバッグ用 */
+      & > div.time-text {
         justify-self: end;  /* iphone デバッグ用 */
-        margin-block-start: 0.5vw;  /* iphone デバッグ用 */
-        margin-inline-end: 0.78vw;  /* iphone デバッグ用 */
-      }  /* iphone デバッグ用 */
+      }
     }
     &:has(div.countdown2.hidden) {
       grid-template: repeat(2, min-content 1fr) / 10.5fr 9fr 9fr;

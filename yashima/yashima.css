@@ -136,20 +136,12 @@ div#result-area {
     grid-gap: 0.65vw 1.95vw;
     & div {
       line-height: 1.0;
-      justify-self: end;  /* iphone デバッグ用 */
-    }
-    & > div {
       align-self: center;
-      justify-self: end;  /* iphone デバッグ用 */
-      & > div {
-        align-self: center;
-        justify-self: end;  /* iphone デバッグ用 */
-        &[class*="-text"] {
-          font-size: max(1.8vw, 8px);
-          justify-self: end;  /* iphone デバッグ用 */
-          margin-block-start: 0.5vw;
-          margin-inline-end: 0.78vw;
-        }
+      justify-self: end;
+      &[class*="-text"] {
+        font-size: max(1.8vw, 8px);
+        margin-block-start: 0.5vw;
+        margin-inline-end: 0.78vw;
       }
     }
     & > div.countdown1 {
@@ -223,24 +215,15 @@ div#result-area {
         transform: scaleY(calc(1 / 1.1));
         line-height: calc(1 / 1.1);
       }
-      & > div.name-text {
-        justify-self: end;  /* iphone デバッグ用 */
-      }
     }
     & > div.day-area {
       grid-column: 2;
       justify-self: center;
       font-size: 4.0em;
-      & > div.day-text {
-        justify-self: end;  /* iphone デバッグ用 */
-      }
     }
     & > div.time-area {
       grid-column: 3;
       font-size: 4.0em;
-      & > div.time-text {
-        justify-self: end;  /* iphone デバッグ用 */
-      }
     }
     &:has(div.countdown2.hidden) {
       grid-template: repeat(2, min-content 1fr) / 10.5fr 9fr 9fr;

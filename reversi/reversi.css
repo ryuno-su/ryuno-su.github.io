@@ -389,6 +389,7 @@ details#parameter-area {
       }
       & label {
         display: inline-block;
+        vertical-align: middle;
         width: 5.8rem;
       }
       & .label::after {

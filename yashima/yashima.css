@@ -101,14 +101,10 @@ ul.button-list {
       }
     }
   }
-  div#result-area + & {
-    /* margin-block-start: 0.4rem; */
-    margin-block-start: 0.45rem;
-    /* margin-inline-start: 0.1rem; */
-    margin-inline-start: 0.9rem;
+  div#button-area > & {
+    margin-inline-start: 0.5rem;
   }
-  div#info-area & {
-    margin-block-start: -0.1rem;
+  div#info-area > & {
     margin-inline-start: 0.5rem;
   }
 }

@@ -451,7 +451,7 @@ details#parameter-area {
       & label {
         display: inline-block;
         vertical-align: middle;
-        width: 4.55rem;
+        width: 4.5rem;
       }
       & .label::after {
         display: inline-block;

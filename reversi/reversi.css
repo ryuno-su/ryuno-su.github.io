@@ -82,7 +82,7 @@ svg {
     stroke: black;
     stroke-width: calc(var(--svg-bg-stroke-length) / 2);
   }
-  &.not-init_area {
+  &.out-init_area {
     & > rect.background {
       fill: none;
     }
@@ -97,7 +97,7 @@ svg {
     & > rect.background {
       fill: lime;
     }
-    &.not-init_area > rect.background {
+    &.out-init_area > rect.background {
       fill: rgb(170, 170, 170);
     }
   }

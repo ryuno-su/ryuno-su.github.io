@@ -133,7 +133,7 @@ div#result-area {
     & div {
       line-height: 1.0;
       align-self: center;
-      justify-self: end; /* todo */
+      justify-self: end;
       &[class*="-text"] {
         font-size: max(1.8vw, 8px);
         margin-block-start: 0.5vw;
@@ -208,7 +208,7 @@ div#result-area {
         line-height: 1.2;
       }
       & > div.name-text {
-        line-height: 1.3; /* todo */
+        line-height: 1.35;
       }
     }
     & > div.day-area {

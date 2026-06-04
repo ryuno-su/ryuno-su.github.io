@@ -334,6 +334,7 @@ details#parameter-area {
     word-break: keep-all;
     white-space: nowrap;
     overflow-x: auto;
+    overscroll-behavior-y: auto;
     & ul#AI_LIST {
       display: inline-block;
       margin: 0px;
@@ -528,6 +529,7 @@ div#board-area {
   max-width: 100%;
   max-height: calc(100dvh - 0.2rem - 0.2rem - 1.5rem - 0.2rem  - 0.5rem - 0.2rem - 1.3rem - 1.3rem - 0.2rem);
   overflow: auto;
+  overscroll-behavior-y: auto;
   &:focus {
     outline-offset: 0px;
   }
@@ -643,6 +645,7 @@ div#info-area {
       display: block;
       resize: vertical;
       overflow-y: auto;
+      overscroll-behavior-y: auto;
       margin: 0px;
       padding: 4px;
       font-size: 0.9em;

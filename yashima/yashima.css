@@ -192,6 +192,7 @@ div#result-area {
       display: -webkit-box;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      overscroll-behavior-y: auto;
       text-overflow: ellipsis;
       -webkit-line-clamp: 3;
       line-clamp: 3;
@@ -255,6 +256,7 @@ div#edit-area {
     word-break: keep-all;
     white-space: nowrap;
     overflow-x: auto;
+    overscroll-behavior-y: auto;
     & > li {
       list-style: none;
       line-height: 1.5;

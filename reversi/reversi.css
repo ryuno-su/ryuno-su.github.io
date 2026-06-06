@@ -8,7 +8,8 @@ html {
   text-rendering: optimizeSpeed;
   scroll-behavior: smooth;
 
-  overscroll-behavior: none;
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: none;
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
@@ -22,7 +23,8 @@ html {
   text-rendering: optimizeSpeed;
   scroll-behavior: smooth;
 
-  overscroll-behavior: none;
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: none;
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
@@ -75,13 +77,6 @@ svg {
   margin: 0px;
   padding: 0px;
   cursor: pointer;
-  & > rect.background {
-    width: 100%;
-    height: 100%;
-    fill: limegreen;
-    stroke: black;
-    stroke-width: calc(var(--svg-bg-stroke-length) / 2);
-  }
   &.out-init_area {
     & > rect.background {
       fill: none;
@@ -93,7 +88,11 @@ svg {
       fill: none;
     }
   }
-  &:hover {
+  &:focus {
+    outline: none;
+    border: none;
+  }
+  &:is(:hover, :focus) {
     & > rect.background {
       fill: lime;
     }
@@ -101,12 +100,27 @@ svg {
       fill: rgb(170, 170, 170);
     }
   }
-  & > text {
+  & > rect.background {
+    width: 100%;
+    height: 100%;
+    x: 0%;
+    y: 0%;
+    fill: limegreen;
+    stroke: black;
+    stroke-width: calc(var(--svg-bg-stroke-length) / 2);
+  }
+  & > circle:is(.disc, .assist-disc) {
+    cx: 50%;
+    cy: 50%;
+    r: 40%;
+  }
+  & > text.score {
     font-size: 0.5em;
-    line-height: 0;
-    text-align: center;
-    vertical-align: middle;
+    x: 50%;
+    y: 50%;
     fill: green;
+    text-anchor: middle;
+    dominant-baseline: central;
   }
 
   &.cell {
@@ -147,6 +161,8 @@ svg {
     & > rect.highlight-disc {
       width: 90%;
       height: 90%;
+      x: 5%;
+      y: 5%;
       fill: none;
       stroke-width: var(--svg-st-stroke-length);
       stroke-dasharray: calc(var(--svg-st-stroke-length) * 2), calc(var(--svg-st-stroke-length) * 2);
@@ -334,6 +350,7 @@ details#parameter-area {
     word-break: keep-all;
     white-space: nowrap;
     overflow-x: auto;
+    overscroll-behavior-x: none;
     overscroll-behavior-y: auto;
     & ul#AI_LIST {
       display: inline-block;
@@ -529,11 +546,9 @@ div#board-area {
   max-width: 100%;
   max-height: calc(100dvh - 0.2rem - 0.2rem - 1.5rem - 0.2rem  - 0.5rem - 0.2rem - 1.3rem - 1.3rem - 0.2rem);
   overflow: auto;
+  overscroll-behavior-x: none;
   overscroll-behavior-y: auto;
-  &:focus {
-    outline-offset: 0px;
-  }
-  & > table {
+  & > table#board {
     table-layout: fixed;
     border-collapse: separate;
     border-spacing: 0px;
@@ -682,6 +697,8 @@ footer {
 /* @media (orientation: portrait) { */
   html {
     font-size: 18px;
+
+    overscroll-behavior: none;
   }
   details#parameter-area {
     & > ul.details-content {

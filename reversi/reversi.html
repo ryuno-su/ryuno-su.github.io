@@ -12,8 +12,8 @@
   <link rel="apple-touch-icon" type="image/png" href="reversi.png" sizes="180x180">
   <link rel="stylesheet" type="text/css" href="reversi.css">
   <!-- デバッグ用 -->
-  <!-- <script type="text/javascript" src="reversi.js" defer></script> -->
-  <script type="text/javascript" src="reversi.min.js" defer></script>
+  <script type="text/javascript" src="reversi.js" defer></script>
+  <!-- <script type="text/javascript" src="reversi.min.js" defer></script> -->
 </head>
 
 <body>
@@ -24,169 +24,169 @@
 
   <main>
     <div id="template-area" class="area hidden">
-      <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="cell" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="white" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="cell" data-color="white" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="red" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="cell" data-color="red" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="blue" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="cell" data-color="blue" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="cyan" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="cell" data-color="cyan" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="magenta" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="cell" data-color="magenta" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="yellow" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="cell" data-color="yellow" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="orange" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="cell" data-color="orange" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="sentinel" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
-      </svg>
-      <hr>
-
-      <svg class="highlight" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <rect class="highlight-disc" x="5%" y="5%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
-      </svg>
-      <svg class="highlight" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <rect class="highlight-disc" x="5%" y="5%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
-      </svg>
-      <svg class="highlight" data-color="white" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <rect class="highlight-disc" x="5%" y="5%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
-      </svg>
-      <svg class="highlight" data-color="red" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <rect class="highlight-disc" x="5%" y="5%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
-      </svg>
-      <svg class="highlight" data-color="blue" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <rect class="highlight-disc" x="5%" y="5%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
-      </svg>
-      <svg class="highlight" data-color="cyan" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <rect class="highlight-disc" x="5%" y="5%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
-      </svg>
-      <svg class="highlight" data-color="magenta" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <rect class="highlight-disc" x="5%" y="5%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
-      </svg>
-      <svg class="highlight" data-color="yellow" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <rect class="highlight-disc" x="5%" y="5%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
-      </svg>
-      <svg class="highlight" data-color="orange" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <rect class="highlight-disc" x="5%" y="5%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
-      </svg>
-      <svg class="highlight" data-color="sentinel" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <rect class="highlight-disc" x="5%" y="5%"></rect>
-        <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="cell" data-color="sentinel" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
       <hr>
 
-      <svg class="assist" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="assist-disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="highlight" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <rect class="highlight-disc"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="assist-disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="highlight" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <rect class="highlight-disc"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="white" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="assist-disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="highlight" data-color="white" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <rect class="highlight-disc"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="red" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="assist-disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="highlight" data-color="red" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <rect class="highlight-disc"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="blue" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="assist-disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="highlight" data-color="blue" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <rect class="highlight-disc"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="cyan" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="assist-disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="highlight" data-color="cyan" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <rect class="highlight-disc"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="magenta" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="assist-disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="highlight" data-color="magenta" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <rect class="highlight-disc"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="yellow" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="assist-disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="highlight" data-color="yellow" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <rect class="highlight-disc"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="orange" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="assist-disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="highlight" data-color="orange" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <rect class="highlight-disc"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="sentinel" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect class="background" x="0%" y="0%"></rect>
-        <circle class="assist-disc" cx="50%" cy="50%" r="40%"></circle>
-        <text class="hidden" x="35%" y="65%"></text>
+      <svg class="highlight" data-color="sentinel" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <rect class="highlight-disc"></rect>
+        <circle class="disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
+      </svg>
+      <hr>
+
+      <svg class="assist" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="assist-disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
+      </svg>
+      <svg class="assist" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="assist-disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
+      </svg>
+      <svg class="assist" data-color="white" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="assist-disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
+      </svg>
+      <svg class="assist" data-color="red" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="assist-disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
+      </svg>
+      <svg class="assist" data-color="blue" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="assist-disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
+      </svg>
+      <svg class="assist" data-color="cyan" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="assist-disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
+      </svg>
+      <svg class="assist" data-color="magenta" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="assist-disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
+      </svg>
+      <svg class="assist" data-color="yellow" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="assist-disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
+      </svg>
+      <svg class="assist" data-color="orange" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="assist-disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
+      </svg>
+      <svg class="assist" data-color="sentinel" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+        <rect class="background"></rect>
+        <circle class="assist-disc"></circle>
+        <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
       <hr>
 
@@ -332,472 +332,472 @@
           <tr>
             <th>1</th>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="11">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">7</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="11">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">7</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="12">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">1</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="12">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">1</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="13">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">6</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="13">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="14">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">5</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="14">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">5</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="15">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">5</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="15">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">5</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="16">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">6</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="16">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="17">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">1</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="17">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">1</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="18">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">7</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="18">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">7</text>
               </svg>
             </td>
           </tr>
           <tr>
             <th>2</th>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="21">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">1</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="21">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">1</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="22">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">2</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="22">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">2</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="23">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">3</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="23">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="24">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">3</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="24">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="25">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">3</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="25">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="26">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">3</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="26">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="27">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">2</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="27">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">2</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="28">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">1</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="28">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">1</text>
               </svg>
             </td>
           </tr>
           <tr>
             <th>3</th>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="31">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">6</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="31">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="32">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">3</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="32">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="33">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">6</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="33">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="34">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">4</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="34">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="35">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">4</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="35">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="36">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">6</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="36">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="37">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">3</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="37">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="38">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">6</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="38">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
           </tr>
           <tr>
             <th>4</th>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="41">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">5</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="41">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">5</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="42">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">3</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="42">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="43">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">4</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="43">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="white" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="44">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">2</text>
+              <svg class="cell" data-color="white" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="44">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="45">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">2</text>
+              <svg class="cell" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="45">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="46">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">4</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="46">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="47">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">3</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="47">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="48">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">5</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="48">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">5</text>
               </svg>
             </td>
           </tr>
           <tr>
             <th>5</th>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="51">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">5</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="51">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">5</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="52">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">3</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="52">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="53">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">4</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="53">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="54">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">2</text>
+              <svg class="cell" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="54">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="white" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="55">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">2</text>
+              <svg class="cell" data-color="white" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="55">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="56">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">4</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="56">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="57">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">3</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="57">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="58">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">5</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="58">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">5</text>
               </svg>
             </td>
           </tr>
           <tr>
             <th>6</th>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="61">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">6</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="61">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="62">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">3</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="62">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="63">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">6</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="63">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="64">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">4</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="64">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="65">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">4</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="65">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="66">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">6</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="66">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="67">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">3</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="67">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="68">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">6</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="68">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
           </tr>
           <tr>
             <th>7</th>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="71">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">1</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="71">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">1</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="72">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">2</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="72">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">2</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="73">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">3</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="73">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="74">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">3</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="74">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="75">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">3</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="75">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="76">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">3</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="76">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="77">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">2</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="77">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">2</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="78">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">1</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="78">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">1</text>
               </svg>
             </td>
           </tr>
           <tr>
             <th>8</th>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="81">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">7</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="81">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">7</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="82">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">1</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="82">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">1</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="83">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">6</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="83">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="84">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">5</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="84">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">5</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="85">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">5</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="85">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">5</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="86">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">6</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="86">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="87">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">1</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="87">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">1</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" data-index="88">
-                <rect class="background" x="0%" y="0%"></rect>
-                <circle class="disc" cx="50%" cy="50%" r="40%"></circle>
-                <text class="hidden" x="35%" y="65%">7</text>
+              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="88">
+                <rect class="background"></rect>
+                <circle class="disc"></circle>
+                <text class="score hidden" x="50%" y="50%">7</text>
               </svg>
             </td>
           </tr>
@@ -865,12 +865,17 @@
         </a>
       </li>
       <li>
-        <a href="https://www.hasera.net/othello/mame006.html" target="_blank">
+        <a href="https://play.hasera.net" target="_blank">
+          はせらリバーシ - はせら
+        </a>
+      </li>
+      <li>
+        <a href="https://hasera.net/othello/mame006.html" target="_blank">
           最も早い段階でのパス - はせら
         </a>
       </li>
       <li>
-        <a href="https://www.hasera.net/othello/mame007.html" target="_blank">
+        <a href="https://hasera.net/othello/mame007.html" target="_blank">
           早い段階での連続パス - はせら
         </a>
       </li>

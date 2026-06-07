@@ -8,7 +8,8 @@ html {
   text-rendering: optimizeSpeed;
   scroll-behavior: smooth;
 
-  overscroll-behavior: none;
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: none;
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
@@ -22,7 +23,8 @@ html {
   text-rendering: optimizeSpeed;
   scroll-behavior: smooth;
 
-  overscroll-behavior: none;
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: none;
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
@@ -75,17 +77,28 @@ svg {
   margin: 0px;
   padding: 0px;
   cursor: pointer;
+  &:focus {
+    outline: none;
+    border: none;
+  }
+  &:is(:hover, :focus) {
+    & > rect.background {
+      fill: gold;
+    }
+  }
   & > rect.background {
     width: 100%;
     height: 100%;
+    x: 0%;
+    y: 0%;
     fill: sandybrown;
     stroke: black;
     stroke-width: calc(var(--svg-bg-stroke-length) / 2);
   }
-  &:hover {
-    & > rect.background {
-      fill: gold;
-    }
+  & > circle:is(.disc, .assist-disc) {
+    cx: 50%;
+    cy: 50%;
+    r: 40%;
   }
 
   &.cell {
@@ -126,6 +139,8 @@ svg {
     & > rect.highlight-disc {
       width: 90%;
       height: 90%;
+      x: 5%;
+      y: 5%;
       fill: none;
       stroke-width: var(--svg-st-stroke-length);
     }
@@ -254,6 +269,9 @@ svg {
 
   &.hint {
     & > circle.hint-disc {
+      cx: 50%;
+      cy: 50%;
+      r: 45%;
       fill: none;
       stroke-width: var(--svg-st-stroke-length);
     }
@@ -398,40 +416,8 @@ details#parameter-area {
     word-break: keep-all;
     white-space: nowrap;
     overflow-x: auto;
+    overscroll-behavior-x: none;
     overscroll-behavior-y: auto;
-    & ul#AI_LIST {
-      display: inline-block;
-      margin: 0px;
-      margin-inline-end: 0.2rem;
-      width: fit-content;
-      &.disabled {
-        & label.label {
-          opacity: 0.7;
-        }
-        & input[type="checkbox"] {
-          opacity: 1;
-        }
-      }
-      & li {
-        margin-block-start: -0.2rem;
-        vertical-align: middle;
-        &.shown {
-          display: inline-block;
-        }
-        & label.label {
-          display: inline;
-        }
-        & .label::after {
-          padding-inline: 0.4rem 0.0rem;
-        }
-        & span:is([data-color="white"], [data-color="yellow"]) {
-          text-shadow: 0px 0px 2px black;
-        }
-        & input[type="checkbox"] {
-          line-height: 1;
-        }
-      }
-    }
     & select {
       margin-inline-start: -0.45px;
       padding-block: 0.0rem 0.2rem;
@@ -475,7 +461,7 @@ details#parameter-area {
       }
       &[type="checkbox"] {
         margin: 0px;
-        margin-inline-start: -1px;
+        margin-inline-start: -0.05rem;
         width: 1lh;
         height: 1lh;
         &:focus {
@@ -536,6 +522,42 @@ details#parameter-area {
     & input:is([type="number"], [type="text"]) {
       padding: 0.1rem 0.1rem;
     }
+    & ul#AI_LIST {
+      display: inline-block;
+      margin: 0px;
+      margin-inline-end: 0.2rem;
+      width: fit-content;
+      &.disabled {
+        & label.label {
+          opacity: 0.7;
+        }
+        & input[type="checkbox"] {
+          opacity: 1;
+        }
+      }
+      & li {
+        margin-block-start: -0.2rem;
+        vertical-align: middle;
+        margin-block-end: 0.1rem;
+        &.shown {
+          display: inline-block;
+        }
+        & label.label {
+          display: inline;
+        }
+        & .label::after {
+          padding-inline: 0.4rem 0.0rem;
+        }
+        & span:is([data-color="white"], [data-color="yellow"]) {
+          text-shadow: 0px 0px 2px black;
+          /* text-stroke: 1px black;
+          -webkit-text-stroke: 1px black; */
+        }
+        & input[type="checkbox"] {
+          line-height: 1.1;
+        }
+      }
+    }
   }
 }
 
@@ -590,11 +612,9 @@ div#board-area {
   max-width: 100%;
   max-height: calc(100dvh - 0.2rem - 0.2rem - 1.5rem - 0.2rem  - 0.5rem - 0.2rem - 1.3rem - 1.3rem - 0.2rem);
   overflow: auto;
+  overscroll-behavior-x: none;
   overscroll-behavior-y: auto;
-  &:focus {
-    outline-offset: 0px;
-  }
-  & > table {
+  & > table#board {
     table-layout: fixed;
     border-collapse: separate;
     border-spacing: 0px;
@@ -743,6 +763,10 @@ footer {
 /* @media (orientation: portrait) { */
   html {
     font-size: 18px;
+    overscroll-behavior: none;
+  }
+  *, *::before, *::after {
+    overscroll-behavior: none;
   }
   details#parameter-area {
     & > ul.details-content {
@@ -750,6 +774,8 @@ footer {
         & li {
           & span:is([data-color="white"], [data-color="yellow"]) {
             text-shadow: 0px 0px 0.2px gray;
+            /* text-stroke: 0.5px gray;
+            -webkit-text-stroke: 0.5px gray; */
           }
         }
       }

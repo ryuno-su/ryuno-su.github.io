@@ -8,7 +8,8 @@ html {
   text-rendering: optimizeSpeed;
   scroll-behavior: smooth;
 
-  overscroll-behavior: none;
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: none;
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
@@ -22,7 +23,8 @@ html {
   text-rendering: optimizeSpeed;
   scroll-behavior: smooth;
 
-  overscroll-behavior: none;
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: none;
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
@@ -99,7 +101,7 @@ div#edit-area {
     & > ul.details-content {
       border: 1px solid black;
       border-radius: 3px;
-      font-size: 0.9em;
+      font-size: 0.9rem;
       margin: 0px;
       padding: 0.2rem;
       width: auto;
@@ -108,6 +110,7 @@ div#edit-area {
       word-break: keep-all;
       white-space: nowrap;
       overflow-x: auto;
+      overscroll-behavior-y: auto;
       & > li {
         list-style: none;
         line-height: 1.7;
@@ -161,6 +164,7 @@ div#edit-area {
     display: block;
     resize: vertical;
     overflow-y: auto;
+    overscroll-behavior-y: auto;
     margin: 0px;
     padding: 4px;
     width: 100%;
@@ -233,6 +237,7 @@ div#result-area {
     display: block;
     resize: vertical;
     overflow-y: auto;
+    overscroll-behavior-y: auto;
     margin: 0px;
     padding: 4px;
     width: auto;
@@ -272,6 +277,10 @@ footer {
 /* @media (orientation: portrait) { */
   html {
     font-size: 18px;
+    overscroll-behavior: none;
+  }
+  *, *::before, *::after {
+    overscroll-behavior: none;
   }
   div#edit-area > details {
     &#instruction-area li label {
@@ -282,9 +291,9 @@ footer {
       width: 5.7rem;
       margin-inline-end: 0.6rem;
     }
-    & input {
+    /* keshitai */
+    /* & input {
       font-size: 16px;
-      line-height: 1.15;
-    }
+    } */
   }
 }

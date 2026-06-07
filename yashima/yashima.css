@@ -17,7 +17,8 @@ html {
   text-rendering: optimizeSpeed;
   scroll-behavior: smooth;
 
-  overscroll-behavior: none;
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: none;
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
@@ -31,7 +32,8 @@ html {
   text-rendering: optimizeSpeed;
   scroll-behavior: smooth;
 
-  overscroll-behavior: none;
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: none;
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
@@ -256,6 +258,7 @@ div#edit-area {
     word-break: keep-all;
     white-space: nowrap;
     overflow-x: auto;
+    overscroll-behavior-x: none;
     overscroll-behavior-y: auto;
     & > li {
       list-style: none;
@@ -359,9 +362,17 @@ footer {
 }
 
 /* モバイル端末用 */
-/* @media (width < var(--mobile-length)) or (height < var(--mobile-length)) { */
+@media (width < var(--mobile-length)) or (height < var(--mobile-length)) {
 /* デバッグ用 */
 /* @media (orientation: portrait) { */
+  html {
+    font-size: 18px; /* keshitai */
+    overscroll-behavior: none;
+  }
+  *, *::before, *::after {
+    overscroll-behavior: none;
+  }
+}
 @media (orientation: portrait) {
   div#result-area {
     & > div#result-content {

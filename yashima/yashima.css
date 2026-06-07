@@ -63,7 +63,11 @@ body {
 }
 
 :focus {
-  outline: -webkit-focus-ring-color auto 1px;
+  /* outline: 1px auto -webkit-focus-ring-color; */
+  outline: 2px solid black;
+  outline-offset: -1px;
+  border: none;
+  border-radius: 3px;
 }
 
 hr {
@@ -98,8 +102,6 @@ ul.button-list {
       &:focus {
         outline: 2px solid black;
         outline-offset: -1px;
-        border: none;
-        border-radius: 3px;
       }
     }
   }
@@ -274,7 +276,6 @@ div#edit-area {
       }
       & > input {
         width: 15.0rem;
-
         appearance: none;
         line-height: 1.4;
         height: 1lh;
@@ -307,7 +308,8 @@ div#edit-area {
           opacity: 0.7;
         }
         &:valid:focus {
-          outline: -webkit-focus-ring-color auto 1px;
+          outline: 2px solid black;
+          outline-offset: -1px;
         }
       }
     }
@@ -366,7 +368,7 @@ footer {
 /* デバッグ用 */
 /* @media (orientation: portrait) { */
   html {
-    font-size: 18px; /* keshitai */
+    font-size: 18px;
     overscroll-behavior: none;
   }
   *, *::before, *::after {

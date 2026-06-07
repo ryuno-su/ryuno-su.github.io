@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,172 +23,169 @@
   <hr>
 
   <main>
-    <div id="template-area" class="area hidden">
-      <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+    <template id="template-area">
+      <svg class="cell" data-color="none" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="cell" data-color="black" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="white" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="cell" data-color="white" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="red" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="cell" data-color="red" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="blue" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="cell" data-color="blue" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="cyan" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="cell" data-color="cyan" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="magenta" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="cell" data-color="magenta" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="yellow" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="cell" data-color="yellow" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="orange" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="cell" data-color="orange" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="cell" data-color="sentinel" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="cell" data-color="sentinel" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <hr>
 
-      <svg class="highlight" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="highlight" data-color="none" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <rect class="highlight-disc"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="highlight" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="highlight" data-color="black" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <rect class="highlight-disc"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="highlight" data-color="white" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="highlight" data-color="white" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <rect class="highlight-disc"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="highlight" data-color="red" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="highlight" data-color="red" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <rect class="highlight-disc"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="highlight" data-color="blue" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="highlight" data-color="blue" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <rect class="highlight-disc"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="highlight" data-color="cyan" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="highlight" data-color="cyan" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <rect class="highlight-disc"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="highlight" data-color="magenta" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="highlight" data-color="magenta" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <rect class="highlight-disc"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="highlight" data-color="yellow" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="highlight" data-color="yellow" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <rect class="highlight-disc"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="highlight" data-color="orange" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="highlight" data-color="orange" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <rect class="highlight-disc"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="highlight" data-color="sentinel" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="highlight" data-color="sentinel" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <rect class="highlight-disc"></rect>
         <circle class="disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <hr>
 
-      <svg class="assist" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="assist" data-color="none" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="assist-disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="assist" data-color="black" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="assist-disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="white" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="assist" data-color="white" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="assist-disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="red" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="assist" data-color="red" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="assist-disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="blue" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="assist" data-color="blue" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="assist-disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="cyan" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="assist" data-color="cyan" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="assist-disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="magenta" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="assist" data-color="magenta" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="assist-disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="yellow" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="assist" data-color="yellow" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="assist-disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="orange" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="assist" data-color="orange" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="assist-disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <svg class="assist" data-color="sentinel" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+      <svg class="assist" data-color="sentinel" data-index="0" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect class="background"></rect>
         <circle class="assist-disc"></circle>
         <text class="score hidden" x="50%" y="50%">0</text>
       </svg>
-      <hr>
 
       <span class="color-text" data-color="none">NONE</span>
       <span class="color-text" data-color="black">BLACK</span>
@@ -200,14 +197,13 @@
       <span class="color-text" data-color="yellow">YELLOW</span>
       <span class="color-text" data-color="orange">ORANGE</span>
       <span class="color-text" data-color="sentinel">SENTINEL</span>
-      <hr>
-    </div>
+    </template>
 
     <details id="parameter-area" class="area">
       <summary class="label" title="パラメータを設定します">parameter</summary>
       <ul class="details-content">
         <li class="shown">
-          <span class="label"><label for="COLOR_NUM">対局人数</label></span>
+          <span class="label"><label for="COLOR_NUM" lang="ja">対局人数</label></span>
           <select id="COLOR_NUM" name="COLOR_NUM" required autocomplete="off" title="以下のいずれかの整数を選択してください">
             <option value="2" selected>2</option>
             <option value="3">3</option>
@@ -219,19 +215,19 @@
           </select>
         </li>
         <li class="shown">
-          <span class="label"><label for="BOARD_WIDTH">盤面横幅</label></span>
+          <span class="label"><label for="BOARD_WIDTH" lang="ja">盤面横幅</label></span>
           <input id="BOARD_WIDTH" name="BOARD_WIDTH" type="number" value="8" required min="4" max="26" step="1" pattern="^([1-9][0-9]*|0)$" inputmode="numeric" autocomplete="off" title="4以上26以下の整数を入力してください">
         </li>
         <li class="shown">
-          <span class="label"><label for="BOARD_HEIGHT">盤面縦幅</label></span>
+          <span class="label"><label for="BOARD_HEIGHT" lang="ja">盤面縦幅</label></span>
           <input id="BOARD_HEIGHT" name="BOARD_HEIGHT" type="number" value="8" required min="4" max="26" step="1" pattern="^([1-9][0-9]*|0)$" inputmode="numeric" autocomplete="off" title="4以上26以下の整数を入力してください">
         </li>
         <li class="shown">
-          <span class="label"><label for="TURN_NUM">手数/手番</label></span>
+          <span class="label"><label for="TURN_NUM" lang="ja">手数/手番</label></span>
           <input id="TURN_NUM" name="TURN_NUM" type="number" value="1" required min="1" max="4" step="1" pattern="^([1-9][0-9]*|0)$" inputmode="numeric" autocomplete="off" title="1以上4以下の整数を入力してください">
         </li>
         <li class="shown">
-          <span class="label"><label for="ai-black">AI手番</label></span>
+          <span class="label"><label for="ai-black" lang="ja">AI手番</label></span>
           <ul id="AI_LIST">
             <li class="shown">
               <label class="label" for="ai-black"><span class="color-text" data-color="black">BLACK</span></label>
@@ -268,7 +264,7 @@
           </ul>
         </li>
         <li class="hidden">
-          <span class="label"><label for="AI_LEVEL">AIレベル</label></span>
+          <span class="label"><label for="AI_LEVEL" lang="ja">AIレベル</label></span>
           <select id="AI_LEVEL" name="AI_LEVEL" required autocomplete="off" title="以下のいずれかの整数を選択してください">
             <option value="0">0</option>
             <option value="1">1</option>
@@ -280,7 +276,7 @@
           </select>
         </li>
         <li class="shown">
-          <span class="label"><label for="DELAY_MSEC">待機時間</label></span>
+          <span class="label"><label for="DELAY_MSEC" lang="ja">待機時間</label></span>
           <select id="DELAY_MSEC" name="DELAY_MSEC" required autocomplete="off" title="以下のいずれかの値を選択してください">
             <option value="0">0ms</option>
             <option value="1">1ms</option>
@@ -291,11 +287,11 @@
           </select>
         </li>
         <li class="shown">
-          <span class="label"><label for="LUCKY_MODE">ラッキーマス</label></span>
+          <span class="label"><label for="LUCKY_MODE" lang="ja">ラッキーマス</label></span>
           <input id="LUCKY_MODE" name="LUCKY_MODE" type="checkbox" value="false" title="ラッキーマスの有無を選択してください">
         </li>
         <li class="shown">
-          <span class="label"><label for="HAND_MODE">初期配置手動</label></span>
+          <span class="label"><label for="HAND_MODE" lang="ja">初期配置手動</label></span>
           <input id="HAND_MODE" name="HAND_MODE" type="checkbox" value="false" title="初期配置を手動で行うかどうか選択してください">
         </li>
       </ul>
@@ -332,56 +328,56 @@
           <tr>
             <th>1</th>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="11">
+              <svg class="cell" data-color="none" data-index="11" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">7</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="12">
+              <svg class="cell" data-color="none" data-index="12" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">1</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="13">
+              <svg class="cell" data-color="none" data-index="13" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="14">
+              <svg class="cell" data-color="none" data-index="14" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">5</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="15">
+              <svg class="cell" data-color="none" data-index="15" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">5</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="16">
+              <svg class="cell" data-color="none" data-index="16" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="17">
+              <svg class="cell" data-color="none" data-index="17" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">1</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="18">
+              <svg class="cell" data-color="none" data-index="18" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">7</text>
@@ -391,56 +387,56 @@
           <tr>
             <th>2</th>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="21">
+              <svg class="cell" data-color="none" data-index="21" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">1</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="22">
+              <svg class="cell" data-color="none" data-index="22" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">2</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="23">
+              <svg class="cell" data-color="none" data-index="23" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="24">
+              <svg class="cell" data-color="none" data-index="24" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="25">
+              <svg class="cell" data-color="none" data-index="25" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="26">
+              <svg class="cell" data-color="none" data-index="26" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="27">
+              <svg class="cell" data-color="none" data-index="27" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">2</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="28">
+              <svg class="cell" data-color="none" data-index="28" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">1</text>
@@ -450,56 +446,56 @@
           <tr>
             <th>3</th>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="31">
+              <svg class="cell" data-color="none" data-index="31" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="32">
+              <svg class="cell" data-color="none" data-index="32" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="33">
+              <svg class="cell" data-color="none" data-index="33" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="34">
+              <svg class="cell" data-color="none" data-index="34" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="35">
+              <svg class="cell" data-color="none" data-index="35" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="36">
+              <svg class="cell" data-color="none" data-index="36" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="37">
+              <svg class="cell" data-color="none" data-index="37" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="38">
+              <svg class="cell" data-color="none" data-index="38" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">6</text>
@@ -509,56 +505,56 @@
           <tr>
             <th>4</th>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="41">
+              <svg class="cell" data-color="none" data-index="41" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">5</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="42">
+              <svg class="cell" data-color="none" data-index="42" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="43">
+              <svg class="cell" data-color="none" data-index="43" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="white" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="44">
+              <svg class="cell" data-color="white" data-index="44" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="45">
+              <svg class="cell" data-color="black" data-index="45" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="46">
+              <svg class="cell" data-color="none" data-index="46" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="47">
+              <svg class="cell" data-color="none" data-index="47" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="48">
+              <svg class="cell" data-color="none" data-index="48" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">5</text>
@@ -568,56 +564,56 @@
           <tr>
             <th>5</th>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="51">
+              <svg class="cell" data-color="none" data-index="51" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">5</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="52">
+              <svg class="cell" data-color="none" data-index="52" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="53">
+              <svg class="cell" data-color="none" data-index="53" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="black" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="54">
+              <svg class="cell" data-color="black" data-index="54" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="white" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="55">
+              <svg class="cell" data-color="white" data-index="55" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="56">
+              <svg class="cell" data-color="none" data-index="56" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="57">
+              <svg class="cell" data-color="none" data-index="57" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="58">
+              <svg class="cell" data-color="none" data-index="58" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">5</text>
@@ -627,56 +623,56 @@
           <tr>
             <th>6</th>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="61">
+              <svg class="cell" data-color="none" data-index="61" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="62">
+              <svg class="cell" data-color="none" data-index="62" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="63">
+              <svg class="cell" data-color="none" data-index="63" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="64">
+              <svg class="cell" data-color="none" data-index="64" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="65">
+              <svg class="cell" data-color="none" data-index="65" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">4</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="66">
+              <svg class="cell" data-color="none" data-index="66" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="67">
+              <svg class="cell" data-color="none" data-index="67" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="68">
+              <svg class="cell" data-color="none" data-index="68" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">6</text>
@@ -686,56 +682,56 @@
           <tr>
             <th>7</th>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="71">
+              <svg class="cell" data-color="none" data-index="71" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">1</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="72">
+              <svg class="cell" data-color="none" data-index="72" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">2</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="73">
+              <svg class="cell" data-color="none" data-index="73" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="74">
+              <svg class="cell" data-color="none" data-index="74" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="75">
+              <svg class="cell" data-color="none" data-index="75" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="76">
+              <svg class="cell" data-color="none" data-index="76" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">3</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="77">
+              <svg class="cell" data-color="none" data-index="77" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">2</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="78">
+              <svg class="cell" data-color="none" data-index="78" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">1</text>
@@ -745,56 +741,56 @@
           <tr>
             <th>8</th>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="81">
+              <svg class="cell" data-color="none" data-index="81" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">7</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="82">
+              <svg class="cell" data-color="none" data-index="82" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">1</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="83">
+              <svg class="cell" data-color="none" data-index="83" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="84">
+              <svg class="cell" data-color="none" data-index="84" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">5</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="85">
+              <svg class="cell" data-color="none" data-index="85" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">5</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="86">
+              <svg class="cell" data-color="none" data-index="86" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">6</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="87">
+              <svg class="cell" data-color="none" data-index="87" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">1</text>
               </svg>
             </td>
             <td>
-              <svg class="cell" data-color="none" version="1.1" xmlns="http://www.w3.org/2000/svg" tabindex="0" data-index="88">
+              <svg class="cell" data-color="none" data-index="88" tabindex="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <rect class="background"></rect>
                 <circle class="disc"></circle>
                 <text class="score hidden" x="50%" y="50%">7</text>
@@ -840,62 +836,62 @@
     <h2>Reference</h2>
     <ul>
       <li>
-        <a href="https://ja.wikipedia.org/wiki/%E3%82%AA%E3%82%BB%E3%83%AD_(%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B2%E3%83%BC%E3%83%A0)" target="_blank">
+        <a href="https://ja.wikipedia.org/wiki/%E3%82%AA%E3%82%BB%E3%83%AD_(%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B2%E3%83%BC%E3%83%A0)" target="_blank" lang="ja">
           オセロ (ボードゲーム) - Wikipedia
         </a>
       </li>
       <li>
-        <a href="https://www.othello.org/lesson/lesson/rule.html" target="_blank">
+        <a href="https://www.othello.org/lesson/lesson/rule.html" target="_blank" lang="ja">
           オセロのルール - Othello! JAPAN
         </a>
       </li>
       <li>
-        <a href="https://www.othello.org/lesson/lesson/term.html" target="_blank">
+        <a href="https://www.othello.org/lesson/lesson/term.html" target="_blank" lang="ja">
           オセロ用語の基礎知識 - Othello! JAPAN
         </a>
       </li>
       <li>
-        <a href="https://www.nicovideo.jp/watch/sm8391299" target="_blank">
-          【プログラミング】オセロを1時間で作ってみた【実況解説】 - ニコニコ動画
+        <a href="https://www.nicovideo.jp/watch/sm8391299" target="_blank" lang="ja">
+          【プログラミング】オセロを1時間で作ってみた【実況解説】 - ニコニコ
         </a>
       </li>
       <li>
-        <a href="https://do2.rojo.jp/shogi/javascript/mania.html?f=1" target="_blank">
+        <a href="https://do2.rojo.jp/shogi/javascript/mania.html?f=1" target="_blank" lang="ja">
           オセロ棋譜再生[オセ まにあ] - rojo.jp
         </a>
       </li>
       <li>
-        <a href="https://play.hasera.net" target="_blank">
-          はせらリバーシ - はせら
+        <a href="https://play.hasera.net" target="_blank" lang="ja">
+          はせらリバーシ - はせらリバーシ
         </a>
       </li>
       <li>
-        <a href="https://hasera.net/othello/mame006.html" target="_blank">
+        <a href="https://hasera.net/othello/mame006.html" target="_blank" lang="ja">
           最も早い段階でのパス - はせら
         </a>
       </li>
       <li>
-        <a href="https://hasera.net/othello/mame007.html" target="_blank">
+        <a href="https://hasera.net/othello/mame007.html" target="_blank" lang="ja">
           早い段階での連続パス - はせら
         </a>
       </li>
       <li>
-        <a href="http://www.net.c.dendai.ac.jp/~ksuzuki/" target="_blank">
+        <a href="http://www.net.c.dendai.ac.jp/~ksuzuki/" target="_blank" lang="ja">
           4×4オセロ全手解析 - 東京電機大学
         </a>
       </li>
       <li>
-        <a href="https://www.afsgames.com/reversi.htm" target="_blank">
-          リバーシ(オセロゲーム) - ゲームのつぼ
+        <a href="https://www.afsgames.com/reversi.htm" target="_blank" lang="ja">
+          リバーシ(オセロゲーム) | 無料ゲームは「ゲームのつぼ」 - ゲームのつぼ
         </a>
       </li>
       <li>
-        <a href="https://www.keishicho.metro.tokyo.lg.jp/play/reversi/" target="_blank">
-          リバーシ - 警視庁
+        <a href="https://www.keishicho.metro.tokyo.lg.jp/play/reversi/" target="_blank" lang="ja">
+          リバーシ 警視庁 - 警視庁ホームページ
         </a>
       </li>
       <li>
-        <a href="https://choi.lavox.net/0/terms.html" target="_blank">
+        <a href="https://choi.lavox.net/0/terms.html" target="_blank" lang="ja">
           オセロ用語対訳集 - lavox.net
         </a>
       </li>

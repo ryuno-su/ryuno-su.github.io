@@ -410,7 +410,6 @@ details#parameter-area {
       }
     }
     & label,
-    & .label,
     & input[type="checkbox"],
     & select {
       cursor: pointer;
@@ -468,6 +467,12 @@ details#parameter-area {
         & input[type="checkbox"] {
           opacity: 1;
         }
+      }
+      &:focus-within {
+        outline: 2px solid black;
+        outline-offset: -1px;
+        border: none;
+        border-radius: 3px;
       }
       & li {
         margin-block-start: -0.2rem;

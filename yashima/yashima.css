@@ -263,8 +263,7 @@ div#edit-area {
     overscroll-behavior-y: auto;
     & > li {
       list-style: none;
-      /* line-height: 1.5; */
-      line-height: 2;
+      line-height: 1.5;
       & label {
         display: inline-block;
         width: 6.3rem;
@@ -277,8 +276,7 @@ div#edit-area {
       & > input {
         width: 15.0rem;
         appearance: none;
-        /* line-height: 1.4; */
-        line-height: 1.7;
+        line-height: 1.4;
         height: 1lh;
         vertical-align: middle;
         color: black;

@@ -248,14 +248,14 @@ div#edit-area {
     margin-block-start: 0.2rem;
     margin-block-end: 0.2rem;
   }
-  & > :is(ul, div) {
+  & > ul {
     border: 1px solid black;
     border-radius: 3px;
     margin: 0.5rem;
     padding: 0.2rem;
     width: auto;
-  }
-  & > ul {
+
+    display: block;
     word-break: keep-all;
     white-space: nowrap;
     overflow-x: auto;
@@ -278,7 +278,7 @@ div#edit-area {
         appearance: none;
         line-height: 1.4;
         height: 1lh;
-        /* vertical-align: middle; *//*todo*/
+        vertical-align: middle;
         color: black;
         background-color: white;
         outline: 1px solid black;
@@ -371,6 +371,11 @@ footer {
   }
   *, *::before, *::after {
     overscroll-behavior: none;
+  }
+  div#edit-area {
+    & > ul {
+      font-size: 0.9rem;
+    }
   }
 }
 @media (orientation: portrait) {

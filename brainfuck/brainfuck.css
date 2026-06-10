@@ -282,14 +282,16 @@ footer {
   *, *::before, *::after {
     overscroll-behavior: none;
   }
-  div#edit-area > details {
-    &#instruction-area li label {
-      width: 7.2rem;
-      margin-inline-end: 0.6rem;
-    }
-    &#environment-area li label {
-      width: 5.7rem;
-      margin-inline-end: 0.6rem;
+  div#edit-area {
+    & > details {
+      &#instruction-area li label {
+        width: 7.2rem;
+        margin-inline-end: 0.6rem;
+      }
+      &#environment-area li label {
+        width: 5.7rem;
+        margin-inline-end: 0.6rem;
+      }
     }
   }
 }

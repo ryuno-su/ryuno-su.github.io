@@ -264,7 +264,6 @@ div#edit-area {
     & > li {
       list-style: none;
       line-height: 1.5;
-      vertical-align: middle;
       & label {
         display: inline-block;
         width: 6.3rem;

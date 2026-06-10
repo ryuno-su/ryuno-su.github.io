@@ -117,8 +117,7 @@ header {
   font-size: 0.9rem;
   & > h1 {
     font-size: 1.6rem;
-    margin-block-start: 0.2rem;
-    margin-block-end: 0.2rem;
+    margin-block: 0.2rem;
   }
 }
 
@@ -265,6 +264,7 @@ div#edit-area {
     & > li {
       list-style: none;
       line-height: 1.5;
+      vertical-align: middle;
       & label {
         display: inline-block;
         width: 6.3rem;
@@ -277,9 +277,9 @@ div#edit-area {
       & > input {
         width: 15.0rem;
         appearance: none;
-        line-height: 1.5;
+        line-height: 1.4;
         height: 1lh;
-        vertical-align: middle;
+        /* vertical-align: middle; *//*todo*/
         color: black;
         background-color: white;
         outline: 1px solid black;
@@ -349,8 +349,7 @@ aside {
   font-size: 0.9rem;
   & > h2 {
     font-size: 1.4rem;
-    margin-block-start: 0.2rem;
-    margin-block-end: 0.2rem;
+    margin-block: 0.2rem;
   }
   & a[target="_blank"]::after {
     content: "↗";

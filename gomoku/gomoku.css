@@ -473,6 +473,7 @@ details#parameter-area {
       cursor: default;
       & > label {
         cursor: default;
+        -webkit-tap-highlight-color: transparent;/*todo*/
       }
     }
     & label,

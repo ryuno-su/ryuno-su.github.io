@@ -373,8 +373,8 @@ footer {
     overscroll-behavior: none;
   }
   div#edit-area {
-    & > ul {
-      font-size: 0.8rem;
+    & input {
+      font-size: 0.9rem;
     }
   }
 }

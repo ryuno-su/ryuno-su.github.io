@@ -267,7 +267,7 @@ div#edit-area {
       & label {
         display: inline-block;
         width: 6.3rem;
-        vertical-align: middle;/*todo*/
+        vertical-align: middle;
       }
       & > .label::after {
         display: inline-block;

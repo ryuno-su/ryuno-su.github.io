@@ -129,7 +129,7 @@ div#result-area {
   background-color: black;
   color: sandybrown;
   & > div#result-content {
-    height: 100vh;
+    height: 100lvh;
     display: grid;
     grid-template: repeat(3, min-content 1fr) / 10.5fr 9fr 9fr;
     grid-gap: 0.65vw 1.95vw;
@@ -267,6 +267,7 @@ div#edit-area {
       & label {
         display: inline-block;
         width: 6.3rem;
+        vertical-align: middle;/*todo*/
       }
       & > .label::after {
         display: inline-block;

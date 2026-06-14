@@ -73,6 +73,7 @@ body {
 hr {
   border: none;
   border-top: 1px solid black;
+  margin-block: 0.5rem;
 }
 
 ul.button-list {
@@ -353,8 +354,8 @@ aside {
   }
   & a[target="_blank"]::after {
     content: "↗";
-    font-size: 0.7rem;
     margin-inline-start: 0.2rem;
+    display: inline-block;
   }
 }
 

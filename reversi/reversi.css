@@ -569,17 +569,11 @@ div#board-area {
       text-align: center;
       background-color: rgb(200, 200, 200);
       position: sticky;
-      /* todo */
-      /* will-change: transform; */
-      /* @container scroll-state(scrollable: x) or scroll-state(scrollable: y) {
-         @container not scroll-state(scrollable: none) {
-        & {
-          will-change: transform;
-        }
-      } */
       &::before {
         content: "";
         box-sizing: content-box;
+        width: 100%;
+        height: 100%;
         position: absolute;
         left: 0px;
         top: 0px;
@@ -593,22 +587,12 @@ div#board-area {
         height: calc(var(--svg-length) / 2);
         top: 0px;
         z-index: 1;
-        &::before {
-          width: 100%;
-          height: calc(100% - 1px);
-          border-block-start: 1px solid rgb(200, 200, 200);
-        }
       }
       & th:first-of-type {
         width: calc(var(--svg-length) / 2);
         height: calc(var(--svg-length) / 2);
         left: 0px;
         z-index: 2;
-        &::before {
-          width: calc(100% - 1px);
-          height: 100%;
-          border-inline-start: 1px solid rgb(200, 200, 200);
-        }
       }
     }
     & > tbody {
@@ -619,11 +603,6 @@ div#board-area {
         left: 0px;
         z-index: 1;
         padding-inline-end: calc((var(--svg-length) / 2 - 1em) / 2);
-        &::before {
-          width: calc(100% - 1px);
-          height: 100%;
-          border-inline-start: 1px solid rgb(200, 200, 200);
-        }
       }
       & tr:first-of-type td {
         border-block-start: calc(var(--svg-bg-stroke-length) * 2) solid black;

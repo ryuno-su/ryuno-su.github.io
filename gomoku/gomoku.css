@@ -652,13 +652,13 @@ div#board-area {
       & th {
         width: calc(var(--svg-length));
         height: calc(var(--svg-length) / 2);
-        top: 0px;
+        top: -1px;/*todo*/
         z-index: 1;
       }
       & th:first-of-type {
         width: calc(var(--svg-length) / 2);
         height: calc(var(--svg-length) / 2);
-        left: 0px;
+        left: -1px;/*todo*/
         z-index: 2;
       }
     }
@@ -667,7 +667,7 @@ div#board-area {
         text-align: end;
         width: calc(var(--svg-length) / 2);
         height: calc(var(--svg-length));
-        left: 0px;
+        left: -1px;/*todo*/
         z-index: 1;
         padding-inline-end: calc((var(--svg-length) / 2 - 1em) / 2);
       }

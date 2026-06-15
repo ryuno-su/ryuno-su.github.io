@@ -159,6 +159,9 @@ div#result-area {
         font-size: max(1.8vw, 8px);
         margin-block-start: 0.5vw;
         margin-inline-end: 0.78vw;
+        /*todo*/
+          width: max-content;
+          margin-inline-start: auto;
       }
     }
 
@@ -173,6 +176,7 @@ div#result-area {
     }
     & > div.name-area {
       grid-column: 1;
+      justify-self: end;
       font-size: 3.0em;
 
       display: -webkit-box;
@@ -205,6 +209,7 @@ div#result-area {
     }
     & > div.time-area {
       grid-column: 3;
+      justify-self: end;
       font-size: 4.0em;
     }
     & > div:is(.day-area, .time-area) > div:is(.day, .time) {

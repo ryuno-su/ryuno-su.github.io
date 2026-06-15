@@ -293,7 +293,8 @@ div#edit-area {
         padding-inline: 0.2rem;
         &[type="datetime-local"] {
           appearance: none;
-          -webkit-appearance: none;
+          /*todo keshitai*/
+          /* -webkit-appearance: none; */
           &::-webkit-date-and-time-value {
             text-align: left;
           }

@@ -134,6 +134,23 @@ div#result-area {
     display: grid;
     grid-template: repeat(3, min-content 1fr) / 10.5fr 9fr 9fr;
     grid-gap: 0.65vw 1.95vw;
+    &:has(div.countdown2.hidden) {
+      grid-template: repeat(2, min-content 1fr) / 10.5fr 9fr 9fr;
+      & > div:not(.title-area) {
+        margin-bottom: calc((100vh - 6.5vw - 10.4vw - 3.9vw - 2.6vw - 1.3vw) / 4);
+      }
+      & > div.live {
+        grid-row: 4;
+        &.title-area {
+          grid-row: 3;
+        }
+      }
+
+      & > div.countdown2.hidden {
+        display: none;
+      }
+    }
+
     & div {
       line-height: 1.0;
       align-self: center;
@@ -144,42 +161,7 @@ div#result-area {
         margin-inline-end: 0.78vw;
       }
     }
-    & > div.countdown1 {
-      grid-row: 2;
-      &.title-area {
-        grid-row: 1;
-      }
-    }
-    & > div.countdown2 {
-      grid-row: 4;
-      &.title-area {
-        grid-row: 3;
-      }
-    }
-    & > div.live {
-      grid-row: 6;
-      &.title-area {
-        grid-row: 5;
-      }
-      &.name-area {
-        justify-self: center;
-        margin-inline-start: 3.9vw;
-        & > div {
-          justify-self: center;
-        }
-      }
-      &.day-area {
-        & > div[class*="-text"] {
-          & > span.month-string {
-            margin-inline-end: 9.3vw;
-          }
-        }
-      }
-    }
-    & > div:is(.day-area, .time-area) > div:is(.day, .time) {
-      font-family: "DSEG7-Classic";
-      font-weight: bold;
-    }
+
     & > div:not(.title-area) {
       align-self: last baseline;
       margin-bottom: calc((100vh - 9.75vw - 15.6vw - 3.9vw - 3.25vw - 1.3vw) / 6);
@@ -225,19 +207,41 @@ div#result-area {
       grid-column: 3;
       font-size: 4.0em;
     }
-    &:has(div.countdown2.hidden) {
-      grid-template: repeat(2, min-content 1fr) / 10.5fr 9fr 9fr;
-      & > div.countdown2.hidden {
-        display: none;
+    & > div:is(.day-area, .time-area) > div:is(.day, .time) {
+      font-family: "DSEG7-Classic";
+      font-weight: bold;
+    }
+
+    & > div.countdown1 {
+      grid-row: 2;
+      &.title-area {
+        grid-row: 1;
       }
-      & > div.live {
-        grid-row: 4;
-        &.title-area {
-          grid-row: 3;
+    }
+    & > div.countdown2 {
+      grid-row: 4;
+      &.title-area {
+        grid-row: 3;
+      }
+    }
+    & > div.live {
+      grid-row: 6;
+      &.title-area {
+        grid-row: 5;
+      }
+      &.name-area {
+        justify-self: center;
+        margin-inline-start: 3.9vw;
+        & > div {
+          justify-self: center;
         }
       }
-      & > div:not(.title-area) {
-        margin-bottom: calc((100vh - 6.5vw - 10.4vw - 3.9vw - 2.6vw - 1.3vw) / 4);
+      &.day-area {
+        & > div[class*="-text"] {
+          & > span.month-string {
+            margin-inline-end: 9.3vw;
+          }
+        }
       }
     }
   }
@@ -293,8 +297,7 @@ div#edit-area {
         padding-inline: 0.2rem;
         &[type="datetime-local"] {
           appearance: none;
-          /*todo keshitai*/
-          /* -webkit-appearance: none; */
+          -webkit-appearance: none;
           &::-webkit-date-and-time-value {
             text-align: left;
           }

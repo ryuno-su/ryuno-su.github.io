@@ -156,18 +156,23 @@ div#result-area {
       align-self: center;
       justify-self: end;
       &[class*="-text"] {
+        width: fit-content;
+        margin-inline-start: auto;
         font-size: max(1.8vw, 8px);
         margin-block-start: 0.5vw;
         margin-inline-end: 0.78vw;
-        /*todo*/
-          width: max-content;
-          margin-inline-start: auto;
       }
     }
 
-    & > div:not(.title-area) {
+    & > div:is(.name-area, .day-area, .time-area) {
       align-self: last baseline;
       margin-bottom: calc((100vh - 9.75vw - 15.6vw - 3.9vw - 3.25vw - 1.3vw) / 6);
+    }
+    & > div:is(.day-area, .time-area) {
+      & > div:is(.day, .time) {
+        font-family: "DSEG7-Classic";
+        font-weight: bold;
+      }
     }
     & > div.title-area {
       grid-column: 2;
@@ -176,7 +181,6 @@ div#result-area {
     }
     & > div.name-area {
       grid-column: 1;
-      justify-self: end;
       font-size: 3.0em;
 
       display: -webkit-box;
@@ -186,20 +190,20 @@ div#result-area {
       text-overflow: ellipsis;
       -webkit-line-clamp: 3;
       line-clamp: 3;
-      & > div:is(.name, .name-text) {
+      & > div {
         word-break: break-all;
         white-space: pre-wrap;
-      }
-      & > div.name {
-        font-family: "Noto Serif JP", serif;
-        font-feature-settings: "palt";
-        font-variant-east-asian: proportional-width;
-        font-weight: 900;
-        transform: scaleY(1.1);
-        line-height: 1.2;
-      }
-      & > div.name-text {
-        line-height: 1.35;
+        &.name {
+          font-family: "Noto Serif JP", serif;
+          font-feature-settings: "palt";
+          font-variant-east-asian: proportional-width;
+          font-weight: 900;
+          transform: scaleY(1.1);
+          line-height: 1.2;
+        }
+        &.name-text {
+          line-height: 1.35;
+        }
       }
     }
     & > div.day-area {
@@ -209,12 +213,7 @@ div#result-area {
     }
     & > div.time-area {
       grid-column: 3;
-      justify-self: end;
       font-size: 4.0em;
-    }
-    & > div:is(.day-area, .time-area) > div:is(.day, .time) {
-      font-family: "DSEG7-Classic";
-      font-weight: bold;
     }
 
     & > div.countdown1 {
@@ -332,18 +331,10 @@ div#info-area {
     margin-block-start: 0.2rem;
     margin-block-end: 0.2rem;
   }
-  /* & > h3 {
-    font-size: 1.0rem;
-    margin-block-start: 0.2rem;
-    margin-block-end: 0.2rem;
-    margin-inline-start: 0.5rem;
-  } */
   & > div {
     border: 1px solid black;
     border-radius: 3px;
     margin: 0.5rem;
-    /* margin: 0.4rem;
-    margin-inline-start: 1.0rem; */
     padding: 0.2rem;
     width: auto;
     line-height: 1;

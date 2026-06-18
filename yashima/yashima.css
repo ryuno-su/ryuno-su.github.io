@@ -136,7 +136,7 @@ div#result-area {
     grid-gap: 0.65vw 1.95vw;
     &:has(div.countdown2.hidden) {
       grid-template: repeat(2, min-content 1fr) / 10.5fr 9fr 9fr;
-      & > div:not(.title-area) {
+      & > div:is(.name-area, .day-area, .time-area) {
         margin-bottom: calc((100vh - 6.5vw - 10.4vw - 3.9vw - 2.6vw - 1.3vw) / 4);
       }
       & > div.live {
@@ -154,13 +154,9 @@ div#result-area {
     & div {
       line-height: 1.0;
       align-self: center;
-      justify-self: end;
       &[class*="-text"] {
-        width: fit-content;
-        margin-inline-start: auto;
         font-size: max(1.8vw, 8px);
         margin-block-start: 0.5vw;
-        margin-inline-end: 0.78vw;
       }
     }
 
@@ -172,15 +168,21 @@ div#result-area {
       & > div:is(.day, .time) {
         font-family: "DSEG7-Classic";
         font-weight: bold;
+        font-size: 4.0em;
       }
     }
     & > div.title-area {
       grid-column: 2;
       justify-self: start;
       font-size: 2.8em;
+      & > div.title {
+        justify-self: start;
+      }
     }
     & > div.name-area {
       grid-column: 1;
+      justify-self: start;
+      margin-inline-start: 0.5vw;
       font-size: 3.0em;
 
       display: -webkit-box;
@@ -191,6 +193,7 @@ div#result-area {
       -webkit-line-clamp: 3;
       line-clamp: 3;
       & > div {
+        justify-self: start;
         word-break: break-all;
         white-space: pre-wrap;
         &.name {
@@ -203,17 +206,38 @@ div#result-area {
         }
         &.name-text {
           line-height: 1.35;
+          margin-inline-start: 0.2vw;
         }
       }
     }
     & > div.day-area {
       grid-column: 2;
       justify-self: center;
-      font-size: 4.0em;
+      & > div {
+        &.day {
+          justify-self: center;
+        }
+        &.day-text {
+          justify-self: end;
+          width: fit-content;
+          margin-inline-start: auto;
+          margin-inline-end: 0.6vw;
+        }
+      }
     }
     & > div.time-area {
       grid-column: 3;
-      font-size: 4.0em;
+      justify-self: end;
+      width: fit-content;
+      margin-inline-start: auto;
+      & > div {
+        justify-self: end;
+        width: fit-content;
+        margin-inline-start: auto;
+        &.time-text {
+          margin-inline-end: 0.6vw;
+        }
+      }
     }
 
     & > div.countdown1 {
@@ -233,17 +257,10 @@ div#result-area {
       &.title-area {
         grid-row: 5;
       }
-      &.name-area {
-        justify-self: center;
-        margin-inline-start: 3.9vw;
-        & > div {
-          justify-self: center;
-        }
-      }
       &.day-area {
-        & > div[class*="-text"] {
+        & > div.day-text {
           & > span.month-string {
-            margin-inline-end: 9.3vw;
+            margin-inline-end: 9.5vw;
           }
         }
       }
@@ -384,11 +401,11 @@ footer {
   div#result-area {
     & > div#result-content {
       height: calc(100vw / 1.7);
-      & > div:not(.title-area) {
+      & > div:is(.name-area, .day-area, .time-area) {
         margin-bottom: calc((100vw / 1.7 - 9.75vw - 15.6vw - 3.9vw - 3.25vw - 1.3vw) / 6);
       }
       &:has(div.countdown2.hidden) {
-        & > div:not(.title-area) {
+        & > div:is(.name-area, .day-area, .time-area) {
           margin-bottom: calc((100vw / 1.7 - 6.5vw - 10.4vw - 3.9vw - 2.6vw - 1.3vw) / 4);
         }
       }

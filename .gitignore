@@ -34,12 +34,12 @@
 
 !/watermelon/
 /watermelon/*
-# !/watermelon/watermelon.html
-# !/watermelon/watermelon.css
-# !/watermelon/watermelon.min.js
-# !/watermelon/watermelon.ico
-# !/watermelon/watermelon.png
-# !/watermelon/watermelon.svg
+!/watermelon/watermelon.html
+!/watermelon/watermelon.css
+!/watermelon/watermelon.min.js
+!/watermelon/watermelon.ico
+!/watermelon/watermelon.png
+!/watermelon/watermelon.svg
 
 !/library/
 /library/*

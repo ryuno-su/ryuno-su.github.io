@@ -13,29 +13,6 @@
   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:svg="http://www.w3.org/2000/svg">
-  <style
-    id="style1">
-    rect.background {
-      fill: sandybrown;
-      stroke: black;
-      stroke-width: 2;
-      @media (prefers-color-scheme: dark) {
-        stroke: white;
-      }
-    }
-    circle.disc#circle1 {
-      fill: white;
-    }
-    circle.disc#circle2 {
-      fill: black;
-    }
-    circle.disc#circle3 {
-      fill: black;
-    }
-    circle.disc#circle4 {
-      fill: white;
-    }
-  </style>
   <sodipodi:namedview
     id="namedview1"
     pagecolor="#ffffff"
@@ -57,6 +34,14 @@
     inkscape:current-layer="layer1" />
   <defs
     id="defs1" />
+  <style
+    id="style1">
+    rect.background {
+      @media (prefers-color-scheme: dark) {
+        stroke: white;
+      }
+    }
+  </style>
   <g
     id="layer1"
     inkscape:label="Layer 1"

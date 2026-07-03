@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+  id="svg1"
+  width="180"
+  height="180"
+  viewBox="0 0 180 180"
+  version="1.1"
+  sodipodi:docname="watermelon.svg"
+  inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+    id="namedview1"
+    pagecolor="#ffffff"
+    bordercolor="#000000"
+    borderopacity="0.25"
+    inkscape:showpageshadow="2"
+    inkscape:pageopacity="0.0"
+    inkscape:pagecheckerboard="0"
+    inkscape:deskcolor="#d1d1d1"
+    inkscape:document-units="px"
+    inkscape:zoom="5.78"
+    inkscape:cx="92.474048"
+    inkscape:cy="85.899654"
+    inkscape:window-width="2256"
+    inkscape:window-height="1470"
+    inkscape:window-x="-11"
+    inkscape:window-y="-11"
+    inkscape:window-maximized="1"
+    inkscape:current-layer="layer1" />
+  <defs
+    id="defs1" />
+  <style
+    id="style1">
+  </style>
+  <g
+    id="layer1"
+    inkscape:label="Layer 1"
+    inkscape:groupmode="layer">
+    <g
+      id="g1"
+      inkscape:label="stripe">
+      <circle
+        id="circle1-1"
+        cx="90"
+        cy="90"
+        r="90"
+        fill="#64ca0d" />
+      <ellipse
+        id="ellipse1-2"
+        cx="90"
+        cy="90"
+        rx="90"
+        ry="70"
+        fill="#11770d" />
+      <ellipse
+        id="ellipse1-3"
+        cx="90"
+        cy="90"
+        rx="90"
+        ry="50"
+        fill="#64ca0d" />
+      <ellipse
+        id="ellipse1-4"
+        cx="90"
+        cy="90"
+        rx="90"
+        ry="30"
+        fill="#11770d" />
+      <ellipse
+        id="ellipse1-5"
+        cx="90"
+        cy="90"
+        rx="90"
+        ry="10"
+        fill="#64cd0d" />
+    </g>
+    <g
+      id="g2"
+      inkscape:label="gloss">
+      <path
+        id="path2-1"
+        d="M -90 0
+          A 90 90 0 0 1 -79 0.72070312
+          A 90 90 0 0 0 -158 90
+          A 90 90 0 0 0 -79 179.31836
+          A 90 90 0 0 1 -90 180
+          A 90 90 0 0 1 -180 90
+          A 90 90 0 0 1 -90 0
+          z"
+        transform="scale(-1,1)"
+        fill="white"
+        fill-opacity="0.25" />
+      <ellipse
+        id="ellipse2-2"
+        cx="89.61528"
+        cy="113.37955"
+        rx="9.5376883"
+        ry="13.835848"
+        transform="matrix(0.82661794,-0.56276353,0.58406042,0.81171018,0,0)"
+        fill="white" />
+      <circle
+        id="circle2-3"
+        cx="155.40939"
+        cy="64.211914"
+        r="5.3499999"
+        fill="white" />
+    </g>
+    <g
+      id="g3"
+      inkscape:label="ring">
+      <circle
+        id="circle3"
+        cx="90"
+        cy="90"
+        r="87"
+        fill="none"
+        stroke="#11770d"
+        stroke-width="6" />
+    </g>
+  </g>
+</svg>

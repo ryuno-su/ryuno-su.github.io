@@ -5,6 +5,8 @@ html {
   overscroll-behavior: none;
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+
+  background-color: black;
 }
 *, *::before, *::after {
   font-family: inherit;
@@ -31,11 +33,11 @@ header {
 }
 
 main {
-  min-width: 100dvw;
-  min-height: 100dvh;
-  background-color: black;
+  width: 100dvw;
+  height: 100dvh;
   & > canvas#canvas {
     position: absolute;
+    background-color: white;
   }
 }
 

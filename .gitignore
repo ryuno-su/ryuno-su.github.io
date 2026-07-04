@@ -47,6 +47,7 @@
 !/library/const.min.js
 !/library/class.min.js
 !/library/function.min.js
+!/library/highFunction.min.js
 !/library/closure.min.js
 !/library/prototype.min.js
 !/library/promise.min.js

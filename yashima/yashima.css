@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Noto+Sans+JP&family=Noto+Serif+JP:wght@900&display=swap");
-
-@font-face {
-  font-family: "DSEG7-Classic";
-  src: url("fonts/DSEG7-Classic/DSEG7Classic-Bold.woff2") format("woff2"),
-       url("fonts/DSEG7-Classic/DSEG7Classic-Bold.woff") format("woff"),
-       url("fonts/DSEG7-Classic/DSEG7Classic-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
+@import url("fonts/DSEG7-Classic.css");
 
 html {
   font-family: "Roboto Mono", "Noto Sans JP", monospace;

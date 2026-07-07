@@ -2,9 +2,13 @@ html {
   font-weight: normal;
   font-size: 25px;
   box-sizing: border-box;
-  overscroll-behavior: none;
+  text-rendering: optimizeSpeed;
+
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: none;
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
 
   background-color: black;
 }
@@ -12,6 +16,13 @@ html {
   font-family: inherit;
   font-size: 100%;
   box-sizing: inherit;
+  text-rendering: optimizeSpeed;
+
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: none;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
 }
 
 body {

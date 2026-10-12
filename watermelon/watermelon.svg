@@ -44,11 +44,12 @@
     <g
       id="g1"
       inkscape:label="stripe">
-      <circle
-        id="circle1-1"
+      <ellipse
+        id="ellipse1-1"
         cx="90"
         cy="90"
-        r="90"
+        rx="90"
+        ry="90"
         fill="#64ca0d" />
       <ellipse
         id="ellipse1-2"

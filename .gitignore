@@ -9,6 +9,7 @@
 /brainfuck/*
 !/brainfuck/brainfuck.html
 !/brainfuck/brainfuck.css
+!/brainfuck/brainfuck.js
 !/brainfuck/brainfuck.min.js
 !/brainfuck/brainfuck.ico
 !/brainfuck/brainfuck.png
@@ -18,6 +19,7 @@
 /reversi/*
 !/reversi/reversi.html
 !/reversi/reversi.css
+!/reversi/reversi.js
 !/reversi/reversi.min.js
 !/reversi/reversi.ico
 !/reversi/reversi.png
@@ -27,6 +29,7 @@
 /gomoku/*
 !/gomoku/gomoku.html
 !/gomoku/gomoku.css
+!/gomoku/gomoku.js
 !/gomoku/gomoku.min.js
 !/gomoku/gomoku.ico
 !/gomoku/gomoku.png
@@ -36,6 +39,7 @@
 /watermelon/*
 !/watermelon/watermelon.html
 !/watermelon/watermelon.css
+!/watermelon/watermelon.js
 !/watermelon/watermelon.min.js
 !/watermelon/watermelon.ico
 !/watermelon/watermelon.png
@@ -43,19 +47,28 @@
 
 !/library/
 /library/*
+!/library/library.js
 !/library/library.min.js
+!/library/const.js
 !/library/const.min.js
+!/library/class.js
 !/library/class.min.js
+!/library/function.js
 !/library/function.min.js
+!/library/highFunction.js
 !/library/highFunction.min.js
+!/library/closure.js
 !/library/closure.min.js
+!/library/prototype.js
 !/library/prototype.min.js
+!/library/promise.js
 !/library/promise.min.js
 
 !/yashima/
 /yashima/*
 !/yashima/yashima.html
 !/yashima/yashima.css
+!/yashima/yashima.js
 !/yashima/yashima.min.js
 !/yashima/yashima.ico
 !/yashima/yashima.png

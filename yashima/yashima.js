@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 // const Library = await import("../library/library.js");  // デバッグ用
 const Library = await import("../library/library.min.js");
 
-/** div#result-area */ 
+/** div#result-area */
 const DOMResult = Library.deepFreeze({
     countdown1: {
         name    : document.querySelector("div#result-area div.countdown1 > div.name"),
@@ -76,8 +76,8 @@ https://ryuno-su.github.io/yashima/yashima.html?name1=%E6%A2%97%E6%A6%82%E9%9B%8
 /*
 const DEFAULT_PARAMETERS = Library.deepFreeze({
     countdown1: {
-        name    : "梗概集提出期限" ,  // TODO名
-        nameText: "Deadline For Submitting Abstracts" ,  // TODO英語名
+        name    : "梗概集提出期限",  // TODO名
+        nameText: "Deadline For Submitting Abstracts",  // TODO英語名
         date    : new Date(
                     new Date().localDate().getTime() + new Date("1970-01-19T16:51:52").getTime()
                   )
@@ -85,8 +85,8 @@ const DEFAULT_PARAMETERS = Library.deepFreeze({
                   .toISOStringSlice("YYYY-MM-DDThh:mm:ss"),  // 期限日時
     },
     countdown2: {
-        name    : "卒業論文提出期限" ,  // TODO名
-        nameText: "Deadline For Submission Of Papers" ,  // TODO英語名
+        name    : "卒業論文提出期限",  // TODO名
+        nameText: "Deadline For Submission Of Papers",  // TODO英語名
         date    : new Date(
                     new Date().localDate().getTime() + new Date("1970-01-30T20:21:52").getTime()
                   )

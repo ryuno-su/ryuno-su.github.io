@@ -90,7 +90,7 @@ Array.prototype.isEqAll = function(value=this[0]) {
  * @param {...number} indexes 添え字並び
  * @returns {any[]} 配列の要素列
  */
-Array.prototype.select = function(...indexes) {
+Array.prototype.choice = function(...indexes) {
     return indexes.map((index) => this[index]);
 }
 
@@ -100,7 +100,7 @@ Array.prototype.select = function(...indexes) {
  */
 Array.prototype.prefixSum = function(seed = 0) {
     let sum = seed;
-    return [0, ...this].map(value => sum += value);
+    return [0, ...this].map((value) => sum += value);
 }
 
 /** 数列の階差数列
@@ -108,7 +108,7 @@ Array.prototype.prefixSum = function(seed = 0) {
  */
 Array.prototype.prefixDif = function() {
     let prev = this[0];
-    return this.slice(1).map(value => {
+    return this.slice(1).map((value) => {
         const dif = value - prev;
         prev = value;
         return dif;

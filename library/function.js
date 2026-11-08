@@ -2,8 +2,8 @@
 
 // import { COUNTRY, TIMEZONE } from "./const.js";  // デバッグ用
 import { COUNTRY, TIMEZONE } from "./const.min.js";
-// import "./prototype.js";  // { prefixSum, bisectLeft }  // デバッグ用
-import "./prototype.min.js";  // { prefixSum, bisectLeft }
+// import "./prototype.js";  // { prefixSum, bisectLeft, random }  // デバッグ用
+import "./prototype.min.js";  // { prefixSum, bisectLeft, random }
 
 /** 強制終了
  * @description 呼び出し元にcatchがなければプログラムが終了する
@@ -117,7 +117,7 @@ export function deepFreeze(obj) {
 }
 
 /** 列挙定数群生成
- * @description C言語のenum(列挙定数)形式のObjectを作成
+ * @description C言語の`enum`(列挙定数)形式のObjectを作成
  * @param {...string} keys キー並び
  * @returns {object.<string, number>} 列挙定数群
  */
@@ -149,10 +149,10 @@ export function randomInt(num) {
  * @returns {number} 疑似整数乱数
  */
 export function randomIntRange(min, max) {
-    if (min > max) return undefined;
-    min = Math.ceil(min);
-    max = Math.floor(max) + 1;
-    return randomInt(max-min) + min;
+        if (min > max) return undefined;
+        min = Math.ceil(min);
+        max = Math.floor(max) + 1;
+        return randomInt(max-min) + min;
 }
 
 /** 複数閉区間指定の疑似整数乱数
@@ -160,14 +160,8 @@ export function randomIntRange(min, max) {
  * @returns {number} 疑似整数乱数
  */
 export function randomIntRanges(ranges) {
-    const rands = ranges.map(([min, max]) => {
-        if (min > max) return undefined;
-        min = Math.ceil(min);
-        max = Math.floor(max) + 1;
-        return randomInt(max-min) + min;
-    });
-    const i = Math.trunc(Math.random()*rands.length);
-    return rands[i];
+    const rands = ranges.map(([min, max]) => randomIntRange(min, max));
+    return rands.random();
 }
 
 /** 離散確率密度関数pdfに従う疑似整数乱数(0-indexed)
@@ -279,7 +273,7 @@ export function lcm(...ints) {
  * @param {number} b 除数
  * @returns {number} 商
  */
-export function div(a, b) {
+export function idiv(a, b) {
     return Math.trunc(a/b);
 }
 
@@ -314,7 +308,6 @@ export function ipow(a, b) {
  * @returns {number} 整数の平方根
  */
 export function isqrt(a) {
-    if (a <= 0) return 0;
     let r = Math.sqrt(a);
     while ((r+1)*(r+1) <= a) r++;
     while (r*r > a) r--;
@@ -322,6 +315,7 @@ export function isqrt(a) {
 }
 
 /** xがいずれかと等価かどうか
+ * @description Pythonのin演算子`x in [a, b, ]`相当
  * - `x === a || x === b || ...`
  * @param {any} x 検査対象
  * @param {any[]} values 検査集合
